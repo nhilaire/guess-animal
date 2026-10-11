@@ -79,8 +79,9 @@ describe('question choice (AC-07)', () => {
   it('picks the unasked question with the highest expected gain', () => {
     const s = newGame(data);
     const gains = data.questions.map((_, q) => expectedGain(data, s.weights, q));
-    const best = gains.indexOf(Math.max(...gains));
-    expect(s.current).toBe(best);
+    const max = Math.max(...gains);
+    const earliestBest = gains.findIndex((g) => g >= max - 1e-12);
+    expect(s.current).toBe(earliestBest);
   });
 
   it('breaks ties with the earliest question', () => {

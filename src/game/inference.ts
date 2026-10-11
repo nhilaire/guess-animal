@@ -34,20 +34,44 @@ export function entropy(p: number[]): number {
   return h;
 }
 
+const xlog2 = (x: number) => (x > 0 ? x * Math.log2(x) : 0);
+const LOG_YES: Record<Fact, number> = { y: Math.log2(P_YES.y), n: Math.log2(P_YES.n), v: Math.log2(P_YES.v) };
+const LOG_NO: Record<Fact, number> = { y: Math.log2(1 - P_YES.y), n: Math.log2(1 - P_YES.n), v: Math.log2(1 - P_YES.v) };
+
+// For unnormalised x with sum S: H(x/S) = log2(S) - (sum x log2 x) / S. With y = w*l:
+// y log2 y = l * (w log2 w) + y log2 l, so the inner loop needs no logarithm (wlw = w log2 w, precomputed).
+function gain(data: GameData, weights: number[], wlw: number[], total: number, before: number, q: number): number {
+  let pYes = 0;
+  let pNo = 0;
+  let xlxYes = 0;
+  let xlxNo = 0;
+  for (let i = 0; i < weights.length; i++) {
+    const w = weights[i];
+    if (w <= 0) continue;
+    const f = data.animals[i].facts[q];
+    const l = P_YES[f];
+    const y = w * l;
+    const n = w - y;
+    pYes += y;
+    pNo += n;
+    xlxYes += l * wlw[i] + y * LOG_YES[f];
+    xlxNo += (1 - l) * wlw[i] + n * LOG_NO[f];
+  }
+  const after = (xlog2(pYes) - xlxYes + xlog2(pNo) - xlxNo) / total;
+  return before - after;
+}
+
+function prepare(weights: number[]) {
+  const wlw = weights.map(xlog2);
+  const total = weights.reduce((a, b) => a + b, 0);
+  const before = total > 0 ? Math.log2(total) - wlw.reduce((a, b) => a + b, 0) / total : 0;
+  return { wlw, total, before };
+}
+
 // Expected information gain (bits) of asking question q, for a Oui / Non answer.
 export function expectedGain(data: GameData, weights: number[], q: number): number {
-  let pYes = 0;
-  const yes: number[] = [];
-  const no: number[] = [];
-  data.animals.forEach((a, i) => {
-    const l = P_YES[a.facts[q]];
-    yes.push(weights[i] * l);
-    no.push(weights[i] * (1 - l));
-    pYes += weights[i] * l;
-  });
-  const pNo = 1 - pYes;
-  const after = (pYes > 0 ? pYes * entropy(normalise(yes)) : 0) + (pNo > 0 ? pNo * entropy(normalise(no)) : 0);
-  return entropy(weights) - after;
+  const { wlw, total, before } = prepare(weights);
+  return total > 0 ? gain(data, weights, wlw, total, before, q) : 0;
 }
 
 function topAnimal(c: Core): number {
@@ -59,17 +83,19 @@ function topAnimal(c: Core): number {
 }
 
 function bestQuestion(data: GameData, c: Core): { q: number; gain: number } {
+  const { wlw, total, before } = prepare(c.weights);
   let q = -1;
-  let gain = -Infinity;
+  let best = -Infinity;
+  if (total <= 0) return { q, gain: 0 };
   for (let i = 0; i < data.questions.length; i++) {
     if (c.asked[i]) continue;
-    const g = expectedGain(data, c.weights, i);
-    if (g > gain + 1e-12) {
+    const g = gain(data, c.weights, wlw, total, before, i);
+    if (g > best + 1e-12) {
       q = i;
-      gain = g;
+      best = g;
     }
   }
-  return { q, gain };
+  return { q, gain: best };
 }
 
 // Decides the next step: a proposal or the next question (or giving up).

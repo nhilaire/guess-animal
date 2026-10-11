@@ -8,7 +8,7 @@ Format: `- [ ] T-01 Title (AC-01, AC-02) - proof: unit|e2e|device`. Check the bo
 - [x] T-01 Inference engine: weights, likelihoods, information gain, proposal rule, wrong proposals, give up, undo (AC-06, AC-07, AC-08, AC-09, AC-10) - proof: unit
 - [x] T-02 Question list and data pipeline: data/questions.csv + data/animals.csv -> src/game/data.generated.ts, validation (AC-03, AC-05) - proof: unit
 - [x] T-03 Animal data: ~150 animals with every fact, distinguishability and generic-name checks (AC-03, AC-04, AC-05) - proof: unit
-- [ ] T-04 Simulation tests on the real data: perfect player and one-wrong-answer player, tune data until targets pass (AC-11, AC-12) - proof: unit
+- [x] T-04 Simulation tests on the real data: perfect player and one-wrong-answer player, tune data until targets pass (AC-11, AC-12) - proof: unit
 - [ ] T-05 Data review sheet docs/DATA-REVIEW.md generated from the CSV, French, per animal (AC-29) - proof: unit
 - [ ] T-06 French copy in tu form with no-break spaces, typography test over fr.ts and questions (AC-01, AC-27) - proof: unit
 - [ ] T-07 Screens: consent (French), home, question, proposal, victory, give up, thanks; navigation and Android back (AC-01, AC-02, AC-14, AC-15, AC-16, AC-17, AC-25) - proof: unit
