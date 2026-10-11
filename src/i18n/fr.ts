@@ -1,39 +1,62 @@
-// Every player-facing string lives here, in French. Components never inline text.
-import { label, NBSP } from './format';
+// Every player-facing string lives here, in French (tone: tu). Components never inline text.
+// `typo` applies French typography: no-break space before ? ! : ; (source text stays readable).
+import { NBSP } from './format';
+
+export const typo = (s: string): string => s.replace(/[   ]*([?!:;])/g, `${NBSP}$1`);
 
 export const fr = {
   consent: {
-    title: 'Votre vie privée',
-    body:
-      "Nous aimerions mesurer de façon anonyme l'utilisation du jeu et détecter les plantages afin de l'améliorer. " +
-      "Aucune donnée personnelle n'est collectée et rien n'est utilisé à des fins publicitaires.",
+    title: 'Statistiques anonymes',
+    body: typo(
+      "Pour améliorer le jeu, Devine l'Animal peut envoyer des statistiques anonymes (parties jouées, animaux trouvés ou non, plantages). Aucune donnée personnelle. Tu peux changer d'avis dans les paramètres.",
+    ),
     accept: 'Accepter',
     refuse: 'Refuser',
-    footnote: "Vous pourrez changer d'avis à tout moment dans les paramètres.",
   },
   home: {
+    pitch: typo('Pense à un animal… je vais le deviner !'),
     play: 'Jouer',
     settings: 'Paramètres',
-    bestScore: (score: number) => label('Meilleur score', score),
   },
   game: {
-    tap: `Touchez${NBSP}!`,
-    score: (score: number) => label('Score', score),
-    timeLeft: (seconds: number) => label('Temps', `${seconds}${NBSP}s`),
-    over: 'Partie terminée',
-    finalScore: (score: number) => label('Votre score', score),
+    counter: (n: number) => `Question ${n}`,
+    yes: 'Oui',
+    no: 'Non',
+    dontKnow: 'Je ne sais pas',
+    replay: 'Réécouter',
+    undo: 'Revenir',
+  },
+  proposal: {
+    question: (spoken: string) => typo(`Est-ce que c'est ${spoken} ?`),
+  },
+  victory: {
+    title: typo("J'ai trouvé !"),
+    body: (spoken: string) => `C'était ${spoken}.`,
+    questions: (n: number) => (n <= 1 ? `En ${n} question.` : `En ${n} questions.`),
+  },
+  giveUp: {
+    title: typo('Je donne ma langue au chat !'),
+    body: typo('À quel animal pensais-tu ?'),
+    notListed: "Il n'est pas dans la liste",
+  },
+  thanks: {
+    body: typo('Merci ! Je ferai mieux la prochaine fois.'),
+  },
+  common: {
     playAgain: 'Rejouer',
     home: 'Accueil',
   },
   settings: {
     title: 'Paramètres',
-    telemetry: 'Partager des statistiques anonymes',
-    telemetryHelp: "Aide à corriger les bugs et à améliorer le jeu. Aucune donnée personnelle n'est envoyée.",
+    sound: 'Son',
+    vibrations: 'Vibrations',
+    stats: 'Statistiques anonymes',
+    statsHelp: "Aide à corriger les erreurs et à améliorer le jeu. Aucune donnée personnelle n'est envoyée.",
     back: 'Retour',
   },
   errors: {
     title: 'Oups',
-    body: 'Un problème est survenu. Relancez le jeu.',
+    body: 'Un problème est survenu. Relance le jeu.',
     retry: 'Réessayer',
   },
 } as const;

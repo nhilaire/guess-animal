@@ -1,88 +1,124 @@
-import { useEffect, useReducer, useRef, useState } from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { AppState, BackHandler } from 'react-native';
 
-import { durationSeconds, initialState, reduce, remainingSeconds } from '../game/engine';
-import { fr } from '../i18n/fr';
+import { feedback } from '../audio/feedback';
+import { GAME_DATA } from '../game/data.generated';
+import { Answer, GameState, answerProposal, answerQuestion, newGame, undo } from '../game/inference';
+import { Settings } from '../storage/settings';
 import { track } from '../telemetry/telemetry';
-import { Button } from '../ui/Button';
-import { Screen } from '../ui/Screen';
-import { colors, font, spacing } from '../ui/theme';
+import { GiveUpView, ProposalView, QuestionView, ThanksView, VictoryView } from './GameViews';
 
-type Props = { onExit: () => void; onGameOver: (score: number) => void };
+const data = GAME_DATA;
+// The engine is deterministic: the opening state is always the same, computed once.
+const OPENING: GameState = newGame(data);
 
-export function GameScreen({ onExit, onGameOver }: Props) {
-  const [state, dispatch] = useReducer(reduce, initialState);
-  const [now, setNow] = useState(() => Date.now());
-  const reported = useRef(false);
+type Props = { settings: Settings; onExit: () => void };
 
-  const start = () => {
-    reported.current = false;
-    const t = Date.now();
-    dispatch({ type: 'start', now: t });
-    setNow(t);
+export function GameScreen({ settings, onExit }: Props) {
+  const [state, setState] = useState<GameState>(OPENING);
+  const [thanks, setThanks] = useState(false);
+  const [round, setRound] = useState(0);
+  const ended = useRef(false);
+  const sortedAnimals = useMemo(() => [...data.animals].sort((a, b) => a.name.localeCompare(b.name, 'fr')), []);
+
+  // One game_start per round.
+  useEffect(() => {
+    ended.current = false;
     track('game_start', {});
+  }, [round]);
+
+  // End of round: telemetry once, sounds and haptics.
+  useEffect(() => {
+    if (state.phase !== 'found' && state.phase !== 'gaveUp') return;
+    if (ended.current) return;
+    ended.current = true;
+    const won = state.phase === 'found';
+    track('game_end', { result: won ? 'found' : 'given_up', questions: state.questionsAnswered, wrong_guesses: state.wrongGuesses });
+    if (settings.sound) {
+      feedback().effect(won ? 'win' : 'lose');
+      feedback().line(won ? 'victory' : 'giveUp');
+    }
+    if (settings.vibrations) feedback().vibrate();
+  }, [state, settings]);
+
+  // Speak the current question or proposal.
+  useEffect(() => {
+    if (!settings.sound) return;
+    if (state.phase === 'question') feedback().question(data.questions[state.current].id);
+    else if (state.phase === 'proposal') feedback().proposal(data.animals[state.current].id);
+  }, [state.phase, state.current, round, settings.sound]);
+
+  const quit = useCallback(() => {
+    feedback().stop();
+    if (!ended.current) {
+      ended.current = true;
+      track('game_end', { result: 'quit', questions: state.questionsAnswered, wrong_guesses: state.wrongGuesses });
+    }
+    onExit();
+  }, [state, onExit]);
+
+  // Android back: leave the game.
+  useEffect(() => {
+    const sub = BackHandler.addEventListener('hardwareBackPress', () => {
+      quit();
+      return true;
+    });
+    return () => sub?.remove();
+  }, [quit]);
+
+  // Background: silence; the game state is kept as it is.
+  useEffect(() => {
+    const sub = AppState.addEventListener('change', (s) => {
+      if (s !== 'active') feedback().stop();
+    });
+    return () => sub?.remove();
+  }, []);
+
+  const playAgain = () => {
+    feedback().stop();
+    setState(OPENING);
+    setThanks(false);
+    setRound((r) => r + 1);
   };
 
-  useEffect(start, []); // eslint-disable-line react-hooks/exhaustive-deps
+  const onAnswer = (a: Answer) => {
+    feedback().stop();
+    setState((s) => answerQuestion(data, s, a));
+  };
 
-  useEffect(() => {
-    if (state.status !== 'playing') return;
-    const id = setInterval(() => {
-      const t = Date.now();
-      setNow(t);
-      dispatch({ type: 'tick', now: t });
-    }, 200);
-    return () => clearInterval(id);
-  }, [state.status]);
+  const onProposal = (correct: boolean) => {
+    feedback().stop();
+    setState((s) => answerProposal(data, s, correct));
+  };
 
-  useEffect(() => {
-    if (state.status !== 'over' || reported.current) return;
-    reported.current = true;
-    track('game_end', { result: 'quit', questions: state.score, wrong_guesses: 0 }); // template placeholder, replaced in build
-    onGameOver(state.score);
-  }, [state, onGameOver]);
+  const onPick = (animal: string) => {
+    track('animal_missed', { animal });
+    if (settings.sound) feedback().line('thanks');
+    setThanks(true);
+  };
 
-  if (state.status === 'over') {
-    return (
-      <Screen testID="game-over-screen">
-        <View style={styles.center}>
-          <Text style={styles.title} accessibilityRole="header">
-            {fr.game.over}
-          </Text>
-          <Text style={styles.score}>{fr.game.finalScore(state.score)}</Text>
-        </View>
-        <Button label={fr.game.playAgain} onPress={start} testID="game-play-again" />
-        <Button label={fr.game.home} onPress={onExit} variant="secondary" testID="game-home" />
-      </Screen>
-    );
+  if (thanks) return <ThanksView onPlayAgain={playAgain} onHome={quit} />;
+
+  switch (state.phase) {
+    case 'question':
+      return (
+        <QuestionView
+          question={data.questions[state.current]}
+          number={state.questionsAnswered + 1}
+          canUndo={state.history.length > 0}
+          onAnswer={onAnswer}
+          onReplay={() => settings.sound && feedback().question(data.questions[state.current].id)}
+          onUndo={() => {
+            feedback().stop();
+            setState(undo);
+          }}
+        />
+      );
+    case 'proposal':
+      return <ProposalView animal={data.animals[state.current]} onAnswer={onProposal} />;
+    case 'found':
+      return <VictoryView animal={data.animals[state.current]} questions={state.questionsAnswered} onPlayAgain={playAgain} onHome={quit} />;
+    case 'gaveUp':
+      return <GiveUpView animals={sortedAnimals} onPick={onPick} />;
   }
-
-  return (
-    <Screen testID="game-screen">
-      <View style={styles.hud}>
-        <Text style={styles.hudText}>{fr.game.score(state.score)}</Text>
-        <Text style={styles.hudText}>{fr.game.timeLeft(remainingSeconds(state, now))}</Text>
-      </View>
-      <Pressable
-        testID="game-tap-zone"
-        accessibilityRole="button"
-        accessibilityLabel={fr.game.tap}
-        onPress={() => dispatch({ type: 'tap', now: Date.now() })}
-        style={({ pressed }) => [styles.tapZone, pressed && styles.tapZonePressed]}
-      >
-        <Text style={styles.tapText}>{fr.game.tap}</Text>
-      </Pressable>
-    </Screen>
-  );
 }
-
-const styles = StyleSheet.create({
-  center: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: spacing.md },
-  title: { color: colors.text, fontSize: font.title, fontWeight: '800' },
-  score: { color: colors.accent, fontSize: font.heading, fontWeight: '700' },
-  hud: { flexDirection: 'row', justifyContent: 'space-between' },
-  hudText: { color: colors.text, fontSize: font.body, fontWeight: '600' },
-  tapZone: { flex: 1, borderRadius: 24, backgroundColor: colors.surface, alignItems: 'center', justifyContent: 'center' },
-  tapZonePressed: { backgroundColor: colors.accent },
-  tapText: { color: colors.text, fontSize: font.title, fontWeight: '800' },
-});

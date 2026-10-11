@@ -14,9 +14,8 @@ export function ConsentScreen({ onDecision }: { onDecision: (granted: boolean) =
           {fr.consent.title}
         </Text>
         <Text style={styles.body}>{fr.consent.body}</Text>
-        <Text style={styles.footnote}>{fr.consent.footnote}</Text>
       </View>
-      <Button label={fr.consent.accept} onPress={() => onDecision(true)} testID="consent-accept" />
+      <Button label={fr.consent.accept} onPress={() => onDecision(true)} variant="secondary" testID="consent-accept" />
       <Button label={fr.consent.refuse} onPress={() => onDecision(false)} variant="secondary" testID="consent-refuse" />
     </Screen>
   );
@@ -25,6 +24,5 @@ export function ConsentScreen({ onDecision }: { onDecision: (granted: boolean) =
 const styles = StyleSheet.create({
   content: { flex: 1, justifyContent: 'center', gap: spacing.md },
   title: { color: colors.text, fontSize: font.title, fontWeight: '800' },
-  body: { color: colors.text, fontSize: font.body, lineHeight: 24 },
-  footnote: { color: colors.muted, fontSize: font.small },
+  body: { color: colors.text, fontSize: font.body, lineHeight: 26 },
 });

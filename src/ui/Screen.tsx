@@ -7,7 +7,7 @@ import { colors, spacing } from './theme';
 export function Screen({ children, testID }: { children: ReactNode; testID?: string }) {
   return (
     <View testID={testID} style={[styles.screen, { paddingTop: (StatusBar.currentHeight ?? 0) + spacing.lg }]}>
-      <StatusBar barStyle="light-content" translucent backgroundColor="transparent" />
+      <StatusBar barStyle="dark-content" translucent backgroundColor="transparent" />
       {children}
     </View>
   );

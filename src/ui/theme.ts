@@ -1,13 +1,18 @@
+// Bright, friendly palette (PRD "Look, sound and feel"). Answers always pair colour with an icon and text.
 export const colors = {
-  background: '#101828',
-  surface: '#1D2939',
-  text: '#F9FAFB',
-  muted: '#98A2B3',
-  accent: '#FDB022',
-  accentText: '#101828',
-  danger: '#F97066',
+  background: '#FFF6E5',
+  surface: '#FFFFFF',
+  surfaceAlt: '#FDEBC8',
+  text: '#1D2939',
+  muted: '#475467',
+  accent: '#F79009',
+  accentText: '#FFFFFF',
+  yes: '#079455',
+  no: '#D92D20',
+  neutral: '#667085',
+  danger: '#D92D20',
 } as const;
 
 export const spacing = { xs: 4, sm: 8, md: 16, lg: 24, xl: 40 } as const;
 
-export const font = { title: 34, heading: 24, body: 17, small: 14 } as const;
+export const font = { emoji: 96, title: 34, question: 28, heading: 24, body: 18, small: 15 } as const;

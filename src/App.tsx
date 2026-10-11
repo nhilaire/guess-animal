@@ -5,7 +5,7 @@ import { ConsentScreen } from './screens/ConsentScreen';
 import { GameScreen } from './screens/GameScreen';
 import { HomeScreen } from './screens/HomeScreen';
 import { SettingsScreen } from './screens/SettingsScreen';
-import { loadBestScore, saveBestScore } from './storage/bestScore';
+import { DEFAULT_SETTINGS, Settings, loadSettings, saveSettings } from './storage/settings';
 import { Consent, loadConsent, saveConsent } from './telemetry/consentStore';
 import { applyConsent } from './telemetry/telemetry';
 import { ErrorBoundary } from './ui/ErrorBoundary';
@@ -16,16 +16,16 @@ type Route = 'home' | 'game' | 'settings';
 export default function App() {
   const [consent, setConsentState] = useState<Consent | 'loading'>('loading');
   const [route, setRoute] = useState<Route>('home');
-  const [bestScore, setBestScore] = useState(0);
+  const [settings, setSettings] = useState<Settings>(DEFAULT_SETTINGS);
 
   useEffect(() => {
     let alive = true;
     (async () => {
-      const [storedConsent, storedBest] = await Promise.all([loadConsent(), loadBestScore()]);
+      const [storedConsent, storedSettings] = await Promise.all([loadConsent(), loadSettings()]);
       if (storedConsent !== 'unknown') await applyConsent(storedConsent === 'granted');
       if (alive) {
         setConsentState(storedConsent);
-        setBestScore(storedBest);
+        setSettings(storedSettings);
       }
     })();
     return () => {
@@ -40,9 +40,9 @@ export default function App() {
     setConsentState(value);
   }, []);
 
-  const onGameOver = useCallback(async (score: number) => {
-    setBestScore((current) => Math.max(current, score));
-    await saveBestScore(score);
+  const changeSettings = useCallback((next: Settings) => {
+    setSettings(next);
+    void saveSettings(next);
   }, []);
 
   let content: React.ReactNode;
@@ -55,11 +55,19 @@ export default function App() {
   } else if (consent === 'unknown') {
     content = <ConsentScreen onDecision={decide} />;
   } else if (route === 'game') {
-    content = <GameScreen onExit={() => setRoute('home')} onGameOver={onGameOver} />;
+    content = <GameScreen settings={settings} onExit={() => setRoute('home')} />;
   } else if (route === 'settings') {
-    content = <SettingsScreen telemetryEnabled={consent === 'granted'} onToggleTelemetry={decide} onBack={() => setRoute('home')} />;
+    content = (
+      <SettingsScreen
+        settings={settings}
+        telemetryEnabled={consent === 'granted'}
+        onChange={changeSettings}
+        onToggleTelemetry={decide}
+        onBack={() => setRoute('home')}
+      />
+    );
   } else {
-    content = <HomeScreen bestScore={bestScore} onPlay={() => setRoute('game')} onSettings={() => setRoute('settings')} />;
+    content = <HomeScreen onPlay={() => setRoute('game')} onSettings={() => setRoute('settings')} />;
   }
 
   return <ErrorBoundary>{content}</ErrorBoundary>;
