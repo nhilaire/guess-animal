@@ -7,9 +7,9 @@ amphibian;Est-ce un amphibien ?
 insect;Est-ce un insecte ?
 crustacean;Est-ce un crustacé ?
 soft_body;Est-ce qu'il a un corps mou, sans os ?
-water;Est-ce qu'il vit dans l'eau ?
-sea;Est-ce qu'il vit dans la mer ?
-freshwater;Est-ce qu'il vit près des rivières, des lacs ou des mares ?
+water;Est-ce qu'il passe presque tout son temps dans l'eau ?
+sea;Est-ce qu'il vit dans la mer ou au bord de la mer ?
+freshwater;Est-ce qu'il vit dans ou au bord des rivières, des lacs ou des mares ?
 farm;Est-ce qu'on l'élève dans les fermes ?
 pet;Est-ce un animal de compagnie ?
 wild_france;Est-ce qu'on peut le voir en liberté dans la nature en France ?
@@ -21,9 +21,9 @@ cold;Est-ce qu'il vit dans des endroits très froids ?
 forest;Est-ce qu'il vit dans la forêt ?
 desert;Est-ce qu'il vit dans le désert ?
 mountain;Est-ce qu'il vit à la montagne ?
-trees;Est-ce qu'il grimpe aux arbres ?
+trees;Est-ce qu'il grimpe ou vit dans les arbres ?
 burrow;Est-ce qu'il creuse un terrier ?
-big;Est-ce qu'il est plus grand qu'un adulte ?
+big;Est-ce qu'il est plus grand ou plus long qu'un adulte ?
 small;Est-ce qu'il est plus petit qu'un chat ?
 flies;Est-ce qu'il peut voler ?
 swims;Est-ce qu'il sait nager ?
@@ -52,7 +52,7 @@ black;Est-ce qu'il est noir ?
 grey;Est-ce qu'il est gris ?
 orange;Est-ce qu'il est orange ou roux ?
 green;Est-ce qu'il est vert ?
-carnivore;Est-ce qu'il mange d'autres animaux ?
+carnivore;Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ?
 herbivore;Est-ce qu'il mange seulement des plantes ?
 dangerous;Est-ce qu'il peut être dangereux pour l'homme ?
 venom;Est-ce qu'il a du venin ?
@@ -62,7 +62,7 @@ group;Est-ce qu'il vit en groupe ?
 jumps;Est-ce qu'il se déplace en sautant ?
 fast;Est-ce qu'il court très vite ?
 eggs;Est-ce qu'il pond des œufs ?
-eaten;Est-ce qu'on le mange souvent ?
+eaten;Est-ce que les gens en mangent souvent ?
 ridden;Est-ce qu'on peut monter sur son dos ?
 feline;Est-ce un félin, de la famille du chat ?
 canine;Est-ce qu'il est de la famille du chien ?
@@ -78,11 +78,13 @@ tusks;Est-ce qu'il a des défenses ?
 mask;Est-ce qu'il a un masque noir autour des yeux ?
 big_beak;Est-ce qu'il a un très grand bec ?
 spikes;Est-ce qu'il a des piquants ?
-huge;Est-ce qu'il est plus grand qu'un éléphant ?
-fits_hand;Est-ce qu'il tient dans une main ?
+huge;Est-ce qu'il est plus gros qu'un éléphant ?
+fits_hand;Est-ce qu'il tient dans la main d'un adulte ?
 talks;Est-ce qu'il peut répéter des mots ?
 sings;Est-ce qu'il chante ?
 migrates;Est-ce qu'il part dans les pays chauds en hiver ?
 drinks_blood;Est-ce qu'il boit du sang ?
 sewers;Est-ce qu'il vit dans les égouts ?
 in_house;Est-ce qu'on le trouve souvent dans les maisons ?
+yellow;Est-ce qu'il est jaune ?
+pink;Est-ce qu'il est rose ?

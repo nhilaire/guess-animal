@@ -86,6 +86,9 @@ flowchart LR
   (« l'ours polaire », « la girafe »), display name (« Ours polaire »), emoji (fallback 🐾).
 - No generic animal (no « Poisson », « Singe », « Serpent », « Oiseau », « Insecte »).
 - About 40-60 questions, French, « tu » tone, about the animal (« Est-ce qu'il vit dans l'eau ? »).
+  Amendment 2026-10-11: 89 questions are used (extra discriminating questions such as « barbichette », « défenses »,
+  « moustaches » are needed so that every pair of close animals differs on 2 questions, AC-04); a game still asks
+  about 8-12 of them.
 - Each fact (animal × question) is `yes`, `no` or `variable` (true only for some individuals or contexts, or
   debatable for a child).
 - A review sheet (`docs/DATA-REVIEW.md`, generated from the CSV) lets the user check animals one by one.
