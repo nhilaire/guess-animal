@@ -1,31 +1,35 @@
 appId: io.github.nhilaire.guessanimal
-name: Smoke - first launch, refuse telemetry, play one round
+name: Smoke - French consent, refuse, consent not asked again, question 1 (AC-01, AC-02, AC-14)
 tags:
   - smoke
 ---
 - launchApp:
     clearState: true
-- assertVisible: "Votre vie privée"
+- assertVisible: "Statistiques anonymes"
+- assertVisible: "Accepter"
+- assertVisible: "Refuser"
 - takeScreenshot: 01-consent
 - tapOn:
     id: "consent-refuse"
 - assertVisible:
     id: "home-screen"
 - takeScreenshot: 02-home
-- tapOn:
-    id: "home-play"
-- assertVisible:
-    id: "game-tap-zone"
-- tapOn:
-    id: "game-tap-zone"
-- tapOn:
-    id: "game-tap-zone"
-- takeScreenshot: 03-game
-- extendedWaitUntil:
-    visible: "Partie terminée"
-    timeout: 20000
-- takeScreenshot: 04-game-over
-- tapOn:
-    id: "game-home"
+- stopApp
+- launchApp
 - assertVisible:
     id: "home-screen"
+- assertNotVisible: "Statistiques anonymes"
+- tapOn:
+    id: "home-play"
+- assertVisible: "Question 1"
+- assertVisible:
+    id: "answer-yes"
+- assertVisible:
+    id: "answer-no"
+- assertVisible:
+    id: "answer-dontknow"
+- assertVisible:
+    id: "game-replay"
+- assertVisible:
+    id: "game-undo"
+- takeScreenshot: 03-question-1

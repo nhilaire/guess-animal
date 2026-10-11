@@ -1,0 +1,20 @@
+appId: io.github.nhilaire.guessanimal
+name: Undo the last answer (AC-17)
+tags:
+  - e2e
+---
+- launchApp:
+    clearState: true
+- tapOn:
+    id: "consent-refuse"
+- tapOn:
+    id: "home-play"
+- assertVisible: "Question 1"
+- tapOn:
+    id: "answer-yes"
+- assertVisible: "Question 2"
+- takeScreenshot: 30-question-2
+- tapOn:
+    id: "game-undo"
+- assertVisible: "Question 1"
+- takeScreenshot: 31-undo-question-1

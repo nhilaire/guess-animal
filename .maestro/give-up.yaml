@@ -1,0 +1,77 @@
+appId: io.github.nhilaire.guessanimal
+name: Give up after 3 wrong proposals, pick an animal (AC-16)
+tags:
+  - e2e
+---
+- launchApp:
+    clearState: true
+- tapOn:
+    id: "consent-refuse"
+- tapOn:
+    id: "home-play"
+- tapOn:
+    id: "answer-dontknow"
+- tapOn:
+    id: "answer-dontknow"
+- tapOn:
+    id: "answer-dontknow"
+- tapOn:
+    id: "answer-dontknow"
+- tapOn:
+    id: "answer-dontknow"
+- tapOn:
+    id: "answer-dontknow"
+- tapOn:
+    id: "answer-dontknow"
+- tapOn:
+    id: "answer-dontknow"
+- tapOn:
+    id: "answer-dontknow"
+- tapOn:
+    id: "answer-dontknow"
+- tapOn:
+    id: "answer-dontknow"
+- tapOn:
+    id: "answer-dontknow"
+- tapOn:
+    id: "answer-dontknow"
+- tapOn:
+    id: "answer-dontknow"
+- tapOn:
+    id: "answer-dontknow"
+- tapOn:
+    id: "answer-dontknow"
+- tapOn:
+    id: "answer-dontknow"
+- tapOn:
+    id: "answer-dontknow"
+- tapOn:
+    id: "answer-dontknow"
+- tapOn:
+    id: "answer-dontknow"
+- assertVisible:
+    id: "proposal-screen"
+- tapOn:
+    id: "proposal-no"
+- assertVisible:
+    id: "proposal-screen"
+- tapOn:
+    id: "proposal-no"
+- assertVisible:
+    id: "proposal-screen"
+- tapOn:
+    id: "proposal-no"
+- assertVisible:
+    id: "giveup-screen"
+- assertVisible: "Je donne ma langue au chat !"
+- takeScreenshot: 20-give-up
+- scrollUntilVisible:
+    element:
+      id: "pick-not-listed"
+    direction: DOWN
+- assertVisible: "Il n'est pas dans la liste"
+- tapOn:
+    id: "pick-not-listed"
+- assertVisible:
+    id: "thanks-screen"
+- takeScreenshot: 21-thanks

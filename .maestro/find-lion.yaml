@@ -1,0 +1,49 @@
+appId: io.github.nhilaire.guessanimal
+name: Find the lion: consistent answers, proposal, victory (AC-15)
+tags:
+  - e2e
+---
+- launchApp:
+    clearState: true
+- tapOn:
+    id: "consent-refuse"
+- tapOn:
+    id: "home-play"
+- assertVisible:
+    id: "q-mammal"
+- tapOn:
+    id: "answer-yes"
+- assertVisible:
+    id: "q-carnivore"
+- tapOn:
+    id: "answer-yes"
+- assertVisible:
+    id: "q-whiskers"
+- tapOn:
+    id: "answer-yes"
+- assertVisible:
+    id: "q-feline"
+- tapOn:
+    id: "answer-yes"
+- assertVisible:
+    id: "q-africa"
+- tapOn:
+    id: "answer-yes"
+- assertVisible:
+    id: "q-spots"
+- tapOn:
+    id: "answer-no"
+- assertVisible:
+    id: "q-mane"
+- tapOn:
+    id: "answer-yes"
+- assertVisible:
+    id: "proposal-screen"
+- assertVisible: "Est-ce que c'est le lion ?"
+- takeScreenshot: 10-proposal-lion
+- tapOn:
+    id: "proposal-yes"
+- assertVisible:
+    id: "victory-screen"
+- assertVisible: "J'ai trouvé !"
+- takeScreenshot: 11-victory

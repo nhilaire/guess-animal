@@ -1,0 +1,35 @@
+appId: io.github.nhilaire.guessanimal
+name: Settings persist after a restart (AC-18)
+tags:
+  - e2e
+---
+- launchApp:
+    clearState: true
+- tapOn:
+    id: "consent-accept"
+- tapOn:
+    id: "home-settings"
+- assertVisible:
+    id: "settings-sound"
+    checked: true
+- tapOn:
+    id: "settings-sound"
+- tapOn:
+    id: "settings-vibrations"
+- tapOn:
+    id: "settings-telemetry"
+- takeScreenshot: 40-settings-off
+- stopApp
+- launchApp
+- tapOn:
+    id: "home-settings"
+- assertVisible:
+    id: "settings-sound"
+    checked: false
+- assertVisible:
+    id: "settings-vibrations"
+    checked: false
+- assertVisible:
+    id: "settings-telemetry"
+    checked: false
+- takeScreenshot: 41-settings-after-restart

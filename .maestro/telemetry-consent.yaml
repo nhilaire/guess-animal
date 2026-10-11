@@ -1,5 +1,5 @@
 appId: io.github.nhilaire.guessanimal
-name: Telemetry - accept consent and play one round (events checked in logcat by verify.mjs)
+name: Telemetry: accept consent, play a full game (events checked in logcat by verify.mjs)
 tags:
   - telemetry
 ---
@@ -7,13 +7,43 @@ tags:
     clearState: true
 - tapOn:
     id: "consent-accept"
-- assertVisible:
-    id: "home-screen"
 - tapOn:
     id: "home-play"
+- assertVisible:
+    id: "q-mammal"
 - tapOn:
-    id: "game-tap-zone"
-- extendedWaitUntil:
-    visible: "Partie terminée"
-    timeout: 20000
-- takeScreenshot: telemetry-game-over
+    id: "answer-yes"
+- assertVisible:
+    id: "q-carnivore"
+- tapOn:
+    id: "answer-yes"
+- assertVisible:
+    id: "q-whiskers"
+- tapOn:
+    id: "answer-yes"
+- assertVisible:
+    id: "q-feline"
+- tapOn:
+    id: "answer-yes"
+- assertVisible:
+    id: "q-africa"
+- tapOn:
+    id: "answer-yes"
+- assertVisible:
+    id: "q-spots"
+- tapOn:
+    id: "answer-no"
+- assertVisible:
+    id: "q-mane"
+- tapOn:
+    id: "answer-yes"
+- assertVisible:
+    id: "proposal-screen"
+- assertVisible: "Est-ce que c'est le lion ?"
+- takeScreenshot: telemetry-10-proposal-lion
+- tapOn:
+    id: "proposal-yes"
+- assertVisible:
+    id: "victory-screen"
+- assertVisible: "J'ai trouvé !"
+- takeScreenshot: telemetry-11-victory
