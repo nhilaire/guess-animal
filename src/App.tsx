@@ -67,7 +67,7 @@ export default function App() {
       />
     );
   } else {
-    content = <HomeScreen onPlay={() => setRoute('game')} onSettings={() => setRoute('settings')} />;
+    content = <HomeScreen sound={settings.sound} onPlay={() => setRoute('game')} onSettings={() => setRoute('settings')} />;
   }
 
   return <ErrorBoundary>{content}</ErrorBoundary>;

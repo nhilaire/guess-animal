@@ -7,6 +7,7 @@ export type Feedback = {
   question(questionId: string): void;
   proposal(animalId: string): void;
   line(line: Line): void;
+  then(line: Line): void; // plays after the current clip ends
   effect(effect: Effect): void;
   vibrate(): void;
   stop(): void;
@@ -16,6 +17,7 @@ const silent: Feedback = {
   question: () => {},
   proposal: () => {},
   line: () => {},
+  then: () => {},
   effect: () => {},
   vibrate: () => {},
   stop: () => {},

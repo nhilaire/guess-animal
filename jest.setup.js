@@ -16,3 +16,14 @@ jest.mock('@react-native-firebase/crashlytics', () => ({
   recordError: jest.fn(),
   setCrashlyticsCollectionEnabled: jest.fn(() => Promise.resolve()),
 }));
+
+// Sound and haptics: recorded calls only.
+jest.mock('expo-audio', () => {
+  const player = () => ({ play: jest.fn(), pause: jest.fn(), replace: jest.fn(), seekTo: jest.fn(() => Promise.resolve()), addListener: jest.fn(), remove: jest.fn() });
+  return { createAudioPlayer: jest.fn(() => player()) };
+});
+
+jest.mock('expo-haptics', () => ({
+  notificationAsync: jest.fn(() => Promise.resolve()),
+  NotificationFeedbackType: { Success: 'success', Warning: 'warning', Error: 'error' },
+}));

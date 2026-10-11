@@ -37,6 +37,7 @@ export function GameScreen({ settings, onExit }: Props) {
     if (settings.sound) {
       feedback().effect(won ? 'win' : 'lose');
       feedback().line(won ? 'victory' : 'giveUp');
+      if (!won) feedback().then('giveUpBody');
     }
     if (settings.vibrations) feedback().vibrate();
   }, [state, settings]);

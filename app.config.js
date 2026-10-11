@@ -28,8 +28,8 @@ module.exports = ({ config }) => ({
     ...config.android,
     package: meta.package,
     versionCode: versionCode(version),
-    // Privacy: no advertising ID.
-    blockedPermissions: ['com.google.android.gms.permission.AD_ID'],
+    // Privacy: no advertising ID, no microphone (the game only plays sounds).
+    blockedPermissions: ['com.google.android.gms.permission.AD_ID', 'android.permission.RECORD_AUDIO'],
     ...(hasFirebase ? { googleServicesFile: GOOGLE_SERVICES } : {}),
   },
   plugins: [

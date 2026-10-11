@@ -1,14 +1,23 @@
+import { useEffect } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
+import { feedback } from '../audio/feedback';
 import { APP_NAME } from '../config/app';
 import { fr } from '../i18n/fr';
 import { Button } from '../ui/Button';
 import { Screen } from '../ui/Screen';
 import { colors, font, spacing } from '../ui/theme';
 
-type Props = { onPlay: () => void; onSettings: () => void };
+type Props = { sound: boolean; onPlay: () => void; onSettings: () => void };
 
-export function HomeScreen({ onPlay, onSettings }: Props) {
+export function HomeScreen({ sound, onPlay, onSettings }: Props) {
+  // The pitch is spoken for players who cannot read yet.
+  useEffect(() => {
+    if (!sound) return;
+    feedback().line('pitch');
+    return () => feedback().stop();
+  }, [sound]);
+
   return (
     <Screen testID="home-screen">
       <View style={styles.hero}>

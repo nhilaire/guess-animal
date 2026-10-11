@@ -11,6 +11,7 @@ const fake: Feedback = {
   question: (id) => recorded.push(`question:${id}`),
   proposal: (id) => recorded.push(`proposal:${id}`),
   line: (l) => recorded.push(`line:${l}`),
+  then: (l) => recorded.push(`then:${l}`),
   effect: (e) => recorded.push(`effect:${e}`),
   vibrate: () => recorded.push('vibrate'),
   stop: () => recorded.push('stop'),
