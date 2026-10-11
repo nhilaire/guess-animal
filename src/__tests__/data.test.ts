@@ -11,6 +11,10 @@ describe('animal data', () => {
     expect(() => execFileSync('node', ['scripts/build-data.mjs', '--check'], { cwd: ROOT, stdio: 'pipe' })).not.toThrow();
   });
 
+  it('review sheet docs/DATA-REVIEW.md is in sync with the data (AC-29)', () => {
+    expect(() => execFileSync('node', ['scripts/data-review.mjs', '--check'], { cwd: ROOT, stdio: 'pipe' })).not.toThrow();
+  });
+
   it('is complete, unique, well-formed, 140-160 animals (AC-03)', () => {
     expect(structuralProblems(GAME_DATA)).toEqual([]);
     expect(GAME_DATA.animals.length).toBeGreaterThanOrEqual(140);
