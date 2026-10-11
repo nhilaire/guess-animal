@@ -1,0 +1,9 @@
+{
+  "slug": "guess-animal",
+  "displayName": "Devine l'Animal",
+  "package": "io.github.nhilaire.guessanimal",
+  "stack": null,
+  "description": "Family guessing game: think of an animal, the app asks yes/no questions aloud until it finds it",
+  "language": "fr-FR",
+  "factoryVersion": "1.0.0"
+}
