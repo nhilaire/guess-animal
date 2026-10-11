@@ -14,8 +14,8 @@ Format: `- [ ] T-01 Title (AC-01, AC-02) - proof: unit|e2e|device`. Check the bo
 - [ ] T-07 Screens: consent (French), home, question, proposal, victory, give up, thanks; navigation and Android back (AC-01, AC-02, AC-14, AC-15, AC-16, AC-17, AC-25) - proof: unit
 - [ ] T-08 Settings: sound, vibrations, anonymous statistics, persisted (AC-18, AC-21) - proof: unit
 - [ ] T-09 Telemetry calls: game_start, game_end (found / given_up / quit), animal_missed (AC-20, AC-21) - proof: unit
-- [ ] T-10 Voice samples with 3 French Edge voices for the user to choose (AC-28) - proof: manual
-- [ ] T-11 Audio generation script (edge-tts) + manifest, all audio files generated and committed (AC-13, AC-27) - proof: unit
+- [ ] T-10 Voice samples with 3 French Azure voices for the user to choose (AC-28) - proof: manual
+- [ ] T-11 Audio generation script (Azure Speech REST) + manifest, all audio files generated and committed (AC-13, AC-27) - proof: unit
 - [ ] T-12 Audio playback with expo-audio: auto-play, replay, stop on answer, sound toggle; sound effects and haptics (AC-19, AC-26) - proof: unit
 - [ ] T-13 Maestro flows: smoke (consent refuse + relaunch), find the lion (generated from data), give up after 3 wrong proposals, undo, settings persistence, telemetry consent (AC-01, AC-02, AC-14, AC-15, AC-16, AC-17, AC-18, AC-22, AC-23, AC-24) - proof: e2e
 - [ ] T-14 Release checks prepared: no RECORD_AUDIO / AD_ID, offline flows, cold start, final app label (AC-22, AC-23, AC-24, AC-30) - proof: device
@@ -27,8 +27,8 @@ Format: `- [ ] T-01 Title (AC-01, AC-02) - proof: unit|e2e|device`. Check the bo
   ambiguous facts are marked `v` (variable) rather than guessed. The user reviews a sample (AC-29) before release.
 - `Manchot`: French children often say « pingouin » for it; only « Manchot » is kept (no duplicate), its review row
   says so.
-- Voice (T-10, T-11): edge-tts (Python package, run locally) sends the French texts to the Microsoft Edge read-aloud
-  service; only public game texts are sent. Generated MP3 files are committed; the app never calls the service.
+- Voice (T-10, T-11): a Node script (no dependency) calls the Azure Speech REST API with the key from user
+  environment variables; only public game texts are sent. Generated MP3 files are committed; the app never calls it.
 - Sound effects are synthesised by a local script (self-made, no licence issue), recorded in `assets/LICENSES.md`.
 - E2E "find the lion" flow is generated from the data (one conditional step per question), so it stays in sync.
 - AC-22, AC-23, AC-24 are proved by `/verify-app` (device); AC-28, AC-29, AC-30 need the user.

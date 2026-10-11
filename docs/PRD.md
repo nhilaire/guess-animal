@@ -134,12 +134,13 @@ flowchart LR
   with ?): icon and text together, never colour alone. Large readable font. Portrait only.
 - Animals: Unicode emoji + French display name; 🐾 when no emoji fits. No copyrighted images.
 - Voice: every question, every proposal sentence (« Est-ce que c'est la girafe ? ») and the fixed sentences (pitch,
-  victory, give up, list prompt, thanks) are pre-recorded audio files with the fr-FR-DeniseNeural voice from the free
-  Microsoft Edge online "Read aloud" service (edge-tts). They are generated once by a local script, committed in the
+  victory, give up, list prompt, thanks) are pre-recorded audio files with the fr-FR-DeniseNeural voice from Azure Speech
+  (free tier F0, REST API). They are generated once by a local script, committed in the
   repository, bundled in the APK and played offline; the app never calls any speech service. The spoken text equals
   the French copy. Format: mono MP3, 48 kbit/s (~150 proposals + ~60 questions + ~10 sentences, ≈ 3 MB).
-- Accepted risk: the Edge read-aloud endpoint is unofficial; if it becomes unavailable, Azure Speech (same voice)
-  is the fallback for the generation script.
+- Azure key and region are read by the generation script from user environment variables (AZURE_SPEECH_KEY,
+  AZURE_SPEECH_REGION), never written in any repository. Amendment 2026-10-11, decided by the user: the Edge
+  read-aloud service first chosen refused connections (HTTP 403), so the fallback Azure Speech is used.
 - Playback: the question audio plays automatically when the question appears (if sound is on); « Réécouter » replays
   it; any answer stops the current audio. The proposal sentence plays when the Proposal screen appears.
 - Sound effects: short victory jingle and short give-up sound, CC0 or self-generated; no background music.
@@ -242,7 +243,7 @@ Business and technical indicators followed in Firebase (free Spark plan). Detail
   fires.
 - AC-27 [unit] Given `src/i18n/fr.ts`, the question texts and the audio manifest texts, then every « ! ? : ; » is
   preceded by a no-break space (U+00A0 or U+202F) and every « » encloses its text with no-break spaces.
-- AC-28 [manual] Given a few sample sentences generated with fr-FR-DeniseNeural and 2 other French Edge voices, when
+- AC-28 [manual] Given a few sample sentences generated with fr-FR-DeniseNeural and 2 other French Azure voices, when
   the user listens to them, then the user confirms the voice before all audio files are generated.
 - AC-29 [manual] Given the data review sheet, when the user reviews at least 30 animals across all questions, then
   every correction is applied and the user confirms the data are right.

@@ -73,6 +73,7 @@ Mark assumptions the user accepted as `(default accepted)`.
 - Data: ~150 well-known animals, no generic duplicates; each fact is yes / no / variable; one readable source data file; automated tests prove every animal is reachable and distinguishable from every other; the user reviews a sample before release.
 - Answers: Yes / No / I don't know, large touch buttons, no microphone.
 - Voice: questions, proposals and fixed sentences pre-generated with the free Microsoft Edge online neural voices (fr-FR-DeniseNeural), via a local generation script (not run by the app); no account and no key needed; files bundled in the APK. Accepted risk: the Edge read-aloud endpoint is unofficial and may change or be blocked, and its terms for a published app are unclear; mitigation: audio is generated once and committed, so the app never depends on the service, and Azure Speech (same voice) remains the fallback.
+- Amendment (2026-10-11, user decision): the Edge read-aloud service returned HTTP 403 to edge-tts 7.2.8 (latest); the voice files are generated with Azure Speech free tier F0 instead (same fr-FR-DeniseNeural voice). The key lives in user environment variables, never in a repository.
 - Visuals: emoji + French name; generic pictogram when no emoji exists; no copyrighted images.
 - Tone: tu. Player-facing strings in French.
 - Telemetry (opt-in, anonymous): app open, game start, game end (found / given up, number of questions, number of wrong proposals), animal not found (the animal picked from the list).
