@@ -15,7 +15,7 @@ Format: `- [ ] T-01 Title (AC-01, AC-02) - proof: unit|e2e|device`. Check the bo
 - [x] T-08 Settings: sound, vibrations, anonymous statistics, persisted (AC-18, AC-21) - proof: unit
 - [x] T-09 Telemetry calls: game_start, game_end (found / given_up / quit), animal_missed (AC-20, AC-21) - proof: unit
 - [x] T-10 Voice samples with 3 French Azure voices for the user to choose (AC-28) - proof: manual
-- [ ] T-11 Audio generation script (Azure Speech REST) + manifest, all audio files generated and committed (AC-13, AC-27) - proof: unit
+- [x] T-11 Audio generation script (Azure Speech REST) + manifest, all audio files generated and committed (AC-13, AC-27) - proof: unit
 - [ ] T-12 Audio playback with expo-audio: auto-play, replay, stop on answer, sound toggle; sound effects and haptics (AC-19, AC-26) - proof: unit
 - [ ] T-13 Maestro flows: smoke (consent refuse + relaunch), find the lion (generated from data), give up after 3 wrong proposals, undo, settings persistence, telemetry consent (AC-01, AC-02, AC-14, AC-15, AC-16, AC-17, AC-18, AC-22, AC-23, AC-24) - proof: e2e
 - [ ] T-14 Release checks prepared: no RECORD_AUDIO / AD_ID, offline flows, cold start, final app label (AC-22, AC-23, AC-24, AC-30) - proof: device

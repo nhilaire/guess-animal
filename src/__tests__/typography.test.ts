@@ -1,5 +1,6 @@
 import { GAME_DATA } from '../game/data.generated';
 import { fr } from '../i18n/fr';
+import { typographyProblems } from '../i18n/typography';
 
 // Collects every player-facing string of fr.ts (functions are called with a sample argument).
 function strings(node: unknown, out: string[] = []): string[] {
@@ -7,18 +8,6 @@ function strings(node: unknown, out: string[] = []): string[] {
   else if (typeof node === 'function') out.push(String((node as (x: unknown) => unknown)(node.length ? 'la girafe' : undefined)));
   else if (node && typeof node === 'object') Object.values(node).forEach((v) => strings(v, out));
   return out;
-}
-
-const NB = '[  ]';
-
-export function typographyProblems(texts: string[]): string[] {
-  const p: string[] = [];
-  for (const t of texts) {
-    if (new RegExp(`(^|[^  ])[?!:;]`).test(t)) p.push(`missing no-break space before ? ! : ; in "${t}"`);
-    if (new RegExp(`«(?!${NB})`).test(t) || new RegExp(`(?<!${NB})»`).test(t)) p.push(`missing no-break space inside « » in "${t}"`);
-    if (t.includes('...')) p.push(`use … instead of ... in "${t}"`);
-  }
-  return p;
 }
 
 describe('French typography (AC-27)', () => {
