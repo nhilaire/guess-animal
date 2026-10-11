@@ -5,7 +5,7 @@ Format: `- [ ] T-01 Title (AC-01, AC-02) - proof: unit|e2e|device`. Check the bo
 
 ## Tasks
 
-- [ ] T-01 Inference engine: weights, likelihoods, information gain, proposal rule, wrong proposals, give up, undo (AC-06, AC-07, AC-08, AC-09, AC-10) - proof: unit
+- [x] T-01 Inference engine: weights, likelihoods, information gain, proposal rule, wrong proposals, give up, undo (AC-06, AC-07, AC-08, AC-09, AC-10) - proof: unit
 - [ ] T-02 Question list and data pipeline: data/questions.csv + data/animals.csv -> src/game/data.generated.ts, validation (AC-03, AC-05) - proof: unit
 - [ ] T-03 Animal data: ~150 animals with every fact, distinguishability and generic-name checks (AC-03, AC-04, AC-05) - proof: unit
 - [ ] T-04 Simulation tests on the real data: perfect player and one-wrong-answer player, tune data until targets pass (AC-11, AC-12) - proof: unit
