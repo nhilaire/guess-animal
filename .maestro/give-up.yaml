@@ -1,5 +1,5 @@
 appId: io.github.nhilaire.guessanimal
-name: Give up after 3 wrong proposals, pick an animal (AC-16)
+name: "Give up after 3 wrong proposals, pick an animal (AC-16)"
 tags:
   - e2e
 ---
@@ -69,6 +69,8 @@ tags:
     element:
       id: "pick-not-listed"
     direction: DOWN
+    timeout: 120000
+    speed: 90
 - assertVisible: "Il n'est pas dans la liste"
 - tapOn:
     id: "pick-not-listed"

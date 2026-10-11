@@ -9,7 +9,7 @@ import { fr } from '../i18n/fr';
 
 const FLOWS = path.resolve(__dirname, '..', '..', '.maestro');
 const APP_ID = 'io.github.nhilaire.guessanimal';
-const header = (name: string, tags: string[]) => [`appId: ${APP_ID}`, `name: ${name}`, 'tags:', ...tags.map((t) => `  - ${t}`), '---'];
+const header = (name: string, tags: string[]) => [`appId: ${APP_ID}`, `name: ${JSON.stringify(name)}`, 'tags:', ...tags.map((t) => `  - ${t}`), '---'];
 const start = ['- launchApp:', '    clearState: true', '- tapOn:', '    id: "consent-refuse"', '- tapOn:', '    id: "home-play"'];
 
 function lionSteps(): string[] {
@@ -70,6 +70,8 @@ function giveUp(): string {
     '    element:',
     '      id: "pick-not-listed"',
     '    direction: DOWN',
+    '    timeout: 120000',
+    '    speed: 90',
     `- assertVisible: "${fr.giveUp.notListed}"`,
     '- tapOn:',
     '    id: "pick-not-listed"',
@@ -81,8 +83,8 @@ function giveUp(): string {
 }
 
 const generated: Record<string, () => string> = {
-  'find-lion.yaml': () => findLion('e2e', 'Find the lion: consistent answers, proposal, victory (AC-15)', 'refuse'),
-  'telemetry-consent.yaml': () => findLion('telemetry', 'Telemetry: accept consent, play a full game (events checked in logcat by verify.mjs)', 'accept'),
+  'find-lion.yaml': () => findLion('e2e', 'Find the lion - consistent answers, proposal, victory (AC-15)', 'refuse'),
+  'telemetry-consent.yaml': () => findLion('telemetry', 'Telemetry - accept consent, play a full game (events checked in logcat by verify.mjs)', 'accept'),
   'give-up.yaml': giveUp,
 };
 

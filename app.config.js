@@ -29,7 +29,19 @@ module.exports = ({ config }) => ({
     package: meta.package,
     versionCode: versionCode(version),
     // Privacy: no advertising ID, no microphone (the game only plays sounds).
-    blockedPermissions: ['com.google.android.gms.permission.AD_ID', 'android.permission.RECORD_AUDIO'],
+    blockedPermissions: [
+      'com.google.android.gms.permission.AD_ID',
+      // Privacy Sandbox ad measurement and install referrer pulled in by Firebase Analytics: not used.
+      'android.permission.ACCESS_ADSERVICES_AD_ID',
+      'android.permission.ACCESS_ADSERVICES_ATTRIBUTION',
+      'android.permission.ACCESS_ADSERVICES_TOPICS',
+      'com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE',
+      // Expo template defaults that a small offline game does not need.
+      'android.permission.SYSTEM_ALERT_WINDOW',
+      'android.permission.READ_EXTERNAL_STORAGE',
+      'android.permission.WRITE_EXTERNAL_STORAGE',
+      'android.permission.RECORD_AUDIO',
+    ],
     ...(hasFirebase ? { googleServicesFile: GOOGLE_SERVICES } : {}),
   },
   plugins: [
