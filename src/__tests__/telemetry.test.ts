@@ -20,15 +20,15 @@ describe('telemetry consent', () => {
 
   it('sends nothing without consent', async () => {
     await applyConsent(false);
-    track('game_start', { level: 1 });
+    track('game_start', {});
     expect(logEvent).not.toHaveBeenCalled();
     expect(setConsent).toHaveBeenCalledWith(expect.anything(), expect.objectContaining({ analytics_storage: false, ad_storage: false }));
   });
 
   it('sends typed events after consent, never ad storage', async () => {
     await applyConsent(true);
-    track('game_over', { level: 1, score: 12, duration_s: 10 });
-    expect(logEvent).toHaveBeenCalledWith(expect.anything(), 'game_over', { level: 1, score: 12, duration_s: 10 });
+    track('game_end', { result: 'found', questions: 12, wrong_guesses: 1 });
+    expect(logEvent).toHaveBeenCalledWith(expect.anything(), 'game_end', { result: 'found', questions: 12, wrong_guesses: 1 });
     expect(setConsent).toHaveBeenCalledWith(expect.anything(), expect.objectContaining({ analytics_storage: true, ad_storage: false }));
   });
 });

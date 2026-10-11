@@ -2,8 +2,10 @@
 // Params are numbers or short lowercase enums. Never identifiers, names, free text or locations.
 
 export type TelemetryEvents = {
-  game_start: { level: number };
-  game_over: { level: number; score: number; duration_s: number };
+  game_start: Record<string, never>;
+  game_end: { result: 'found' | 'given_up' | 'quit'; questions: number; wrong_guesses: number };
+  // animal: fixed lowercase animal id from the game data (or 'not_listed'), never free text.
+  animal_missed: { animal: string };
 };
 
 export type EventName = keyof TelemetryEvents;
