@@ -1,6 +1,7 @@
 # Devine l'Animal
 
-A small Android game made with React Native. The game is in French.
+A small Android family guessing game made with React Native: think of an animal among about 150, the game asks
+yes/no questions (shown and read aloud) until it finds it. The game is in French and works offline.
 
 ## Play
 
@@ -12,6 +13,15 @@ Android phone (allow installation from unknown sources).
 - No account, no ads, no personal data.
 - Anonymous usage statistics and crash reports (Firebase) are sent **only if you accept** on first launch.
   You can change your choice at any time in *Paramètres*.
+- What is sent (only after consent): games started; game result (found / given up / quit) with the number of
+  questions and wrong guesses; the animal picked when the game gives up (a fixed animal id or `not_listed`); app opens
+  (Firebase `session_start` / `first_open`); crash reports. No identifier, no advertising ID, no free text.
+- No microphone: the game only plays sounds.
+
+## Voice
+
+The voice is synthetic: the French sentences were generated once with Azure AI Speech (neural voice
+fr-FR-DeniseNeural, `scripts/generate-audio.mjs`) and are bundled in the app; the game never calls a speech service.
 
 ## Build from source
 

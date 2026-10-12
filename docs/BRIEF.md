@@ -39,7 +39,7 @@ Mark assumptions the user accepted as `(default accepted)`.
 ### Look, sound and feel
 
 - **Q:** How are questions read aloud?
-  **A:** Pre-generated audio files made with the free Microsoft Edge online "Read aloud" neural voices (e.g. the edge-tts tool: no account, no key), bundled in the APK so the game plays offline; generated audio files are committed. (Changed by the user after discovery: Edge instead of Azure Speech.)
+  **A:** Pre-generated audio files made with the free Microsoft Edge online "Read aloud" neural voices (e.g. the edge-tts tool: no account, no key), bundled in the APK so the game plays offline; generated audio files are committed. (Changed by the user after discovery: Edge instead of Azure Speech.) (Superseded by the amendment of 2026-10-11: Azure Speech is used instead.)
 - **Q:** What is shown when the game proposes an animal?
   **A:** Emoji + name (default accepted); animals without an emoji get a generic pictogram. No copyrighted images.
 - **Q:** Which voice?
@@ -72,7 +72,7 @@ Mark assumptions the user accepted as `(default accepted)`.
 - Algorithm: pick at each step the question that best splits the remaining candidates (information gain), with soft scoring so a wrong or variable answer penalises rather than eliminates; propose when one animal clearly leads or after ~20 questions; after a wrong proposal discard it and continue; give up after 3 wrong proposals.
 - Data: ~150 well-known animals, no generic duplicates; each fact is yes / no / variable; one readable source data file; automated tests prove every animal is reachable and distinguishable from every other; the user reviews a sample before release.
 - Answers: Yes / No / I don't know, large touch buttons, no microphone.
-- Voice: questions, proposals and fixed sentences pre-generated with the free Microsoft Edge online neural voices (fr-FR-DeniseNeural), via a local generation script (not run by the app); no account and no key needed; files bundled in the APK. Accepted risk: the Edge read-aloud endpoint is unofficial and may change or be blocked, and its terms for a published app are unclear; mitigation: audio is generated once and committed, so the app never depends on the service, and Azure Speech (same voice) remains the fallback.
+- Voice: questions, proposals and fixed sentences pre-generated with the free Microsoft Edge online neural voices (fr-FR-DeniseNeural), via a local generation script (not run by the app); no account and no key needed; files bundled in the APK. Accepted risk: the Edge read-aloud endpoint is unofficial and may change or be blocked, and its terms for a published app are unclear; mitigation: audio is generated once and committed, so the app never depends on the service, and Azure Speech (same voice) remains the fallback. (Superseded by the amendment of 2026-10-11: Azure Speech is used instead.)
 - Amendment (2026-10-11, user decision): the Edge read-aloud service returned HTTP 403 to edge-tts 7.2.8 (latest); the voice files are generated with Azure Speech free tier F0 instead (same fr-FR-DeniseNeural voice). The key lives in user environment variables, never in a repository.
 - Visuals: emoji + French name; generic pictogram when no emoji exists; no copyrighted images.
 - Tone: tu. Player-facing strings in French.
