@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 // Generates docs/DATA-REVIEW.md (French review sheet, one block per animal) from data/*.csv.
+// Animals and questions added after v0.1 (not listed in data/v0.1-*.txt) are marked « nouveau ».
+// The review status table is filled in by hand: it is kept when the sheet is regenerated.
 //   node scripts/data-review.mjs           # write
 //   node scripts/data-review.mjs --check   # exit 1 if out of date
 import fs from 'node:fs';
@@ -10,8 +12,30 @@ import { buildData } from './build-data.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = path.join(ROOT, 'docs', 'DATA-REVIEW.md');
+const NEW = '🆕';
 
-export function renderReview({ questions, animals }) {
+const DEFAULT_STATUS = ['| Review status | |', '|---|---|', '| Reviewed by the user | not yet |', '| Animals reviewed | 0 |', '| Corrections applied | 0 |'];
+
+function readIds(file) {
+  const p = path.join(ROOT, 'data', file);
+  return fs.existsSync(p) ? new Set(fs.readFileSync(p, 'utf8').split(/\r?\n/).filter(Boolean)) : null;
+}
+
+// The hand-filled status table of an existing sheet (lines starting with "|" after "| Review status").
+function statusTable(current) {
+  const lines = current.split(/\r?\n/);
+  const start = lines.findIndex((l) => l.startsWith('| Review status'));
+  if (start < 0) return DEFAULT_STATUS;
+  const out = [];
+  for (let i = start; i < lines.length && lines[i].startsWith('|'); i++) out.push(lines[i]);
+  return out;
+}
+
+export function renderReview({ questions, animals }, { oldAnimals = null, oldQuestions = null, status = DEFAULT_STATUS } = {}) {
+  const isNewAnimal = (id) => oldAnimals !== null && !oldAnimals.has(id);
+  const isNewQuestion = (id) => oldQuestions !== null && !oldQuestions.has(id);
+  const newAnimals = animals.filter((a) => isNewAnimal(a.id));
+  const newQuestions = questions.filter((q) => isNewQuestion(q.id));
   const lines = [
     '# Data review sheet',
     '',
@@ -21,18 +45,26 @@ export function renderReview({ questions, animals }) {
     'those answered **Ça dépend** (true only for some individuals or contexts, or debatable). Every other question is',
     'answered **Non**. To review: read each block and note any answer a child or a parent would give differently.',
     '',
-    '| Review status | |',
-    '|---|---|',
-    '| Reviewed by the user | not yet |',
-    '| Animals reviewed | 0 |',
-    '| Corrections applied | 0 |',
+    ...status,
     '',
   ];
+  if (newAnimals.length || newQuestions.length) {
+    lines.push(
+      `## ${NEW} Added since v0.1`,
+      '',
+      `${newAnimals.length} new animals (marked ${NEW} below): ${newAnimals.map((a) => a.name).sort((a, b) => a.localeCompare(b, 'fr')).join(', ')}.`,
+      '',
+      `${newQuestions.length} new questions (marked ${NEW} in the lists):`,
+      '',
+      ...newQuestions.map((q) => `- ${q.text}`),
+      '',
+    );
+  }
   const sorted = [...animals].sort((a, b) => a.name.localeCompare(b.name, 'fr'));
   for (const a of sorted) {
     const facts = a.facts.split('');
-    const pick = (f) => questions.filter((_, i) => facts[i] === f).map((q) => q.text);
-    lines.push(`## ${a.emoji} ${a.name} (\`${a.id}\`)`, '');
+    const pick = (f) => questions.filter((_, i) => facts[i] === f).map((q) => (isNewQuestion(q.id) ? `${NEW} ${q.text}` : q.text));
+    lines.push(`## ${a.emoji} ${a.name} (\`${a.id}\`)${isNewAnimal(a.id) ? ` ${NEW} nouveau` : ''}`, '');
     lines.push(`- **Oui** : ${pick('y').join(' · ') || '(aucune)'}`);
     lines.push(`- **Ça dépend** : ${pick('v').join(' · ') || '(aucune)'}`, '');
   }
@@ -40,12 +72,14 @@ export function renderReview({ questions, animals }) {
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-  const text = renderReview(buildData());
+  const current = fs.existsSync(OUT) ? fs.readFileSync(OUT, 'utf8') : '';
+  const text = renderReview(buildData(), {
+    oldAnimals: readIds('v0.1-animals.txt'),
+    oldQuestions: readIds('v0.1-questions.txt'),
+    status: statusTable(current),
+  });
   if (process.argv.includes('--check')) {
-    const current = fs.existsSync(OUT) ? fs.readFileSync(OUT, 'utf8') : '';
-    // The review status table is filled in by hand: compare everything after it.
-    const body = (s) => s.slice(s.indexOf('\n## '));
-    if (body(current) !== body(text)) {
+    if (current !== text) {
       console.error('docs/DATA-REVIEW.md is out of date: run node scripts/data-review.mjs');
       process.exit(1);
     }

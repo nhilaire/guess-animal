@@ -88,3 +88,27 @@ sewers;Est-ce qu'il vit dans les égouts ?
 in_house;Est-ce qu'on le trouve souvent dans les maisons ?
 yellow;Est-ce qu'il est jaune ?
 pink;Est-ce qu'il est rose ?
+savanna;Est-ce qu'il vit dans la savane ?
+jungle;Est-ce qu'il vit dans la jungle ?
+hump;Est-ce qu'il a une bosse sur le dos ?
+two_humps;Est-ce qu'il a deux bosses ?
+long_nose;Est-ce qu'il a une trompe ou un très long nez ?
+spits;Est-ce qu'il crache ?
+teeth;Est-ce qu'il a des dents ?
+fish_eater;Est-ce qu'il mange des poissons ?
+pincers;Est-ce qu'il a des pinces ?
+web;Est-ce qu'il fait des toiles ?
+honey;Est-ce qu'il fabrique du miel ?
+glows;Est-ce qu'il brille dans le noir ?
+rolls_ball;Est-ce qu'il peut se rouler en boule ?
+wall_climb;Est-ce qu'il peut marcher sur les murs ?
+long_tongue;Est-ce qu'il a une très longue langue ?
+many_legs;Est-ce qu'il a plus de huit pattes ?
+tiny;Est-ce qu'il est plus petit qu'une souris ?
+parasite;Est-ce qu'il vit sur d'autres animaux ?
+changes_color;Est-ce qu'il peut changer de couleur ?
+ink;Est-ce qu'il crache de l'encre ?
+crest;Est-ce qu'il a une crête sur la tête ?
+upside_down;Est-ce qu'il dort la tête en bas ?
+borrowed_shell;Est-ce qu'il habite dans la coquille d'un autre animal ?
+hair;Est-ce qu'il vit dans les cheveux ?

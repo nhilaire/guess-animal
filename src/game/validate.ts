@@ -2,9 +2,11 @@
 import { GameData } from './types';
 
 export const GENERIC_NAMES = ['Poisson', 'Singe', 'Serpent', 'Oiseau', 'Insecte'];
-export const MIN_ANIMALS = 140;
-export const MAX_ANIMALS = 160;
+export const MIN_ANIMALS = 215;
+export const MAX_ANIMALS = 235;
 export const MIN_STRONG_DIFFERENCES = 2;
+export const MIN_QUESTIONS = 110;
+export const MAX_QUESTIONS_IN_DATA = 120;
 
 // Questions where one animal is "y" and the other "n".
 export function strongDifferences(data: GameData, i: number, j: number): number {
@@ -30,6 +32,8 @@ export function structuralProblems(data: GameData): string[] {
   const p: string[] = [];
   const n = data.animals.length;
   if (n < MIN_ANIMALS || n > MAX_ANIMALS) p.push(`${n} animals, expected ${MIN_ANIMALS}-${MAX_ANIMALS}`);
+  const nq = data.questions.length;
+  if (nq < MIN_QUESTIONS || nq > MAX_QUESTIONS_IN_DATA) p.push(`${nq} questions, expected ${MIN_QUESTIONS}-${MAX_QUESTIONS_IN_DATA}`);
   const seen = (key: 'id' | 'name' | 'spoken') => {
     const s = new Set<string>();
     for (const a of data.animals) {

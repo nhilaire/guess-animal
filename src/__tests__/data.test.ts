@@ -15,10 +15,10 @@ describe('animal data', () => {
     expect(() => execFileSync('node', ['scripts/data-review.mjs', '--check'], { cwd: ROOT, stdio: 'pipe' })).not.toThrow();
   });
 
-  it('is complete, unique, well-formed, 140-160 animals (AC-03)', () => {
+  it('is complete, unique, well-formed, 215-235 animals and 110-120 questions (AC-03)', () => {
     expect(structuralProblems(GAME_DATA)).toEqual([]);
-    expect(GAME_DATA.animals.length).toBeGreaterThanOrEqual(140);
-    expect(GAME_DATA.animals.length).toBeLessThanOrEqual(160);
+    expect(GAME_DATA.animals.length).toBeGreaterThanOrEqual(215);
+    expect(GAME_DATA.animals.length).toBeLessThanOrEqual(235);
   });
 
   it('every pair of animals differs on at least 2 yes/no questions (AC-04)', () => {
