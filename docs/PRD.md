@@ -12,7 +12,7 @@ Last updated: 2026-10-12
 
 ## Summary
 
-A family guessing game: the player thinks of an animal among about 250 well-known ones, and the app finds it by
+A family guessing game: the player thinks of an animal among about 225 well-known ones, and the app finds it by
 asking yes/no questions, shown on screen and read aloud by a natural French voice. The fun is the "how did it
 know?" moment, and trying to trip it up with another animal. Each question is the one that best splits the animals
 still possible, and the game tolerates a wrong answer. Pitch: « Salut ! Je vais lire dans tes pensées. Pense à un animal… »
@@ -80,7 +80,7 @@ flowchart LR
 
 ### Data
 
-- About 250 animals (between 240 and 260, v0.2.0; 146 in v0.1), one readable source file (`data/animals.csv`, one row per animal, one
+- About 225 animals (between 215 and 235, v0.2.0; 146 in v0.1), one readable source file (`data/animals.csv`, one row per animal, one
   column per question), converted into typed TypeScript by a script with tests. Questions in `data/questions.csv`.
 - Each animal has: `id` (lowercase ASCII snake_case, e.g. `polar_bear`), French spoken name with article
   (« l'ours polaire », « la girafe »), display name (« Ours polaire »), emoji (fallback 🐾).
@@ -150,7 +150,7 @@ flowchart LR
   victory, give up, list prompt, thanks) are pre-recorded audio files with the fr-FR-DeniseNeural voice from Azure Speech
   (free tier F0, REST API). They are generated once by a local script, committed in the
   repository, bundled in the APK and played offline; the app never calls any speech service. The spoken text equals
-  the French copy. Format: mono MP3, 48 kbit/s (about 250 proposals + 120 questions + 5 sentences, about 380 clips, ≈ 7 MB).
+  the French copy. Format: mono MP3, 48 kbit/s (about 225 proposals + 115 questions + 5 sentences, about 345 clips, ≈ 6.5 MB).
 - Azure key and region are read by the generation script from user environment variables (AZURE_SPEECH_KEY,
   AZURE_SPEECH_REGION), never written in any repository. Amendment 2026-10-11, decided by the user: the Edge
   read-aloud service first chosen refused connections (HTTP 403), so the fallback Azure Speech is used.
@@ -204,7 +204,7 @@ Business and technical indicators followed in Firebase (free Spark plan). Detail
   does not appear at the next launch.
 - AC-03 [unit] Given the animal data, when it is validated, then every animal has a fact for every question, ids and
   names are unique, ids are lowercase ASCII snake_case, every animal has an emoji (or 🐾) and a spoken name, and the
-  count is between 240 and 260, and the question count is between 110 and 120.
+  count is between 215 and 235, and the question count is between 110 and 120.
 - AC-04 [unit] Given the animal data, when every pair of animals is compared, then each pair differs on at least 2
   questions with one `yes` and the other `no`.
 - AC-05 [unit] Given the animal data, then none of « Poisson », « Singe », « Serpent », « Oiseau », « Insecte » is an
@@ -322,7 +322,8 @@ Amendment 2026-10-12, version 0.1.1 (requested by the user after release 0.1.0):
 « À quel animal pensais-tu ? ». Both are spoken. Version 0.1.1 was verified but not released; it ships in 0.2.0.
 
 Amendment 2026-10-12, version 0.2.0 (requested by the user): more variety and more animals.
-- About 250 animals (240-260, about 105 new ones known to children; no generic animal, no dinosaur); about 20-30 new
+- About 225 animals (215-235, about 80 new ones well known to children; no generic animal, no dinosaur; the user
+  chose 225 well-known animals over 250 with lesser-known species on 2026-10-12); about 20-30 new
   questions (110-120 in total) so that the new animals stay distinguishable (AC-04 unchanged: 2 strong differences).
 - Games vary: the next question is drawn among the best questions (rule in "Inference"); AC-07 now applies to the
   deterministic mode used by tests and e2e flows, AC-31 covers the variety mode, AC-11 is checked in both modes.
