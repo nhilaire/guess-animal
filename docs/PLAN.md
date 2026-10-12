@@ -20,8 +20,8 @@ Format: `- [ ] T-01 Title (AC-01, AC-02) - proof: unit|e2e|device`. Check the bo
 - [x] T-13 Maestro flows: smoke (consent refuse + relaunch), find the lion (generated from data), give up after 3 wrong proposals, undo, settings persistence, telemetry consent (AC-01, AC-02, AC-14, AC-15, AC-16, AC-17, AC-18, AC-22, AC-23, AC-24) - proof: e2e
 - [x] T-14 Release checks prepared: no RECORD_AUDIO / AD_ID, offline flows, cold start, final app label (AC-22, AC-23, AC-24, AC-30) - proof: device
 - [x] T-15 v0.1.1 copy: victory « Youpi, je suis trop fort ! », give up « Bravo, tu es très fort ! » (text, voice clips, tests, flows) (AC-13, AC-15, AC-16, AC-27) - proof: unit
-- [ ] T-16 v0.2.0 engine variety: seeded generator in the game state, candidates = top 3 within 85 % of best gain, deterministic mode, undo restores the generator (AC-07, AC-10, AC-25, AC-31) - proof: unit
-- [ ] T-17 Engine speed on the real data: next question < 100 ms (AC-32) - proof: unit
+- [x] T-16 v0.2.0 engine variety: seeded generator in the game state, candidates = top 3 within 85 % of best gain, deterministic mode, undo restores the generator (AC-07, AC-10, AC-25, AC-31) - proof: unit
+- [x] T-17 Engine speed on the real data: next question < 100 ms (AC-32) - proof: unit
 - [ ] T-18 Deep link guessanimal://deterministic (in-memory flag), all e2e flows open it, same-sequence flow (AC-14, AC-15, AC-16, AC-17, AC-18, AC-33) - proof: e2e
 - [ ] T-19 New questions (~25) with their facts for the existing 146 animals (AC-03, AC-04, AC-27) - proof: unit
 - [ ] T-20 About 105 new animals with every fact (AC-03, AC-04, AC-05) - proof: unit

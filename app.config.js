@@ -24,6 +24,8 @@ module.exports = ({ config }) => ({
   slug: meta.slug,
   version,
   orientation: config.orientation || 'portrait',
+  // Deep link scheme: only guessanimal://deterministic is handled (test mode for e2e flows).
+  scheme: 'guessanimal',
   android: {
     ...config.android,
     package: meta.package,

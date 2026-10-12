@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useState } from 'react';
-import { ActivityIndicator, StyleSheet, View } from 'react-native';
+import { ActivityIndicator, Linking, StyleSheet, View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
+import { handleLink } from './game/mode';
 import { ConsentScreen } from './screens/ConsentScreen';
 import { GameScreen } from './screens/GameScreen';
 import { HomeScreen } from './screens/HomeScreen';
@@ -32,6 +33,13 @@ export default function App() {
     return () => {
       alive = false;
     };
+  }, []);
+
+  // Deterministic test mode via deep link (cold start URL or link opened while running).
+  useEffect(() => {
+    void Linking.getInitialURL().then(handleLink).catch(() => {});
+    const sub = Linking.addEventListener('url', ({ url }) => handleLink(url));
+    return () => sub?.remove();
   }, []);
 
   const decide = useCallback(async (granted: boolean) => {

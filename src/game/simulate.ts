@@ -7,8 +7,8 @@ export type Outcome = { found: boolean; proposals: number; questions: number; fi
 const perfectAnswer = (f: Fact): Answer => (f === 'y' ? 'yes' : f === 'n' ? 'no' : 'dontKnow');
 
 // Plays a full game for `target`. `invertAt` = index (0-based) among the player's Oui/Non answers to invert.
-export function play(data: GameData, target: number, invertAt = -1): Outcome {
-  let s: GameState = newGame(data);
+export function play(data: GameData, target: number, invertAt = -1, seed?: number): Outcome {
+  let s: GameState = newGame(data, seed);
   let yesNo = 0;
   let proposals = 0;
   let firstProposalAt = -1;
@@ -30,8 +30,8 @@ export function play(data: GameData, target: number, invertAt = -1): Outcome {
 }
 
 // Number of Oui/Non answers on the perfect player's path to the first proposal.
-export function yesNoAnswersOnPerfectPath(data: GameData, target: number): number {
-  let s = newGame(data);
+export function yesNoAnswersOnPerfectPath(data: GameData, target: number, seed?: number): number {
+  let s = newGame(data, seed);
   let n = 0;
   while (s.phase === 'question') {
     const a = perfectAnswer(data.animals[target].facts[s.current]);

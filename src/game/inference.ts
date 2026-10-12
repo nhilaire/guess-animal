@@ -1,4 +1,5 @@
-// Deterministic guessing engine (PRD "Rules and scoring > Inference"). Pure functions, no React, no randomness.
+// Guessing engine (PRD "Rules and scoring > Inference"). Pure functions, no React. The only randomness is the
+// seeded generator kept in the game state (variety mode); without a seed the engine is fully deterministic.
 import { Fact, GameData } from './types';
 
 export const P_YES: Record<Fact, number> = { y: 0.95, n: 0.05, v: 0.5 };
@@ -6,6 +7,8 @@ export const PROPOSE_THRESHOLD = 0.85;
 export const MAX_QUESTIONS = 20;
 export const MIN_GAIN_BITS = 0.01;
 export const MAX_WRONG_GUESSES = 3;
+export const VARIETY_RATIO = 0.85;
+export const VARIETY_CANDIDATES = 3;
 
 export type Answer = 'yes' | 'no' | 'dontKnow';
 export type Phase = 'question' | 'proposal' | 'found' | 'gaveUp';
@@ -18,6 +21,7 @@ type Core = {
   discarded: boolean[];
   questionsAnswered: number;
   wrongGuesses: number;
+  rng: number | null; // mulberry32 state (variety mode) or null (deterministic mode)
 };
 
 // `history` holds the states before each answer since the last proposal, for undo.
@@ -82,20 +86,36 @@ function topAnimal(c: Core): number {
   return best;
 }
 
-function bestQuestion(data: GameData, c: Core): { q: number; gain: number } {
+// Mulberry32: one step returns a number in [0, 1) and the next state.
+export function nextRandom(state: number): [number, number] {
+  const a = (state + 0x6d2b79f5) >>> 0;
+  let t = a;
+  t = Math.imul(t ^ (t >>> 15), t | 1);
+  t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+  return [((t ^ (t >>> 14)) >>> 0) / 4294967296, a];
+}
+
+// Unasked questions ranked by gain (ties: earlier in the data), best first.
+function rankedQuestions(data: GameData, c: Core): { q: number; gain: number }[] {
   const { wlw, total, before } = prepare(c.weights);
-  let q = -1;
-  let best = -Infinity;
-  if (total <= 0) return { q, gain: 0 };
+  if (total <= 0) return [];
+  const out: { q: number; gain: number }[] = [];
   for (let i = 0; i < data.questions.length; i++) {
-    if (c.asked[i]) continue;
-    const g = gain(data, c.weights, wlw, total, before, i);
-    if (g > best + 1e-12) {
-      q = i;
-      best = g;
-    }
+    if (!c.asked[i]) out.push({ q: i, gain: gain(data, c.weights, wlw, total, before, i) });
   }
-  return { q, gain: best };
+  return out.sort((a, b) => (Math.abs(b.gain - a.gain) > 1e-12 ? b.gain - a.gain : a.q - b.q));
+}
+
+// Deterministic mode: the best question. Variety mode: drawn among at most 3 questions within 85 % of the best.
+function chooseQuestion(data: GameData, c: Core): { q: number; gain: number; rng: number | null } {
+  const ranked = rankedQuestions(data, c);
+  if (ranked.length === 0) return { q: -1, gain: 0, rng: c.rng };
+  const best = ranked[0];
+  if (c.rng === null) return { ...best, rng: null };
+  const candidates = ranked.filter((x) => x.gain >= VARIETY_RATIO * best.gain).slice(0, VARIETY_CANDIDATES);
+  if (candidates.length < 2) return { ...best, rng: c.rng };
+  const [r, rng] = nextRandom(c.rng);
+  return { ...candidates[Math.floor(r * candidates.length)], rng };
 }
 
 // Decides the next step: a proposal or the next question (or giving up).
@@ -105,9 +125,9 @@ function advance(data: GameData, c: Core): Core {
   if (c.weights[top] >= PROPOSE_THRESHOLD || c.questionsAnswered >= MAX_QUESTIONS) {
     return { ...c, phase: 'proposal', current: top };
   }
-  const { q, gain } = bestQuestion(data, c);
+  const { q, gain, rng } = chooseQuestion(data, c);
   if (q < 0 || gain <= MIN_GAIN_BITS) return { ...c, phase: 'proposal', current: top };
-  return { ...c, phase: 'question', current: q };
+  return { ...c, phase: 'question', current: q, rng };
 }
 
 function core(s: GameState): Core {
@@ -115,7 +135,8 @@ function core(s: GameState): Core {
   return c;
 }
 
-export function newGame(data: GameData): GameState {
+// Without a seed: deterministic mode (tests, e2e). With a seed: variety mode (players).
+export function newGame(data: GameData, seed?: number): GameState {
   const n = data.animals.length;
   const start: Core = {
     phase: 'question',
@@ -125,6 +146,7 @@ export function newGame(data: GameData): GameState {
     discarded: Array(n).fill(false),
     questionsAnswered: 0,
     wrongGuesses: 0,
+    rng: seed === undefined ? null : seed >>> 0,
   };
   return { ...advance(data, start), history: [] };
 }

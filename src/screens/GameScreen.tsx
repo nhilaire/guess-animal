@@ -4,18 +4,19 @@ import { AppState, BackHandler } from 'react-native';
 import { feedback } from '../audio/feedback';
 import { GAME_DATA } from '../game/data.generated';
 import { Answer, GameState, answerProposal, answerQuestion, newGame, undo } from '../game/inference';
+import { newSeed } from '../game/mode';
 import { Settings } from '../storage/settings';
 import { track } from '../telemetry/telemetry';
 import { GiveUpView, ProposalView, QuestionView, ThanksView, VictoryView } from './GameViews';
 
 const data = GAME_DATA;
-// The engine is deterministic: the opening state is always the same, computed once.
-const OPENING: GameState = newGame(data);
+// A new seed per game (variety mode), or none in deterministic mode (tests, e2e flows).
+const startGame = (): GameState => newGame(data, newSeed());
 
 type Props = { settings: Settings; onExit: () => void };
 
 export function GameScreen({ settings, onExit }: Props) {
-  const [state, setState] = useState<GameState>(OPENING);
+  const [state, setState] = useState<GameState>(startGame);
   const [thanks, setThanks] = useState(false);
   const [round, setRound] = useState(0);
   const ended = useRef(false);
@@ -77,7 +78,7 @@ export function GameScreen({ settings, onExit }: Props) {
 
   const playAgain = () => {
     feedback().stop();
-    setState(OPENING);
+    setState(startGame());
     setThanks(false);
     setRound((r) => r + 1);
   };

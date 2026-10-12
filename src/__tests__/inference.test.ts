@@ -243,3 +243,63 @@ describe('undo (AC-10)', () => {
     expect(undo(s)).toBe(s);
   });
 });
+
+describe('variety mode (AC-31, AC-10, v0.2.0)', () => {
+  const many: GameData = {
+    questions: Array.from({ length: 6 }, (_, i) => ({ id: `q${i}`, text: `Q${i} ?` })),
+    // 8 animals, each question splits them 4/4 differently: all gains equal at the start.
+    animals: Array.from({ length: 8 }, (_, k) => ({
+      id: `a${k}`,
+      name: `A${k}`,
+      spoken: `le a${k}`,
+      emoji: '🐾',
+      facts: Array.from({ length: 6 }, (_, q) => ((k >> q % 3) & 1 ? 'y' : 'n')) as Fact[],
+    })),
+  };
+
+  it('draws among at most 3 questions within 85 % of the best gain', () => {
+    const det = newGame(many);
+    const gains = many.questions.map((_, q) => expectedGain(many, det.weights, q));
+    const best = Math.max(...gains);
+    const ranked = gains
+      .map((g, q) => ({ g, q }))
+      .filter((x) => x.g >= 0.85 * best)
+      .sort((a, b) => b.g - a.g || a.q - b.q)
+      .slice(0, 3)
+      .map((x) => x.q);
+    const seen = new Set<number>();
+    for (let seed = 1; seed <= 40; seed++) {
+      const s = newGame(many, seed);
+      expect(ranked).toContain(s.current);
+      seen.add(s.current);
+    }
+    expect(seen.size).toBeGreaterThan(1);
+  });
+
+  it('is reproducible: the same seed gives the same game', () => {
+    const play = (seed: number) => {
+      let s = newGame(data, seed);
+      const qs: number[] = [];
+      while (s.phase === 'question') {
+        qs.push(s.current);
+        s = answerQuestion(data, s, 'yes');
+      }
+      return qs;
+    };
+    expect(play(42)).toEqual(play(42));
+  });
+
+  it('deterministic mode (no seed) always takes the best question', () => {
+    expect(newGame(many).current).toBe(0);
+    expect(newGame(many).rng).toBeNull();
+  });
+
+  it('undo restores the generator, so the next draw is unchanged', () => {
+    let s = newGame(many, 7);
+    s = answerQuestion(many, s, 'yes');
+    const after = answerQuestion(many, s, 'no');
+    const back = answerQuestion(many, undo(after), 'no');
+    expect(back.current).toBe(after.current);
+    expect(back.rng).toBe(after.rng);
+  });
+});
