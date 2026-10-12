@@ -15,7 +15,7 @@ Last updated: 2026-10-11
 A family guessing game: the player thinks of an animal among about 150 well-known ones, and the app finds it by
 asking yes/no questions, shown on screen and read aloud by a natural French voice. The fun is the "how did it
 know?" moment, and trying to trip it up with another animal. Each question is the one that best splits the animals
-still possible, and the game tolerates a wrong answer. Pitch: « Pense à un animal… je vais le deviner ! »
+still possible, and the game tolerates a wrong answer. Pitch: « Salut ! Je vais lire dans tes pensées. Pense à un animal… »
 
 ## Target players
 
@@ -28,7 +28,7 @@ still possible, and the game tolerates a wrong answer. Pitch: « Pense à un ani
 
 1. The player thinks of an animal and taps « Jouer ».
 2. The game shows and speaks a question; the player answers Oui / Non / Je ne sais pas.
-3. Repeat until the game is confident, then it proposes « Est-ce que c'est la girafe ? ».
+3. Repeat until the game is confident, then it proposes « J'ai trouvé ! C'est la girafe ? ».
 4. Correct → victory screen; wrong → the game discards that animal and keeps asking; after 3 wrong proposals it gives
    up and asks which animal it was.
 5. « Rejouer »: try another animal, or one the game will not find.
@@ -49,12 +49,12 @@ still possible, and the game tolerates a wrong answer. Pitch: « Pense à un ani
 ## Screens
 
 - **Consent** (first launch only): explains the anonymous statistics; « Accepter » and « Refuser » equally visible.
-- **Home**: title, pitch « Pense à un animal… je vais le deviner ! », buttons « Jouer » and « Paramètres ».
+- **Home**: title, pitch « Salut ! Je vais lire dans tes pensées. Pense à un animal… », buttons « Jouer » and « Paramètres ».
 - **Question** (game): counter « Question 3 », the question text (large), buttons « Oui », « Non »,
   « Je ne sais pas »; secondary buttons « Réécouter » and « Revenir » (« Revenir » disabled before the first answer).
   Android back returns to Home (the game is abandoned).
-- **Proposal**: animal emoji (large) and « Est-ce que c'est la girafe ? », buttons « Oui » and « Non ».
-- **Victory**: emoji, « J'ai trouvé ! », « C'était la girafe. », « En 12 questions. », buttons « Rejouer » and
+- **Proposal**: animal emoji (large) and « J'ai trouvé ! C'est la girafe ? », buttons « Oui » and « Non ».
+- **Victory**: emoji, « Je le savais ! », « C'était la girafe. », « En 12 questions. », buttons « Rejouer » and
   « Accueil ».
 - **Give up**: « Je donne ma langue au chat ! », « À quel animal pensais-tu ? », alphabetical scrollable list of all
   animals (emoji + display name) and a last entry « Il n'est pas dans la liste ».
@@ -136,7 +136,7 @@ flowchart LR
 - Style: bright, friendly flat colours, large rounded buttons (Oui green with ✓, Non red with ✗, Je ne sais pas grey
   with ?): icon and text together, never colour alone. Large readable font. Portrait only.
 - Animals: Unicode emoji + French display name; 🐾 when no emoji fits. No copyrighted images.
-- Voice: every question, every proposal sentence (« Est-ce que c'est la girafe ? ») and the fixed sentences (pitch,
+- Voice: every question, every proposal sentence (« J'ai trouvé ! C'est la girafe ? ») and the fixed sentences (pitch,
   victory, give up, list prompt, thanks) are pre-recorded audio files with the fr-FR-DeniseNeural voice from Azure Speech
   (free tier F0, REST API). They are generated once by a local script, committed in the
   repository, bundled in the APK and played offline; the app never calls any speech service. The spoken text equals
@@ -220,7 +220,7 @@ Business and technical indicators followed in Firebase (free Spark plan). Detail
 - AC-14 [e2e] Given Home, when the player taps « Jouer », then a question is shown with « Question 1 » and the
   buttons « Oui », « Non », « Je ne sais pas », « Réécouter », « Revenir ».
 - AC-15 [e2e] Given a game, when the player answers the questions consistently with « Lion », then the Proposal
-  screen asks « Est-ce que c'est le lion ? » and « Oui » leads to the Victory screen with « J'ai trouvé ! ».
+  screen asks « J'ai trouvé ! C'est le lion ? » and « Oui » leads to the Victory screen with « Je le savais ! ».
 - AC-16 [e2e] Given a game, when the player answers « Non » to 3 proposals, then the Give up screen shows the animal
   list with « Il n'est pas dans la liste », and choosing an entry leads to the Thanks screen.
 - AC-17 [e2e] Given the Question screen after one answer, when the player taps « Revenir », then the counter goes
@@ -263,7 +263,7 @@ Tone: tu. French typography: no-break space before « : ; ! ? » and inside « �
 | consent.body | Pour améliorer le jeu, Devine l'Animal peut envoyer des statistiques anonymes (parties jouées, animaux trouvés ou non, plantages). Aucune donnée personnelle. Tu peux changer d'avis dans les paramètres. |
 | consent.accept | Accepter |
 | consent.refuse | Refuser |
-| home.pitch | Pense à un animal… je vais le deviner ! |
+| home.pitch | Salut ! Je vais lire dans tes pensées. Pense à un animal… |
 | home.play | Jouer |
 | home.settings | Paramètres |
 | game.counter | Question {n} |
@@ -272,8 +272,8 @@ Tone: tu. French typography: no-break space before « : ; ! ? » and inside « �
 | game.dontKnow | Je ne sais pas |
 | game.replay | Réécouter |
 | game.undo | Revenir |
-| proposal.question | Est-ce que c'est {animal} ? |
-| victory.title | J'ai trouvé ! |
+| proposal.question | J'ai trouvé ! C'est {animal} ? |
+| victory.title | Je le savais ! |
 | victory.body | C'était {animal}. |
 | victory.questions | En {n} questions. |
 | giveup.title | Je donne ma langue au chat ! |
@@ -288,6 +288,11 @@ Tone: tu. French typography: no-break space before « : ; ! ? » and inside « �
 | settings.stats | Statistiques anonymes |
 
 `{animal}` is the spoken name with article (« la girafe »); `{n}` is a number.
+
+Amendment 2026-10-12 (user phone test, decided by the user): more playful copy. Pitch « Salut ! Je vais lire dans tes pensées. Pense à un animal… »,
+proposal « J'ai trouvé ! C'est {animal} ? », victory title « Je le savais ! ». Proposal threshold kept at 0.85
+(simulation: 0.70 saves under 1 question but drops right-first-time proposals from 90 % to 69 % with one wrong answer).
+Screens keep their buttons clear of the Android navigation bar (safe-area bottom inset).
 
 ## Out of scope
 

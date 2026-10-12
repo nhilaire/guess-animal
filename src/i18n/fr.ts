@@ -14,7 +14,7 @@ export const fr = {
     refuse: 'Refuser',
   },
   home: {
-    pitch: typo('Pense à un animal… je vais le deviner !'),
+    pitch: typo('Salut ! Je vais lire dans tes pensées. Pense à un animal…'),
     play: 'Jouer',
     settings: 'Paramètres',
   },
@@ -27,10 +27,10 @@ export const fr = {
     undo: 'Revenir',
   },
   proposal: {
-    question: (spoken: string) => typo(`Est-ce que c'est ${spoken} ?`),
+    question: (spoken: string) => typo(`J'ai trouvé ! C'est ${spoken} ?`),
   },
   victory: {
-    title: typo("J'ai trouvé !"),
+    title: typo('Je le savais !'),
     body: (spoken: string) => `C'était ${spoken}.`,
     questions: (n: number) => (n <= 1 ? `En ${n} question.` : `En ${n} questions.`),
   },

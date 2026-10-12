@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import { ActivityIndicator, StyleSheet, View } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { ConsentScreen } from './screens/ConsentScreen';
 import { GameScreen } from './screens/GameScreen';
@@ -70,7 +71,11 @@ export default function App() {
     content = <HomeScreen sound={settings.sound} onPlay={() => setRoute('game')} onSettings={() => setRoute('settings')} />;
   }
 
-  return <ErrorBoundary>{content}</ErrorBoundary>;
+  return (
+    <SafeAreaProvider>
+      <ErrorBoundary>{content}</ErrorBoundary>
+    </SafeAreaProvider>
+  );
 }
 
 const styles = StyleSheet.create({

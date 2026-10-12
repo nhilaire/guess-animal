@@ -61,10 +61,10 @@ describe('game screens', () => {
   it('finds the lion and shows the victory screen (AC-15)', async () => {
     await startGame();
     await answerFor('lion');
-    expect(screen.getByTestId('proposal-text').props.children).toBe("Est-ce que c'est le lion ?");
+    expect(screen.getByTestId('proposal-text').props.children).toBe("J'ai trouvé ! C'est le lion ?");
     await fireEvent.press(screen.getByTestId('proposal-yes'));
     expect(screen.getByTestId('victory-screen')).toBeTruthy();
-    expect(screen.getByText("J'ai trouvé !")).toBeTruthy();
+    expect(screen.getByText('Je le savais !')).toBeTruthy();
     expect(screen.getByText("C'était le lion.")).toBeTruthy();
   });
 

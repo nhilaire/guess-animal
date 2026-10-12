@@ -27,3 +27,6 @@ jest.mock('expo-haptics', () => ({
   notificationAsync: jest.fn(() => Promise.resolve()),
   NotificationFeedbackType: { Success: 'success', Warning: 'warning', Error: 'error' },
 }));
+
+// Safe-area insets: the library's own mock (zero insets, provider renders its children).
+jest.mock('react-native-safe-area-context', () => require('react-native-safe-area-context/jest/mock').default);

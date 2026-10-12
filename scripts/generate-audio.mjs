@@ -19,8 +19,8 @@ const MANIFEST = path.join(ROOT, 'src', 'audio', 'manifest.generated.ts');
 
 // Fixed sentences: must equal the French copy in src/i18n/fr.ts (checked by a test).
 export const LINES = {
-  pitch: 'Pense à un animal… je vais le deviner !',
-  victory: "J'ai trouvé !",
+  pitch: 'Salut ! Je vais lire dans tes pensées. Pense à un animal…',
+  victory: 'Je le savais !',
   giveUp: 'Je donne ma langue au chat !',
   giveUpBody: 'À quel animal pensais-tu ?',
   thanks: 'Merci ! Je ferai mieux la prochaine fois.',
@@ -30,7 +30,7 @@ export function clips() {
   const { questions, animals } = buildData();
   const list = [];
   for (const q of questions) list.push({ group: 'questions', key: q.id, text: q.text });
-  for (const a of animals) list.push({ group: 'proposals', key: a.id, text: frenchTypography(`Est-ce que c'est ${a.spoken} ?`) });
+  for (const a of animals) list.push({ group: 'proposals', key: a.id, text: frenchTypography(`J'ai trouvé ! C'est ${a.spoken} ?`) });
   for (const [key, text] of Object.entries(LINES)) list.push({ group: 'lines', key, text: frenchTypography(text) });
   return list.map((c) => {
     const hash = crypto.createHash('sha1').update(`${DEFAULT_VOICE}|${c.text}`).digest('hex').slice(0, 10);

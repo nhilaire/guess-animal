@@ -39,11 +39,11 @@ tags:
     id: "answer-yes"
 - assertVisible:
     id: "proposal-screen"
-- assertVisible: "Est-ce que c'est le lion ?"
+- assertVisible: "J'ai trouvé ! C'est le lion ?"
 - takeScreenshot: 10-proposal-lion
 - tapOn:
     id: "proposal-yes"
 - assertVisible:
     id: "victory-screen"
-- assertVisible: "J'ai trouvé !"
+- assertVisible: "Je le savais !"
 - takeScreenshot: 11-victory
