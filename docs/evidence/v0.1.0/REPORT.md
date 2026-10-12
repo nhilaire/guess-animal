@@ -1,16 +1,16 @@
 # Verification report: Devine l'Animal v0.1.0
 
 Overall: PASS
-Commit: 75c8e3d
-Date: 2026-10-12 09:22 UTC
+Commit: 53c2d3b
+Date: 2026-10-12 12:11 UTC
 Stack: expo
 Target: emulator sdk_gphone64_x86_64, Android 16 (API 36, x86_64)
 APK: guess-animal-0.1.0-universal.apk (81.3 MB)
-SHA-256: 160f6cdb2667a5e671105947b0387c86415d50b08ba0bbe18c6668412ecbc968
+SHA-256: bc06e04e34af0e45e6fa0ffd2deeb9647b24036b9b81dcf0c39893b51bb70928
 
 | # | Step | Result | Evidence |
 |---|---|---|---|
-| 1 | clean working tree | PASS | commit 75c8e3d |
+| 1 | clean working tree | PASS | commit 53c2d3b |
 | 2 | typecheck | PASS | `tsc --noEmit` exit 0 |
 | 3 | unit tests (Jest) | PASS | Tests:       69 passed, 69 total |
 | 4 | expo-doctor | PASS | all checks passed |
@@ -19,7 +19,7 @@ SHA-256: 160f6cdb2667a5e671105947b0387c86415d50b08ba0bbe18c6668412ecbc968
 | 7 | release signature | PASS | release signature valid; cert SHA-256 54da35e17c99b321... |
 | 8 | install (adb) | PASS | Performing Streamed Install Success |
 | 9 | launch, alive after 8 s, no fatal error | PASS | process alive, 0 fatal log lines |
-| 10 | cold start time | PASS | 843 ms (target < 3000 ms) |
+| 10 | cold start time | PASS | 1216 ms (target < 3000 ms) |
 | 11 | Maestro E2E flows | PASS | 5/5 flows passed, 13 screenshots in screens/ |
 | 12 | telemetry events after consent | PASS | seen in logcat: game_start, game_end |
 
