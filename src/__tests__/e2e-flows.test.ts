@@ -11,7 +11,16 @@ const FLOWS = path.resolve(__dirname, '..', '..', '.maestro');
 const APP_ID = 'io.github.nhilaire.guessanimal';
 const header = (name: string, tags: string[]) => [`appId: ${APP_ID}`, `name: ${JSON.stringify(name)}`, 'tags:', ...tags.map((t) => `  - ${t}`), '---'];
 // Every flow opens the deterministic-mode deep link right after launch (PRD: e2e flows run in deterministic mode).
-const launch = ['- launchApp:', '    clearState: true', '- openLink: "guessanimal://deterministic"'];
+// The link is opened once the first screen is shown, so that the app's link listener is registered.
+const launch = [
+  '- launchApp:',
+  '    clearState: true',
+  '- extendedWaitUntil:',
+  '    visible:',
+  '      id: "consent-screen"',
+  '    timeout: 15000',
+  '- openLink: "guessanimal://deterministic"',
+];
 const start = [...launch, '- tapOn:', '    id: "consent-refuse"', '- tapOn:', '    id: "home-play"'];
 
 function lionSteps(): string[] {
