@@ -64,7 +64,7 @@ describe('game screens', () => {
     expect(screen.getByTestId('proposal-text').props.children).toBe("J'ai trouvé ! C'est le lion ?");
     await fireEvent.press(screen.getByTestId('proposal-yes'));
     expect(screen.getByTestId('victory-screen')).toBeTruthy();
-    expect(screen.getByText('Je le savais !')).toBeTruthy();
+    expect(screen.getByText('Youpi, je suis trop fort !')).toBeTruthy();
     expect(screen.getByText("C'était le lion.")).toBeTruthy();
   });
 
@@ -75,7 +75,7 @@ describe('game screens', () => {
       await fireEvent.press(screen.getByTestId('proposal-no'));
     }
     expect(screen.getByTestId('giveup-screen')).toBeTruthy();
-    expect(screen.getByText('Je donne ma langue au chat !')).toBeTruthy();
+    expect(screen.getByText('Bravo, tu es très fort !')).toBeTruthy();
     expect(screen.getByTestId('pick-not-listed')).toBeTruthy();
     await fireEvent.press(screen.getByTestId('pick-not-listed'));
     expect(screen.getByTestId('thanks-screen')).toBeTruthy();

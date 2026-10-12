@@ -63,7 +63,7 @@ tags:
     id: "proposal-no"
 - assertVisible:
     id: "giveup-screen"
-- assertVisible: "Je donne ma langue au chat !"
+- assertVisible: "Bravo, tu es très fort !"
 - takeScreenshot: 20-give-up
 - scrollUntilVisible:
     element:

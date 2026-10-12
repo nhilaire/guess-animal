@@ -20,8 +20,8 @@ const MANIFEST = path.join(ROOT, 'src', 'audio', 'manifest.generated.ts');
 // Fixed sentences: must equal the French copy in src/i18n/fr.ts (checked by a test).
 export const LINES = {
   pitch: 'Salut ! Je vais lire dans tes pensées. Pense à un animal…',
-  victory: 'Je le savais !',
-  giveUp: 'Je donne ma langue au chat !',
+  victory: 'Youpi, je suis trop fort !',
+  giveUp: 'Bravo, tu es très fort !',
   giveUpBody: 'À quel animal pensais-tu ?',
   thanks: 'Merci ! Je ferai mieux la prochaine fois.',
 };

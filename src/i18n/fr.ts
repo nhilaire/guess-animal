@@ -30,12 +30,12 @@ export const fr = {
     question: (spoken: string) => typo(`J'ai trouvé ! C'est ${spoken} ?`),
   },
   victory: {
-    title: typo('Je le savais !'),
+    title: typo('Youpi, je suis trop fort !'),
     body: (spoken: string) => `C'était ${spoken}.`,
     questions: (n: number) => (n <= 1 ? `En ${n} question.` : `En ${n} questions.`),
   },
   giveUp: {
-    title: typo('Je donne ma langue au chat !'),
+    title: typo('Bravo, tu es très fort !'),
     body: typo('À quel animal pensais-tu ?'),
     notListed: "Il n'est pas dans la liste",
   },

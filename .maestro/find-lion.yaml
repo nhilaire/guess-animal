@@ -45,5 +45,5 @@ tags:
     id: "proposal-yes"
 - assertVisible:
     id: "victory-screen"
-- assertVisible: "Je le savais !"
+- assertVisible: "Youpi, je suis trop fort !"
 - takeScreenshot: 11-victory

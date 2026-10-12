@@ -4,7 +4,7 @@ Status: approved
 Project slug: guess-animal
 Final app name: Devine l'Animal
 Android package: io.github.nhilaire.guessanimal
-Version target: 0.1.0
+Version target: 0.1.1
 Last updated: 2026-10-11
 
 > Written in English. Player-facing French copy is quoted in the "French copy" section.
@@ -54,9 +54,9 @@ still possible, and the game tolerates a wrong answer. Pitch: « Salut ! Je vais
   « Je ne sais pas »; secondary buttons « Réécouter » and « Revenir » (« Revenir » disabled before the first answer).
   Android back returns to Home (the game is abandoned).
 - **Proposal**: animal emoji (large) and « J'ai trouvé ! C'est la girafe ? », buttons « Oui » and « Non ».
-- **Victory**: emoji, « Je le savais ! », « C'était la girafe. », « En 12 questions. », buttons « Rejouer » and
+- **Victory**: emoji, « Youpi, je suis trop fort ! », « C'était la girafe. », « En 12 questions. », buttons « Rejouer » and
   « Accueil ».
-- **Give up**: « Je donne ma langue au chat ! », « À quel animal pensais-tu ? », alphabetical scrollable list of all
+- **Give up**: « Bravo, tu es très fort ! », « À quel animal pensais-tu ? », alphabetical scrollable list of all
   animals (emoji + display name) and a last entry « Il n'est pas dans la liste ».
 - **Thanks** (after Give up): « Merci ! Je ferai mieux la prochaine fois. », buttons « Rejouer » and « Accueil ».
 - **Settings**: toggles « Son » (voice and effects), « Vibrations », « Statistiques anonymes »; back to Home.
@@ -220,8 +220,9 @@ Business and technical indicators followed in Firebase (free Spark plan). Detail
 - AC-14 [e2e] Given Home, when the player taps « Jouer », then a question is shown with « Question 1 » and the
   buttons « Oui », « Non », « Je ne sais pas », « Réécouter », « Revenir ».
 - AC-15 [e2e] Given a game, when the player answers the questions consistently with « Lion », then the Proposal
-  screen asks « J'ai trouvé ! C'est le lion ? » and « Oui » leads to the Victory screen with « Je le savais ! ».
-- AC-16 [e2e] Given a game, when the player answers « Non » to 3 proposals, then the Give up screen shows the animal
+  screen asks « J'ai trouvé ! C'est le lion ? » and « Oui » leads to the Victory screen with « Youpi, je suis trop fort ! ».
+- AC-16 [e2e] Given a game, when the player answers « Non » to 3 proposals, then the Give up screen shows « Bravo, tu
+  es très fort ! » and the animal
   list with « Il n'est pas dans la liste », and choosing an entry leads to the Thanks screen.
 - AC-17 [e2e] Given the Question screen after one answer, when the player taps « Revenir », then the counter goes
   back to « Question 1 » and the first question is shown again.
@@ -273,10 +274,10 @@ Tone: tu. French typography: no-break space before « : ; ! ? » and inside « �
 | game.replay | Réécouter |
 | game.undo | Revenir |
 | proposal.question | J'ai trouvé ! C'est {animal} ? |
-| victory.title | Je le savais ! |
+| victory.title | Youpi, je suis trop fort ! |
 | victory.body | C'était {animal}. |
 | victory.questions | En {n} questions. |
-| giveup.title | Je donne ma langue au chat ! |
+| giveup.title | Bravo, tu es très fort ! |
 | giveup.body | À quel animal pensais-tu ? |
 | giveup.notListed | Il n'est pas dans la liste |
 | thanks.body | Merci ! Je ferai mieux la prochaine fois. |
@@ -293,6 +294,10 @@ Amendment 2026-10-12 (user phone test, decided by the user): more playful copy. 
 proposal « J'ai trouvé ! C'est {animal} ? », victory title « Je le savais ! ». Proposal threshold kept at 0.85
 (simulation: 0.70 saves under 1 question but drops right-first-time proposals from 90 % to 69 % with one wrong answer).
 Screens keep their buttons clear of the Android navigation bar (safe-area bottom inset).
+
+Amendment 2026-10-12, version 0.1.1 (requested by the user after release 0.1.0): victory title « Youpi, je suis trop fort ! » (was
+« Je le savais ! »); give-up title « Bravo, tu es très fort ! » (was « Je donne ma langue au chat ! »), followed by
+« À quel animal pensais-tu ? ». Both are spoken.
 
 ## Out of scope
 
