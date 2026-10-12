@@ -8,8 +8,8 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 
 | Review status | |
 |---|---|
-| Reviewed by the user | not yet |
-| Animals reviewed | 0 |
+| Reviewed by the user | yes, 2026-10-12: the user confirmed in the session that they reviewed 30 or more animals and found nothing to correct |
+| Animals reviewed | 30 or more (user statement) |
 | Corrections applied | 0 |
 
 ## 🐝 Abeille (`bee`)
