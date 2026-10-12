@@ -28,7 +28,7 @@ Format: `- [ ] T-01 Title (AC-01, AC-02) - proof: unit|e2e|device`. Check the bo
 - [ ] T-21 Independent fact-check of new animals and questions, findings in docs/DATA-FACTCHECK.md, corrections applied (AC-29) - proof: unit
 - [ ] T-22 Simulations in deterministic mode and 5 seeds of variety mode, tune data until targets pass (AC-11, AC-12) - proof: unit
 - [x] T-23 DATA-REVIEW.md marks new animals and questions (AC-29) - proof: unit
-- [ ] T-24 Voice clips for new questions and proposals, same voice (AC-13, AC-27, AC-28) - proof: unit
+- [x] T-24 Voice clips for new questions and proposals, same voice (AC-13, AC-27, AC-28) - proof: unit
 - [ ] T-25 Regenerate e2e flows, APK size < 40 MB check (AC-23, AC-24) - proof: device
 
 ## Notes
