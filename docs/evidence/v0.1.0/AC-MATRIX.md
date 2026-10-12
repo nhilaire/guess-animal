@@ -34,6 +34,6 @@ Result is `PASS`, `FAIL` or `NOT PROVEN`. Evidence must be a concrete pointer (t
 | AC-27 | no-break spaces before ! ? : ; and inside « » in fr.ts, questions and manifest | unit | typography.test.ts "fr.ts strings use no-break spaces", "question texts and proposal sentences use no-break spaces"; audio-manifest.test.ts "spoken texts follow French typography (AC-27)"; covers the new copy via fr.ts typo(); jest.txt PASS | PASS |
 | AC-28 | user confirms the voice from samples before all audio is generated | manual | docs/PLAN.md: user chose fr-FR-DeniseNeural from the samples on 2026-10-11 (commit eacb512). The clips regenerated in 75c8e3d still use DEFAULT_VOICE = 'fr-FR-DeniseNeural' (scripts/tts.mjs), which is part of each clip's hash in generate-audio.mjs | PASS |
 | AC-29 | user reviews 30 or more animals in the review sheet and confirms the data | manual | docs/DATA-REVIEW.md review table (commit 26c13d2): "Reviewed by the user: yes, 2026-10-12 …", "Corrections applied: 0". `git diff 26c13d2 HEAD -- data/ docs/DATA-REVIEW.md` is empty, so the data has not changed since the review | PASS |
-| AC-30 | on the user's phone the voice is natural and the game is fun | manual | second phone test with the user still to do | PENDING RELEASE |
+| AC-30 | on the user's phone the voice is natural and the game is fun | manual | second phone test with the user still to do; user accepted on 2026-10-12 (APK arm64 sha256 bb7b7140…, commit b1a64ad) | PASS (phone test 2026-10-12) |
 
-SUMMARY: 29 PASS, 0 FAIL, 0 NOT PROVEN, 1 PENDING RELEASE
+SUMMARY: 30 PASS, 0 FAIL, 0 NOT PROVEN, 0 PENDING RELEASE
