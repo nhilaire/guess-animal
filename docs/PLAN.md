@@ -25,8 +25,8 @@ Format: `- [ ] T-01 Title (AC-01, AC-02) - proof: unit|e2e|device`. Check the bo
 - [ ] T-18 Deep link guessanimal://deterministic (in-memory flag), all e2e flows open it, same-sequence flow (AC-14, AC-15, AC-16, AC-17, AC-18, AC-33) - proof: e2e
 - [x] T-19 New questions (~25) with their facts for the existing 146 animals (AC-03, AC-04, AC-27) - proof: unit
 - [x] T-20 About 105 new animals with every fact (AC-03, AC-04, AC-05) - proof: unit
-- [ ] T-21 Independent fact-check of new animals and questions, findings in docs/DATA-FACTCHECK.md, corrections applied (AC-29) - proof: unit
-- [ ] T-22 Simulations in deterministic mode and 5 seeds of variety mode, tune data until targets pass (AC-11, AC-12) - proof: unit
+- [x] T-21 Independent fact-check of new animals and questions, findings in docs/DATA-FACTCHECK.md, corrections applied (AC-29) - proof: unit
+- [x] T-22 Simulations in deterministic mode and 5 seeds of variety mode, tune data until targets pass (AC-11, AC-12) - proof: unit
 - [x] T-23 DATA-REVIEW.md marks new animals and questions (AC-29) - proof: unit
 - [x] T-24 Voice clips for new questions and proposals, same voice (AC-13, AC-27, AC-28) - proof: unit
 - [ ] T-25 Regenerate e2e flows, APK size < 40 MB check (AC-23, AC-24) - proof: device
