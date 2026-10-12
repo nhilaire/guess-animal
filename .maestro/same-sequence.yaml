@@ -1,0 +1,30 @@
+appId: io.github.nhilaire.guessanimal
+name: "Deterministic mode - two games answered the same way show the same questions (AC-33)"
+tags:
+  - e2e
+---
+- launchApp:
+    clearState: true
+- openLink: "guessanimal://deterministic"
+- tapOn:
+    id: "consent-refuse"
+- tapOn:
+    id: "home-play"
+- assertVisible:
+    id: "q-mammal"
+- tapOn:
+    id: "answer-yes"
+- assertVisible:
+    id: "q-carnivore"
+- back
+- assertVisible:
+    id: "home-screen"
+- tapOn:
+    id: "home-play"
+- assertVisible:
+    id: "q-mammal"
+- tapOn:
+    id: "answer-yes"
+- assertVisible:
+    id: "q-carnivore"
+- takeScreenshot: 50-same-sequence

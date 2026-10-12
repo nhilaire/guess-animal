@@ -10,7 +10,9 @@ import { fr } from '../i18n/fr';
 const FLOWS = path.resolve(__dirname, '..', '..', '.maestro');
 const APP_ID = 'io.github.nhilaire.guessanimal';
 const header = (name: string, tags: string[]) => [`appId: ${APP_ID}`, `name: ${JSON.stringify(name)}`, 'tags:', ...tags.map((t) => `  - ${t}`), '---'];
-const start = ['- launchApp:', '    clearState: true', '- tapOn:', '    id: "consent-refuse"', '- tapOn:', '    id: "home-play"'];
+// Every flow opens the deterministic-mode deep link right after launch (PRD: e2e flows run in deterministic mode).
+const launch = ['- launchApp:', '    clearState: true', '- openLink: "guessanimal://deterministic"'];
+const start = [...launch, '- tapOn:', '    id: "consent-refuse"', '- tapOn:', '    id: "home-play"'];
 
 function lionSteps(): string[] {
   const data = GAME_DATA;
@@ -33,8 +35,7 @@ function findLion(tag: string, name: string, consent: 'accept' | 'refuse'): stri
   const lion = GAME_DATA.animals.find((a) => a.id === 'lion')!;
   return [
     ...header(name, [tag]),
-    '- launchApp:',
-    '    clearState: true',
+    ...launch,
     '- tapOn:',
     `    id: "consent-${consent}"`,
     '- tapOn:',
@@ -82,7 +83,30 @@ function giveUp(): string {
   ].join('\n');
 }
 
+// AC-33: in deterministic mode two games answered the same way show the same questions.
+function sameSequence(): string {
+  let s = newGame(GAME_DATA);
+  const first = GAME_DATA.questions[s.current].id;
+  s = answerQuestion(GAME_DATA, s, 'yes');
+  const second = GAME_DATA.questions[s.current].id;
+  const round = ['- assertVisible:', `    id: "q-${first}"`, '- tapOn:', '    id: "answer-yes"', '- assertVisible:', `    id: "q-${second}"`];
+  return [
+    ...header('Deterministic mode - two games answered the same way show the same questions (AC-33)', ['e2e']),
+    ...start,
+    ...round,
+    '- back',
+    '- assertVisible:',
+    '    id: "home-screen"',
+    '- tapOn:',
+    '    id: "home-play"',
+    ...round,
+    '- takeScreenshot: 50-same-sequence',
+    '',
+  ].join('\n');
+}
+
 const generated: Record<string, () => string> = {
+  'same-sequence.yaml': sameSequence,
   'find-lion.yaml': () => findLion('e2e', 'Find the lion - consistent answers, proposal, victory (AC-15)', 'refuse'),
   'telemetry-consent.yaml': () => findLion('telemetry', 'Telemetry - accept consent, play a full game (events checked in logcat by verify.mjs)', 'accept'),
   'give-up.yaml': giveUp,

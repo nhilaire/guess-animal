@@ -5,6 +5,7 @@ tags:
 ---
 - launchApp:
     clearState: true
+- openLink: "guessanimal://deterministic"
 - assertVisible: "Statistiques anonymes"
 - assertVisible: "Accepter"
 - assertVisible: "Refuser"
