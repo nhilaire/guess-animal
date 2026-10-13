@@ -96,10 +96,11 @@ flowchart LR
 ### Inference
 
 - Each animal still in play has a weight, initially equal. A discarded animal has weight 0.
-- Answer likelihoods: fact `yes` → P(Oui) = 0.95; fact `no` → P(Oui) = 0.05; fact `variable` → P(Oui) = 0.5;
+- Answer likelihoods: fact `yes` → P(Oui) = 0.90; fact `no` → P(Oui) = 0.10; fact `variable` → P(Oui) = 0.5;
   P(Non) = 1 − P(Oui). After Oui / Non, each weight is multiplied by the likelihood of the answer, then all weights
   are normalised to sum 1. « Je ne sais pas » changes no weight. So a contradicting answer divides an animal's weight
-  by 19 relative to a matching one, without eliminating it.
+  by 9 relative to a matching one, without eliminating it (v0.2.0: 0.90 instead of 0.95, more tolerant of answers
+  a child gives differently from the data).
 - Next question: among questions not yet asked (a question answered « Je ne sais pas » counts as asked and is never
   asked again), ranked by expected information gain on the current weights (entropy before minus expected entropy
   after Oui / Non). Variety (v0.2.0): the candidates are the unasked questions whose gain is ≥ 85 % of the best gain,
@@ -114,8 +115,9 @@ flowchart LR
 - Proposal: the game proposes the animal with the highest weight (ties: earliest in the data file) when (a) that
   weight ≥ 0.85, or (b) 20 questions have been answered (Oui, Non and Je ne sais pas all count), or (c) no unasked
   question has an expected information gain > 0.01 bit.
-- After a wrong proposal the animal is discarded, weights are renormalised and the game resumes with rule (a)-(c):
-  once the 20-question cap is reached, the next proposal comes immediately, with no further question.
+- After a wrong proposal the animal is discarded, weights are renormalised and the game asks at least 3 more
+  questions before it may propose again (unless no unasked question gains > 0.01 bit); the question cap grows by 5
+  per wrong proposal (20, then 25, then 30), so two proposals never follow each other while questions remain.
 - The game gives up after the 3rd wrong proposal, or if every animal is discarded.
 - Undo (« Revenir »): restores the exact state before the last answer to a question (weights, asked questions,
   counter). It can be repeated back to the first question. It does not undo a proposal answer: after a wrong
@@ -210,19 +212,22 @@ Business and technical indicators followed in Firebase (free Spark plan). Detail
   questions with one `yes` and the other `no`.
 - AC-05 [unit] Given the animal data, then none of « Poisson », « Singe », « Serpent », « Oiseau », « Insecte » is an
   animal.
-- AC-06 [unit] Given weights and an answer Oui or Non, when it is applied, then each weight is multiplied by 0.95,
-  0.05 or 0.5 according to the fact and weights are renormalised; « Je ne sais pas » leaves weights unchanged.
+- AC-06 [unit] Given weights and an answer Oui or Non, when it is applied, then each weight is multiplied by 0.90,
+  0.10 or 0.5 according to the fact and weights are renormalised; « Je ne sais pas » leaves weights unchanged.
 - AC-07 [unit] Given a state in deterministic mode, when the next question is chosen, then it is the unasked question
   with the highest expected information gain, ties going to the earliest question in the data; a question answered
   « Je ne sais pas » is never chosen again (in any mode).
 - AC-31 [unit] Given a state in variety mode, when the next question is chosen, then it is one of at most 3 unasked
   questions whose gain is ≥ 85 % of the best; the same seed gives the same game; over 20 seeds the opening question
   takes at least 2 different values.
-- AC-08 [unit] Given a state, when the top weight is ≥ 0.85, or 20 questions are answered, or no question gains
-  > 0.01 bit, then the engine proposes the top animal; otherwise it asks a question.
+- AC-08 [unit] Given a state with no wrong proposal yet, when the top weight is ≥ 0.85, or 20 questions are answered,
+  or no question gains > 0.01 bit, then the engine proposes the top animal; otherwise it asks a question.
 - AC-09 [unit] Given a wrong proposal, when « Non » is answered, then the animal is discarded and the game continues
-  (with an immediate new proposal when the 20-question cap is reached); after the 3rd wrong proposal or when no
-  animal remains, the game gives up.
+  with at least 3 questions before the next proposal (unless no question gains > 0.01 bit) and a cap of 20 + 5 per
+  wrong proposal; after the 3rd wrong proposal or when no animal remains, the game gives up.
+- AC-34 [unit] Given the real data and a player whose Oui / Non answers are each flipped with probability 0.1 (fixed
+  seed, 2 games per animal), when all games are played, then the animal is found within 3 proposals in ≥ 93 % of the
+  games and no game shows two proposals in a row while an informative question remains.
 - AC-10 [unit] Given answered questions, when undo is applied, then the state equals the state before the last
   answer, generator state included; undo is a no-op at the start and never crosses a proposal.
 - AC-11 [unit] Given the real data and a perfect player, when each animal is played in deterministic mode and with
@@ -323,6 +328,13 @@ Screens keep their buttons clear of the Android navigation bar (safe-area bottom
 Amendment 2026-10-12, version 0.1.1 (requested by the user after release 0.1.0): victory title « Youpi, je suis trop fort ! » (was
 « Je le savais ! »); give-up title « Bravo, tu es très fort ! » (was « Je donne ma langue au chat ! »), followed by
 « À quel animal pensais-tu ? ». Both are spoken. Version 0.1.1 was verified but not released; it ships in 0.2.0.
+
+Amendment 2026-10-13, version 0.2.0 (after the user's phone test: several animals proposed in a row, e.g. coq →
+moineau → flamant rose): at least 3 questions after a wrong proposal, question cap 20 + 5 per wrong proposal, answer
+likelihood 0.90 instead of 0.95 (user choice "1 + 2"; proposal threshold kept at 0.85). Simulation with 10 % wrong
+answers: found 87.7 % → 95.8 %, first proposal right 73.7 % → 83.0 %, about 2 more questions, no proposals in a row.
+Trap facts (correct but often answered the other way by children, e.g. the rooster does not lay eggs) are reviewed
+by an agent and set to variable when the 2-difference rule (AC-04) still holds.
 
 Amendment 2026-10-12, version 0.2.0 (requested by the user): more variety and more animals.
 - About 225 animals (215-235, about 80 new ones well known to children; no generic animal, no dinosaur; the user

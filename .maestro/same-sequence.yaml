@@ -19,7 +19,7 @@ tags:
 - tapOn:
     id: "answer-yes"
 - assertVisible:
-    id: "q-carnivore"
+    id: "q-whiskers"
 - back
 - assertVisible:
     id: "home-screen"
@@ -30,5 +30,5 @@ tags:
 - tapOn:
     id: "answer-yes"
 - assertVisible:
-    id: "q-carnivore"
+    id: "q-whiskers"
 - takeScreenshot: 50-same-sequence

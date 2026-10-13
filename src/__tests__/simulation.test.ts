@@ -1,6 +1,6 @@
 import { GAME_DATA } from '../game/data.generated';
 import { MAX_QUESTIONS, newGame } from '../game/inference';
-import { play, yesNoAnswersOnPerfectPath } from '../game/simulate';
+import { play, playNoisy, yesNoAnswersOnPerfectPath } from '../game/simulate';
 
 const data = GAME_DATA;
 const all = data.animals.map((_, i) => i);
@@ -60,5 +60,35 @@ describe('engine speed (AC-32)', () => {
     const median = times[10];
     console.log(`next question at game start: median ${median.toFixed(2)} ms`);
     expect(median).toBeLessThan(100);
+  });
+});
+
+describe('player with 10 % wrong answers (AC-34, v0.2.0)', () => {
+  it('finds the animal within 3 proposals in >= 93 % of games, never two proposals in a row', () => {
+    let state = 2024;
+    const random = () => {
+      state = (state * 1103515245 + 12345) % 2147483648;
+      return state / 2147483648;
+    };
+    let games = 0;
+    let found = 0;
+    let firstTry = 0;
+    let questions = 0;
+    let inARow = 0;
+    for (let rep = 0; rep < 2; rep++) {
+      for (const i of all) {
+        const r = playNoisy(data, i, 0.1, random, 500 + rep * 1000 + i);
+        games++;
+        if (r.found) {
+          found++;
+          questions += r.questions;
+          if (r.proposals === 1) firstTry++;
+        }
+        inARow += r.proposalsInARow;
+      }
+    }
+    console.log(`10 % wrong answers: found ${found}/${games} = ${((100 * found) / games).toFixed(1)} %, first try ${((100 * firstTry) / games).toFixed(1)} %, ${(questions / found).toFixed(1)} questions, proposals in a row: ${inARow}`);
+    expect(found / games).toBeGreaterThanOrEqual(0.93);
+    expect(inARow).toBe(0);
   });
 });

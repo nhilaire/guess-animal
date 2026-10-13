@@ -39,12 +39,12 @@ describe('weights (AC-06)', () => {
     expect(s.questionsAnswered).toBe(0);
   });
 
-  it('multiplies by 0.95 / 0.05 / 0.5 then renormalises on Oui', () => {
+  it('multiplies by 0.90 / 0.10 / 0.5 then renormalises on Oui', () => {
     let s = newGame(data);
     const q = 3; // farm: y n v n y
     s = { ...s, current: q };
     s = answerQuestion(data, s, 'yes');
-    const raw = [0.95, 0.05, 0.5, 0.05, 0.95].map((x) => x * 0.2);
+    const raw = [0.9, 0.1, 0.5, 0.1, 0.9].map((x) => x * 0.2);
     const sum = raw.reduce((a, b) => a + b, 0);
     raw.forEach((r, i) => close(s.weights[i], r / sum));
   });
@@ -52,7 +52,7 @@ describe('weights (AC-06)', () => {
   it('uses the complement on Non', () => {
     let s = { ...newGame(data), current: 3 };
     s = answerQuestion(data, s, 'no');
-    const raw = [0.05, 0.95, 0.5, 0.95, 0.05];
+    const raw = [0.1, 0.9, 0.5, 0.9, 0.1];
     const sum = raw.reduce((a, b) => a + b, 0);
     raw.forEach((r, i) => close(s.weights[i], r / sum));
   });
@@ -176,7 +176,7 @@ describe('proposals (AC-09)', () => {
     expect(['question', 'proposal']).toContain(s.phase);
   });
 
-  it('proposes again immediately once the 20-question cap is reached', () => {
+  it('after a wrong proposal at the cap, asks at least 3 more questions and extends the cap by 5', () => {
     const many: GameData = {
       questions: Array.from({ length: 30 }, (_, i) => ({ id: `q${i}`, text: `Q${i} ?` })),
       animals: ['a', 'b', 'c', 'd'].map((id, k) => ({
@@ -191,8 +191,33 @@ describe('proposals (AC-09)', () => {
     while (s.phase === 'question') s = answerQuestion(many, s, 'dontKnow');
     expect(s.questionsAnswered).toBe(20);
     s = answerProposal(many, s, false);
+    expect(s.phase).toBe('question');
+    for (let i = 0; i < 3; i++) {
+      expect(s.phase).toBe('question');
+      s = answerQuestion(many, s, 'dontKnow');
+    }
+    while (s.phase === 'question') s = answerQuestion(many, s, 'dontKnow');
     expect(s.phase).toBe('proposal');
-    expect(s.questionsAnswered).toBe(20);
+    expect(s.questionsAnswered).toBe(25);
+  });
+
+  it('never proposes twice in a row while an informative question remains, even when confident', () => {
+    // Real data, player thinking of the cat but refusing every proposal: count questions between proposals.
+    let s = newGame(GAME_DATA);
+    const cat = GAME_DATA.animals.findIndex((a) => a.id === 'cat');
+    let sinceProposal = 0;
+    for (let guard = 0; guard < 80 && (s.phase === 'question' || s.phase === 'proposal'); guard++) {
+      if (s.phase === 'question') {
+        const f = GAME_DATA.animals[cat].facts[s.current];
+        s = answerQuestion(GAME_DATA, s, f === 'y' ? 'yes' : f === 'n' ? 'no' : 'dontKnow');
+        sinceProposal++;
+      } else {
+        if (s.wrongGuesses > 0) expect(sinceProposal).toBeGreaterThanOrEqual(3);
+        sinceProposal = 0;
+        s = answerProposal(GAME_DATA, s, false);
+      }
+    }
+    expect(s.phase).toBe('gaveUp');
   });
 
   it('gives up after the 3rd wrong proposal', () => {
@@ -265,7 +290,7 @@ describe('variety mode (AC-31, AC-10, v0.2.0)', () => {
     const ranked = gains
       .map((g, q) => ({ g, q }))
       .filter((x) => x.g >= 0.85 * best)
-      .sort((a, b) => b.g - a.g || a.q - b.q)
+      .sort((a, b) => (Math.abs(b.g - a.g) > 1e-12 ? b.g - a.g : a.q - b.q))
       .slice(0, 3)
       .map((x) => x.q);
     const seen = new Set<number>();

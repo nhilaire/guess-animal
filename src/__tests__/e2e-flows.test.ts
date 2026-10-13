@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 import { GAME_DATA } from '../game/data.generated';
-import { MAX_QUESTIONS, MAX_WRONG_GUESSES, answerQuestion, newGame } from '../game/inference';
+import { MAX_WRONG_GUESSES, answerProposal, answerQuestion, newGame } from '../game/inference';
 import { fr } from '../i18n/fr';
 
 const FLOWS = path.resolve(__dirname, '..', '..', '.maestro');
@@ -65,9 +65,20 @@ function findLion(tag: string, name: string, consent: 'accept' | 'refuse'): stri
 }
 
 function giveUp(): string {
+  // Simulate the deterministic engine: always « Je ne sais pas », always « Non » to proposals, until it gives up.
   const steps: string[] = [];
-  for (let i = 0; i < MAX_QUESTIONS; i++) steps.push('- tapOn:', '    id: "answer-dontknow"');
-  for (let i = 0; i < MAX_WRONG_GUESSES; i++) steps.push('- assertVisible:', '    id: "proposal-screen"', '- tapOn:', '    id: "proposal-no"');
+  let st = newGame(GAME_DATA);
+  while (st.phase === 'question' || st.phase === 'proposal') {
+    if (st.phase === 'question') {
+      steps.push('- tapOn:', '    id: "answer-dontknow"');
+      st = answerQuestion(GAME_DATA, st, 'dontKnow');
+    } else {
+      steps.push('- assertVisible:', '    id: "proposal-screen"', '- tapOn:', '    id: "proposal-no"');
+      st = answerProposal(GAME_DATA, st, false);
+    }
+  }
+  expect(st.phase).toBe('gaveUp');
+  expect(st.wrongGuesses).toBe(MAX_WRONG_GUESSES);
   return [
     ...header('Give up after 3 wrong proposals, pick an animal (AC-16)', ['e2e']),
     ...start,

@@ -58,10 +58,30 @@ tags:
     id: "proposal-screen"
 - tapOn:
     id: "proposal-no"
+- tapOn:
+    id: "answer-dontknow"
+- tapOn:
+    id: "answer-dontknow"
+- tapOn:
+    id: "answer-dontknow"
+- tapOn:
+    id: "answer-dontknow"
+- tapOn:
+    id: "answer-dontknow"
 - assertVisible:
     id: "proposal-screen"
 - tapOn:
     id: "proposal-no"
+- tapOn:
+    id: "answer-dontknow"
+- tapOn:
+    id: "answer-dontknow"
+- tapOn:
+    id: "answer-dontknow"
+- tapOn:
+    id: "answer-dontknow"
+- tapOn:
+    id: "answer-dontknow"
 - assertVisible:
     id: "proposal-screen"
 - tapOn:

@@ -40,3 +40,27 @@ export function yesNoAnswersOnPerfectPath(data: GameData, target: number, seed?:
   }
   return n;
 }
+
+export type NoisyOutcome = { found: boolean; proposals: number; questions: number; proposalsInARow: number };
+
+// A player who answers like the data but flips each Oui/Non answer with probability `flip` (deterministic `random`).
+export function playNoisy(data: GameData, target: number, flip: number, random: () => number, seed?: number): NoisyOutcome {
+  let s: GameState = newGame(data, seed);
+  let proposals = 0;
+  let inARow = 0;
+  let lastWasProposal = false;
+  for (let guard = 0; guard < 200; guard++) {
+    if (s.phase === 'question') {
+      let a = perfectAnswer(data.animals[target].facts[s.current]);
+      if (a !== 'dontKnow' && random() < flip) a = a === 'yes' ? 'no' : 'yes';
+      s = answerQuestion(data, s, a);
+      lastWasProposal = false;
+    } else if (s.phase === 'proposal') {
+      if (lastWasProposal) inARow++;
+      lastWasProposal = true;
+      proposals++;
+      s = answerProposal(data, s, s.current === target);
+    } else break;
+  }
+  return { found: s.phase === 'found', proposals, questions: s.questionsAnswered, proposalsInARow: inARow };
+}

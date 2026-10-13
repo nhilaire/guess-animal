@@ -19,11 +19,15 @@ tags:
 - tapOn:
     id: "answer-yes"
 - assertVisible:
+    id: "q-whiskers"
+- tapOn:
+    id: "answer-yes"
+- assertVisible:
     id: "q-carnivore"
 - tapOn:
     id: "answer-yes"
 - assertVisible:
-    id: "q-whiskers"
+    id: "q-long_tail"
 - tapOn:
     id: "answer-yes"
 - assertVisible:

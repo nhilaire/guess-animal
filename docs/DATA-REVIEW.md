@@ -49,7 +49,7 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 ## 🐝 Abeille (`bee`)
 
 - **Oui** : Est-ce un insecte ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il peut voler ? · Est-ce qu'il a six pattes ? · Est-ce qu'il a des rayures ? · Est-ce qu'il mange seulement des plantes ? · Est-ce qu'il a du venin ? · Est-ce qu'il vit en groupe ? · Est-ce qu'il pond des œufs ? · Est-ce qu'il tient dans la main d'un adulte ? · Est-ce qu'il est jaune ? · 🆕 Est-ce qu'il fabrique du miel ? · 🆕 Est-ce qu'il est plus petit qu'une souris, sans compter la queue ?
-- **Ça dépend** : Est-ce qu'on l'élève dans les fermes ? · Est-ce qu'il a des poils ou de la fourrure ? · Est-ce qu'il peut être dangereux pour l'homme ? · 🆕 Est-ce qu'il peut marcher sur les murs ?
+- **Ça dépend** : Est-ce qu'on l'élève dans les fermes ? · Est-ce qu'il a des poils ou de la fourrure ? · Est-ce qu'il a des couleurs vives ? · Est-ce qu'il peut être dangereux pour l'homme ? · 🆕 Est-ce qu'il peut marcher sur les murs ?
 
 ## 🦅 Aigle (`eagle`)
 
@@ -59,7 +59,7 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 ## 🐍 Anaconda (`anaconda`) 🆕 nouveau
 
 - **Oui** : Est-ce un reptile ? · Est-ce qu'il vit dans ou au bord des rivières, des lacs ou des mares ? · Est-ce qu'il vit en Amérique ? · Est-ce qu'il vit dans la forêt ? · Est-ce qu'il est plus grand ou plus long qu'un adulte ? · Est-ce qu'il sait nager ? · Est-ce qu'il n'a pas de pattes du tout ? · Est-ce qu'il a des écailles ? · Est-ce qu'il a des taches ? · Est-ce qu'il est vert ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il peut être dangereux pour l'homme ? · 🆕 Est-ce qu'il vit dans la jungle ? · 🆕 Est-ce qu'il a des dents ?
-- **Ça dépend** : Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il vit surtout la nuit ? · 🆕 Est-ce qu'il mange des poissons ?
+- **Ça dépend** : Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il a du venin ? · Est-ce qu'il vit surtout la nuit ? · Est-ce qu'il pond des œufs ? · 🆕 Est-ce qu'il mange des poissons ?
 
 ## 🫏 Âne (`donkey`)
 
@@ -68,18 +68,18 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 
 ## 🐾 Anémone de mer (`sea_anemone`) 🆕 nouveau
 
-- **Oui** : Est-ce qu'il a un corps mou, sans os ? · Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il vit dans la mer ou au bord de la mer ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il n'a pas de pattes du tout ? · Est-ce qu'il a des tentacules ? · Est-ce qu'il a des couleurs vives ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il a du venin ?
-- **Ça dépend** : Est-ce qu'il est orange ou roux ? · Est-ce qu'il pond des œufs ? · Est-ce qu'il tient dans la main d'un adulte ? · Est-ce qu'il est rose ?
+- **Oui** : Est-ce qu'il a un corps mou, sans os ? · Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il vit dans la mer ou au bord de la mer ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il n'a pas de pattes du tout ? · Est-ce qu'il a des tentacules ? · Est-ce qu'il a des couleurs vives ?
+- **Ça dépend** : Est-ce qu'il est orange ou roux ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il a du venin ? · Est-ce qu'il pond des œufs ? · Est-ce qu'il tient dans la main d'un adulte ? · Est-ce qu'il est rose ?
 
 ## 🐟 Anguille (`eel`) 🆕 nouveau
 
-- **Oui** : Est-ce un poisson ? · Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il vit dans ou au bord des rivières, des lacs ou des mares ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il sait nager ? · Est-ce qu'il n'a pas de pattes du tout ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il vit surtout la nuit ? · Est-ce qu'il pond des œufs ?
-- **Ça dépend** : Est-ce qu'il vit dans la mer ou au bord de la mer ? · Est-ce qu'il a des écailles ? · Est-ce qu'il est noir ? · Est-ce qu'il est gris ? · Est-ce que les gens en mangent souvent ? · 🆕 Est-ce qu'il a des dents ? · 🆕 Est-ce qu'il mange des poissons ?
+- **Oui** : Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il vit dans ou au bord des rivières, des lacs ou des mares ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il sait nager ? · Est-ce qu'il n'a pas de pattes du tout ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il vit surtout la nuit ? · Est-ce qu'il pond des œufs ?
+- **Ça dépend** : Est-ce un poisson ? · Est-ce qu'il vit dans la mer ou au bord de la mer ? · Est-ce qu'il a des écailles ? · Est-ce qu'il est noir ? · Est-ce qu'il est gris ? · Est-ce que les gens en mangent souvent ? · 🆕 Est-ce qu'il a des dents ? · 🆕 Est-ce qu'il mange des poissons ?
 
 ## 🕷️ Araignée (`spider`)
 
 - **Oui** : Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il a huit pattes ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il pond des œufs ? · Est-ce qu'il tient dans la main d'un adulte ? · Est-ce qu'on le trouve souvent dans les maisons ? · 🆕 Est-ce qu'il fait des toiles ? · 🆕 Est-ce qu'il peut marcher sur les murs ?
-- **Ça dépend** : Est-ce qu'il est noir ? · Est-ce qu'il a du venin ? · Est-ce qu'il vit surtout la nuit ? · 🆕 Est-ce qu'il est plus petit qu'une souris, sans compter la queue ?
+- **Ça dépend** : Est-ce qu'il est noir ? · Est-ce qu'il peut être dangereux pour l'homme ? · Est-ce qu'il a du venin ? · Est-ce qu'il vit surtout la nuit ? · 🆕 Est-ce qu'il est plus petit qu'une souris, sans compter la queue ?
 
 ## 🐾 Autruche (`ostrich`)
 
@@ -94,7 +94,7 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 ## 🐒 Babouin (`baboon`)
 
 - **Oui** : Est-ce un mammifère ? · Est-ce qu'il vit en Afrique ? · Est-ce qu'il a quatre pattes ? · Est-ce qu'il a des poils ou de la fourrure ? · Est-ce qu'il a une longue queue ? · Est-ce qu'il vit en groupe ? · Est-ce un singe ? · 🆕 Est-ce qu'il vit dans la savane ? · 🆕 Est-ce qu'il a des dents ?
-- **Ça dépend** : Est-ce qu'il est gris ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il peut être dangereux pour l'homme ?
+- **Ça dépend** : Est-ce qu'il grimpe ou vit dans les arbres ? · Est-ce qu'il est gris ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il peut être dangereux pour l'homme ?
 
 ## 🐋 Baleine (`whale`)
 
@@ -158,8 +158,8 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 
 ## 🐦 Caille (`quail`) 🆕 nouveau
 
-- **Oui** : Est-ce un oiseau ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il peut voler ? · Est-ce qu'il a deux pattes ? · Est-ce qu'il a des taches ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il pond des œufs ? · Est-ce qu'on mange ses œufs ? · Est-ce qu'il tient dans la main d'un adulte ?
-- **Ça dépend** : Est-ce qu'on l'élève dans les fermes ? · Est-ce qu'il vit en Afrique ? · Est-ce qu'il vit en Asie ? · Est-ce qu'il vit en groupe ? · Est-ce que les gens en mangent souvent ? · Est-ce qu'il part dans les pays chauds en hiver ?
+- **Oui** : Est-ce un oiseau ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il peut voler ? · Est-ce qu'il a deux pattes ? · Est-ce qu'il a des taches ? · Est-ce qu'il pond des œufs ? · Est-ce qu'on mange ses œufs ? · Est-ce qu'il tient dans la main d'un adulte ?
+- **Ça dépend** : Est-ce qu'on l'élève dans les fermes ? · Est-ce qu'il vit en Afrique ? · Est-ce qu'il vit en Asie ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il vit en groupe ? · Est-ce que les gens en mangent souvent ? · Est-ce qu'il part dans les pays chauds en hiver ?
 
 ## 🦑 Calamar (`squid`)
 
@@ -174,7 +174,7 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 ## 🦆 Canard (`duck`)
 
 - **Oui** : Est-ce un oiseau ? · Est-ce qu'il vit dans ou au bord des rivières, des lacs ou des mares ? · Est-ce qu'on l'élève dans les fermes ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il peut voler ? · Est-ce qu'il sait nager ? · Est-ce qu'il a deux pattes ? · Est-ce qu'il pond des œufs ? · Est-ce que les gens en mangent souvent ?
-- **Ça dépend** : Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il a des couleurs vives ? · Est-ce qu'il est blanc ? · Est-ce qu'il est vert ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il vit en groupe ? · Est-ce qu'on mange ses œufs ? · Est-ce qu'il est jaune ? · 🆕 Est-ce qu'il mange des poissons ?
+- **Ça dépend** : Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il a des couleurs vives ? · Est-ce qu'il est blanc ? · Est-ce qu'il est vert ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il mange seulement des plantes ? · Est-ce qu'il vit en groupe ? · Est-ce qu'on mange ses œufs ? · Est-ce qu'il est jaune ? · 🆕 Est-ce qu'il mange des poissons ?
 
 ## 🐤 Canari (`canary`)
 
@@ -199,7 +199,7 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 ## 🦌 Cerf (`deer`)
 
 - **Oui** : Est-ce un mammifère ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il vit dans la forêt ? · Est-ce qu'il a quatre pattes ? · Est-ce qu'il a des poils ou de la fourrure ? · Est-ce qu'il a des cornes ou des bois ? · Est-ce qu'il a des sabots ? · Est-ce qu'il mange seulement des plantes ? · Est-ce qu'il court très vite ? · 🆕 Est-ce qu'il a des dents ?
-- **Ça dépend** : Est-ce qu'il est plus grand ou plus long qu'un adulte ? · Est-ce qu'il vit en groupe ? · Est-ce que les gens en mangent souvent ?
+- **Ça dépend** : Est-ce qu'il est plus grand ou plus long qu'un adulte ? · Est-ce qu'il a des taches ? · Est-ce qu'il est orange ou roux ? · Est-ce qu'il vit en groupe ? · Est-ce que les gens en mangent souvent ?
 
 ## 🐾 Chacal (`jackal`) 🆕 nouveau
 
@@ -218,8 +218,8 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 
 ## 🦇 Chauve-souris (`bat`)
 
-- **Oui** : Est-ce un mammifère ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il peut voler ? · Est-ce qu'il a des poils ou de la fourrure ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il vit surtout la nuit ? · Est-ce qu'il dort tout l'hiver ? · 🆕 Est-ce qu'il a des dents ? · 🆕 Est-ce qu'il dort la tête en bas ?
-- **Ça dépend** : Est-ce qu'il a deux pattes ? · Est-ce qu'il a quatre pattes ? · Est-ce qu'il est noir ? · Est-ce qu'il est gris ? · Est-ce qu'il vit en groupe ? · Est-ce qu'il tient dans la main d'un adulte ? · 🆕 Est-ce qu'il est plus petit qu'une souris, sans compter la queue ?
+- **Oui** : Est-ce un mammifère ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il peut voler ? · Est-ce qu'il a des poils ou de la fourrure ? · Est-ce qu'il vit surtout la nuit ? · Est-ce qu'il dort tout l'hiver ? · 🆕 Est-ce qu'il a des dents ? · 🆕 Est-ce qu'il dort la tête en bas ?
+- **Ça dépend** : Est-ce un oiseau ? · Est-ce qu'il a deux pattes ? · Est-ce qu'il a quatre pattes ? · Est-ce qu'il est noir ? · Est-ce qu'il est gris ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il vit en groupe ? · Est-ce qu'il tient dans la main d'un adulte ? · 🆕 Est-ce qu'il est plus petit qu'une souris, sans compter la queue ?
 
 ## 🐛 Chenille (`caterpillar`) 🆕 nouveau
 
@@ -243,8 +243,8 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 
 ## 🐒 Chimpanzé (`chimpanzee`)
 
-- **Oui** : Est-ce un mammifère ? · Est-ce qu'il vit en Afrique ? · Est-ce qu'il vit dans la forêt ? · Est-ce qu'il grimpe ou vit dans les arbres ? · Est-ce qu'il a des poils ou de la fourrure ? · Est-ce qu'il est noir ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il vit en groupe ? · Est-ce un singe ? · 🆕 Est-ce qu'il vit dans la jungle ? · 🆕 Est-ce qu'il a des dents ?
-- **Ça dépend** : Est-ce qu'il a deux pattes ? · Est-ce qu'il a quatre pattes ? · Est-ce qu'il peut être dangereux pour l'homme ?
+- **Oui** : Est-ce un mammifère ? · Est-ce qu'il vit en Afrique ? · Est-ce qu'il vit dans la forêt ? · Est-ce qu'il grimpe ou vit dans les arbres ? · Est-ce qu'il a des poils ou de la fourrure ? · Est-ce qu'il est noir ? · Est-ce qu'il vit en groupe ? · Est-ce un singe ? · 🆕 Est-ce qu'il vit dans la jungle ? · 🆕 Est-ce qu'il a des dents ?
+- **Ça dépend** : Est-ce qu'il a deux pattes ? · Est-ce qu'il a quatre pattes ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il mange seulement des plantes ? · Est-ce qu'il peut être dangereux pour l'homme ?
 
 ## 🐾 Chinchilla (`chinchilla`) 🆕 nouveau
 
@@ -259,7 +259,7 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 ## 🐾 Cloporte (`woodlouse`) 🆕 nouveau
 
 - **Oui** : Est-ce un crustacé ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il vit dans la forêt ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il est gris ? · Est-ce qu'il mange seulement des plantes ? · Est-ce qu'il vit en groupe ? · Est-ce qu'il tient dans la main d'un adulte ? · 🆕 Est-ce qu'il se roule en boule pour se protéger ? · 🆕 Est-ce qu'il a plus de huit pattes ? · 🆕 Est-ce qu'il est plus petit qu'une souris, sans compter la queue ?
-- **Ça dépend** : Est-ce qu'il a une carapace ou une coquille ? · Est-ce qu'il vit surtout la nuit ? · Est-ce qu'il pond des œufs ? · Est-ce qu'on le trouve souvent dans les maisons ? · 🆕 Est-ce qu'il peut marcher sur les murs ?
+- **Ça dépend** : Est-ce un insecte ? · Est-ce qu'il a une carapace ou une coquille ? · Est-ce qu'il vit surtout la nuit ? · Est-ce qu'il pond des œufs ? · Est-ce qu'on le trouve souvent dans les maisons ? · 🆕 Est-ce qu'il peut marcher sur les murs ?
 
 ## 🐍 Cobra (`cobra`)
 
@@ -268,8 +268,8 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 
 ## 🐞 Coccinelle (`ladybug`)
 
-- **Oui** : Est-ce un insecte ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il peut voler ? · Est-ce qu'il a six pattes ? · Est-ce qu'il a des taches ? · Est-ce qu'il a des couleurs vives ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il pond des œufs ? · Est-ce qu'il tient dans la main d'un adulte ? · 🆕 Est-ce qu'il est plus petit qu'une souris, sans compter la queue ?
-- **Ça dépend** : Est-ce qu'il a une carapace ou une coquille ? · Est-ce qu'il est orange ou roux ? · 🆕 Est-ce qu'il peut marcher sur les murs ?
+- **Oui** : Est-ce un insecte ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il peut voler ? · Est-ce qu'il a six pattes ? · Est-ce qu'il a des taches ? · Est-ce qu'il a des couleurs vives ? · Est-ce qu'il pond des œufs ? · Est-ce qu'il tient dans la main d'un adulte ? · 🆕 Est-ce qu'il est plus petit qu'une souris, sans compter la queue ?
+- **Ça dépend** : Est-ce qu'il a une carapace ou une coquille ? · Est-ce qu'il est orange ou roux ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · 🆕 Est-ce qu'il peut marcher sur les murs ?
 
 ## 🐖 Cochon (`pig`)
 
@@ -279,7 +279,7 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 ## 🐹 Cochon d'Inde (`guinea_pig`)
 
 - **Oui** : Est-ce un mammifère ? · Est-ce un animal de compagnie ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il a quatre pattes ? · Est-ce qu'il a des poils ou de la fourrure ? · Est-ce qu'il mange seulement des plantes ? · Est-ce qu'il vit en groupe ? · Est-ce un rongeur ? · Est-ce qu'il a des moustaches ? · Est-ce qu'on le trouve souvent dans les maisons ? · 🆕 Est-ce qu'il a des dents ?
-- **Ça dépend** : Est-ce qu'il vit en Amérique ? · Est-ce qu'il est blanc ? · Est-ce qu'il est noir ? · Est-ce qu'il est orange ou roux ? · Est-ce qu'il tient dans la main d'un adulte ?
+- **Ça dépend** : Est-ce qu'il vit en Amérique ? · Est-ce qu'il a des taches ? · Est-ce qu'il est blanc ? · Est-ce qu'il est noir ? · Est-ce qu'il est orange ou roux ? · Est-ce qu'il tient dans la main d'un adulte ?
 
 ## 🐦 Colibri (`hummingbird`)
 
@@ -293,8 +293,8 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 
 ## 🐓 Coq (`rooster`) 🆕 nouveau
 
-- **Oui** : Est-ce un oiseau ? · Est-ce qu'on l'élève dans les fermes ? · Est-ce qu'il a deux pattes ? · Est-ce qu'il a des couleurs vives ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il chante ? · 🆕 Est-ce qu'il a une crête ou une huppe sur la tête ?
-- **Ça dépend** : Est-ce un animal de compagnie ? · Est-ce qu'il peut voler ? · Est-ce qu'il a une longue queue ? · Est-ce qu'il est blanc ? · Est-ce qu'il est noir ? · Est-ce qu'il est orange ou roux ? · Est-ce qu'il vit en groupe ? · Est-ce que les gens en mangent souvent ?
+- **Oui** : Est-ce un oiseau ? · Est-ce qu'on l'élève dans les fermes ? · Est-ce qu'il a deux pattes ? · Est-ce qu'il a des couleurs vives ? · Est-ce qu'il chante ? · 🆕 Est-ce qu'il a une crête ou une huppe sur la tête ?
+- **Ça dépend** : Est-ce un animal de compagnie ? · Est-ce qu'il peut voler ? · Est-ce qu'il a une longue queue ? · Est-ce qu'il est blanc ? · Est-ce qu'il est noir ? · Est-ce qu'il est orange ou roux ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il mange seulement des plantes ? · Est-ce qu'il vit en groupe ? · Est-ce qu'il pond des œufs ? · Est-ce que les gens en mangent souvent ?
 
 ## 🐦‍⬛ Corbeau (`crow`)
 
@@ -328,8 +328,8 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 
 ## 🦐 Crevette (`shrimp`)
 
-- **Oui** : Est-ce un crustacé ? · Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il vit dans la mer ou au bord de la mer ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il sait nager ? · Est-ce qu'il vit en groupe ? · Est-ce qu'il pond des œufs ? · Est-ce que les gens en mangent souvent ? · Est-ce qu'il tient dans la main d'un adulte ? · 🆕 Est-ce qu'il est plus petit qu'une souris, sans compter la queue ?
-- **Ça dépend** : Est-ce qu'il vit dans ou au bord des rivières, des lacs ou des mares ? · Est-ce qu'il a une carapace ou une coquille ? · Est-ce qu'il est orange ou roux ? · 🆕 Est-ce qu'il a des pinces ? · 🆕 Est-ce qu'il a plus de huit pattes ?
+- **Oui** : Est-ce un crustacé ? · Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il vit dans la mer ou au bord de la mer ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il sait nager ? · Est-ce qu'il vit en groupe ? · Est-ce qu'il pond des œufs ? · Est-ce que les gens en mangent souvent ? · Est-ce qu'il tient dans la main d'un adulte ?
+- **Ça dépend** : Est-ce qu'il vit dans ou au bord des rivières, des lacs ou des mares ? · Est-ce qu'il a une carapace ou une coquille ? · Est-ce qu'il est orange ou roux ? · Est-ce qu'il est rose ? · 🆕 Est-ce qu'il a des pinces ? · 🆕 Est-ce qu'il a plus de huit pattes ? · 🆕 Est-ce qu'il est plus petit qu'une souris, sans compter la queue ?
 
 ## 🐊 Crocodile (`crocodile`)
 
@@ -354,7 +354,7 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 ## 🦃 Dinde (`turkey`)
 
 - **Oui** : Est-ce un oiseau ? · Est-ce qu'on l'élève dans les fermes ? · Est-ce qu'il vit en Amérique ? · Est-ce qu'il a deux pattes ? · Est-ce qu'il pond des œufs ? · Est-ce que les gens en mangent souvent ?
-- **Ça dépend** : Est-ce qu'il peut voler ? · Est-ce qu'il a des couleurs vives ? · Est-ce qu'il est noir ? · Est-ce qu'il vit en groupe ? · 🆕 Est-ce qu'il a une crête ou une huppe sur la tête ?
+- **Ça dépend** : Est-ce qu'il peut voler ? · Est-ce qu'il a des couleurs vives ? · Est-ce qu'il est noir ? · Est-ce qu'il mange seulement des plantes ? · Est-ce qu'il vit en groupe ? · 🆕 Est-ce qu'il a une crête ou une huppe sur la tête ?
 
 ## 🦎 Dragon de Komodo (`komodo`)
 
@@ -404,7 +404,7 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 ## 🐟 Espadon (`swordfish`) 🆕 nouveau
 
 - **Oui** : Est-ce un poisson ? · Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il vit dans la mer ou au bord de la mer ? · Est-ce qu'il est plus grand ou plus long qu'un adulte ? · Est-ce qu'il sait nager ? · Est-ce qu'il n'a pas de pattes du tout ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il pond des œufs ? · 🆕 Est-ce qu'il a une trompe comme l'éléphant ou un très long nez ? · 🆕 Est-ce qu'il mange des poissons ?
-- **Ça dépend** : Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il est gris ? · Est-ce qu'il peut être dangereux pour l'homme ? · Est-ce que les gens en mangent souvent ?
+- **Ça dépend** : Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il a des écailles ? · Est-ce qu'il est gris ? · Est-ce qu'il peut être dangereux pour l'homme ? · Est-ce que les gens en mangent souvent ?
 
 ## ⭐ Étoile de mer (`starfish`)
 
@@ -413,8 +413,8 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 
 ## 🐦 Faisan (`pheasant`) 🆕 nouveau
 
-- **Oui** : Est-ce un oiseau ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il vit dans la forêt ? · Est-ce qu'il peut voler ? · Est-ce qu'il a deux pattes ? · Est-ce qu'il a une longue queue ? · Est-ce qu'il a des couleurs vives ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il pond des œufs ?
-- **Ça dépend** : Est-ce qu'on l'élève dans les fermes ? · Est-ce qu'il vit en Asie ? · Est-ce qu'il est orange ou roux ? · Est-ce qu'il est vert ? · Est-ce qu'il vit en groupe ? · Est-ce que les gens en mangent souvent ?
+- **Oui** : Est-ce un oiseau ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il vit dans la forêt ? · Est-ce qu'il peut voler ? · Est-ce qu'il a deux pattes ? · Est-ce qu'il a une longue queue ? · Est-ce qu'il a des couleurs vives ? · Est-ce qu'il pond des œufs ?
+- **Ça dépend** : Est-ce qu'on l'élève dans les fermes ? · Est-ce qu'il vit en Asie ? · Est-ce qu'il est orange ou roux ? · Est-ce qu'il est vert ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il vit en groupe ? · Est-ce que les gens en mangent souvent ?
 
 ## 🦊 Fennec (`fennec`)
 
@@ -423,13 +423,13 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 
 ## 🦩 Flamant rose (`flamingo`)
 
-- **Oui** : Est-ce un oiseau ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il vit en Afrique ? · Est-ce qu'il peut voler ? · Est-ce qu'il a deux pattes ? · Est-ce qu'il a un long cou ? · Est-ce qu'il a des couleurs vives ? · Est-ce qu'il vit en groupe ? · Est-ce qu'il pond des œufs ? · Est-ce qu'il est rose ?
-- **Ça dépend** : Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il vit dans la mer ou au bord de la mer ? · Est-ce qu'il vit dans ou au bord des rivières, des lacs ou des mares ? · Est-ce qu'il vit en Amérique ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il a un très grand bec ?
+- **Oui** : Est-ce un oiseau ? · Est-ce qu'il vit en Afrique ? · Est-ce qu'il peut voler ? · Est-ce qu'il a deux pattes ? · Est-ce qu'il a un long cou ? · Est-ce qu'il a des couleurs vives ? · Est-ce qu'il vit en groupe ? · Est-ce qu'il pond des œufs ? · Est-ce qu'il est rose ?
+- **Ça dépend** : Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il vit dans la mer ou au bord de la mer ? · Est-ce qu'il vit dans ou au bord des rivières, des lacs ou des mares ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il vit en Amérique ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il a un très grand bec ?
 
 ## 🐜 Fourmi (`ant`)
 
 - **Oui** : Est-ce un insecte ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il creuse un terrier ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il a six pattes ? · Est-ce qu'il vit en groupe ? · Est-ce qu'il pond des œufs ? · Est-ce qu'il tient dans la main d'un adulte ? · 🆕 Est-ce qu'il peut marcher sur les murs ? · 🆕 Est-ce qu'il est plus petit qu'une souris, sans compter la queue ?
-- **Ça dépend** : Est-ce qu'il est noir ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il mange seulement des plantes ? · Est-ce qu'on le trouve souvent dans les maisons ?
+- **Ça dépend** : Est-ce qu'il est noir ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il mange seulement des plantes ? · Est-ce qu'il a du venin ? · Est-ce qu'on le trouve souvent dans les maisons ?
 
 ## 🐾 Fourmilier (`anteater`)
 
@@ -448,8 +448,8 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 
 ## 🐦 Geai (`jay`) 🆕 nouveau
 
-- **Oui** : Est-ce un oiseau ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il vit dans la forêt ? · Est-ce qu'il grimpe ou vit dans les arbres ? · Est-ce qu'il peut voler ? · Est-ce qu'il a deux pattes ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il pond des œufs ?
-- **Ça dépend** : Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il a des couleurs vives ? · Est-ce qu'il est orange ou roux ? · Est-ce qu'il peut répéter des mots ? · Est-ce qu'il est rose ? · 🆕 Est-ce qu'il a une crête ou une huppe sur la tête ?
+- **Oui** : Est-ce un oiseau ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il vit dans la forêt ? · Est-ce qu'il grimpe ou vit dans les arbres ? · Est-ce qu'il peut voler ? · Est-ce qu'il a deux pattes ? · Est-ce qu'il pond des œufs ?
+- **Ça dépend** : Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il a des couleurs vives ? · Est-ce qu'il est orange ou roux ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il peut répéter des mots ? · Est-ce qu'il est rose ? · 🆕 Est-ce qu'il a une crête ou une huppe sur la tête ?
 
 ## 🦎 Gecko (`gecko`) 🆕 nouveau
 
@@ -464,7 +464,7 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 ## 🐒 Gibbon (`gibbon`) 🆕 nouveau
 
 - **Oui** : Est-ce un mammifère ? · Est-ce qu'il vit en Asie ? · Est-ce qu'il vit dans la forêt ? · Est-ce qu'il grimpe ou vit dans les arbres ? · Est-ce qu'il a des poils ou de la fourrure ? · Est-ce un singe ? · Est-ce qu'il chante ? · 🆕 Est-ce qu'il vit dans la jungle ? · 🆕 Est-ce qu'il a des dents ?
-- **Ça dépend** : Est-ce qu'il a deux pattes ? · Est-ce qu'il a quatre pattes ? · Est-ce qu'il est noir ? · Est-ce qu'il mange seulement des plantes ? · Est-ce qu'il vit en groupe ?
+- **Ça dépend** : Est-ce qu'il a deux pattes ? · Est-ce qu'il a quatre pattes ? · Est-ce qu'il a une longue queue ? · Est-ce qu'il est noir ? · Est-ce qu'il mange seulement des plantes ? · Est-ce qu'il vit en groupe ?
 
 ## 🦒 Girafe (`giraffe`)
 
@@ -478,8 +478,8 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 
 ## 🦍 Gorille (`gorilla`)
 
-- **Oui** : Est-ce un mammifère ? · Est-ce qu'il vit en Afrique ? · Est-ce qu'il vit dans la forêt ? · Est-ce qu'il a des poils ou de la fourrure ? · Est-ce qu'il est noir ? · Est-ce qu'il mange seulement des plantes ? · Est-ce qu'il vit en groupe ? · Est-ce un singe ? · 🆕 Est-ce qu'il vit dans la jungle ? · 🆕 Est-ce qu'il a des dents ?
-- **Ça dépend** : Est-ce qu'il est plus grand ou plus long qu'un adulte ? · Est-ce qu'il a deux pattes ? · Est-ce qu'il a quatre pattes ? · Est-ce qu'il peut être dangereux pour l'homme ?
+- **Oui** : Est-ce un mammifère ? · Est-ce qu'il vit en Afrique ? · Est-ce qu'il vit dans la forêt ? · Est-ce qu'il est plus grand ou plus long qu'un adulte ? · Est-ce qu'il a des poils ou de la fourrure ? · Est-ce qu'il est noir ? · Est-ce qu'il mange seulement des plantes ? · Est-ce qu'il vit en groupe ? · Est-ce un singe ? · 🆕 Est-ce qu'il vit dans la jungle ? · 🆕 Est-ce qu'il a des dents ?
+- **Ça dépend** : Est-ce qu'il a deux pattes ? · Est-ce qu'il a quatre pattes ? · Est-ce qu'il peut être dangereux pour l'homme ?
 
 ## 🐸 Grenouille (`frog`)
 
@@ -503,8 +503,8 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 
 ## 🐾 Guêpe (`wasp`) 🆕 nouveau
 
-- **Oui** : Est-ce un insecte ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il peut voler ? · Est-ce qu'il a six pattes ? · Est-ce qu'il a des rayures ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il a du venin ? · Est-ce qu'il vit en groupe ? · Est-ce qu'il pond des œufs ? · Est-ce qu'il tient dans la main d'un adulte ? · Est-ce qu'il est jaune ? · 🆕 Est-ce qu'il est plus petit qu'une souris, sans compter la queue ?
-- **Ça dépend** : Est-ce qu'il a des couleurs vives ? · Est-ce qu'il est noir ? · Est-ce qu'il peut être dangereux pour l'homme ? · Est-ce qu'on le trouve souvent dans les maisons ? · 🆕 Est-ce qu'il peut marcher sur les murs ?
+- **Oui** : Est-ce un insecte ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il peut voler ? · Est-ce qu'il a six pattes ? · Est-ce qu'il a des rayures ? · Est-ce qu'il a du venin ? · Est-ce qu'il vit en groupe ? · Est-ce qu'il pond des œufs ? · Est-ce qu'il tient dans la main d'un adulte ? · Est-ce qu'il est jaune ? · 🆕 Est-ce qu'il est plus petit qu'une souris, sans compter la queue ?
+- **Ça dépend** : Est-ce qu'il a des couleurs vives ? · Est-ce qu'il est noir ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il peut être dangereux pour l'homme ? · Est-ce qu'on le trouve souvent dans les maisons ? · 🆕 Est-ce qu'il peut marcher sur les murs ?
 
 ## 🐹 Hamster (`hamster`)
 
@@ -518,8 +518,8 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 
 ## 🦔 Hérisson (`hedgehog`)
 
-- **Oui** : Est-ce un mammifère ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il a quatre pattes ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il vit surtout la nuit ? · Est-ce qu'il dort tout l'hiver ? · Est-ce qu'il a des piquants ? · 🆕 Est-ce qu'il a des dents ? · 🆕 Est-ce qu'il se roule en boule pour se protéger ?
-- **Ça dépend** : Est-ce un animal de compagnie ? · Est-ce qu'il vit dans la forêt ? · Est-ce qu'il a des moustaches ?
+- **Oui** : Est-ce un mammifère ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il a quatre pattes ? · Est-ce qu'il vit surtout la nuit ? · Est-ce qu'il dort tout l'hiver ? · Est-ce qu'il a des piquants ? · 🆕 Est-ce qu'il a des dents ? · 🆕 Est-ce qu'il se roule en boule pour se protéger ?
+- **Ça dépend** : Est-ce un animal de compagnie ? · Est-ce qu'il vit dans la forêt ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il mange seulement des plantes ? · Est-ce un rongeur ? · Est-ce qu'il a des moustaches ?
 
 ## 🐾 Héron (`heron`)
 
@@ -533,23 +533,23 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 
 ## 🐾 Hippocampe (`seahorse`)
 
-- **Oui** : Est-ce un poisson ? · Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il vit dans la mer ou au bord de la mer ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il sait nager ? · Est-ce qu'il n'a pas de pattes du tout ? · Est-ce qu'il a une longue queue ? · Est-ce qu'il tient dans la main d'un adulte ?
-- **Ça dépend** : Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il a une poche sur le ventre ? · Est-ce qu'il a des couleurs vives ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il pond des œufs ? · 🆕 Est-ce qu'il est plus petit qu'une souris, sans compter la queue ? · 🆕 Est-ce qu'il peut changer de couleur ?
+- **Oui** : Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il vit dans la mer ou au bord de la mer ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il sait nager ? · Est-ce qu'il n'a pas de pattes du tout ? · Est-ce qu'il a une longue queue ? · Est-ce qu'il tient dans la main d'un adulte ?
+- **Ça dépend** : Est-ce un poisson ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il a une poche sur le ventre ? · Est-ce qu'il a des couleurs vives ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il pond des œufs ? · 🆕 Est-ce qu'il est plus petit qu'une souris, sans compter la queue ? · 🆕 Est-ce qu'il peut changer de couleur ?
 
 ## 🦛 Hippopotame (`hippo`)
 
-- **Oui** : Est-ce un mammifère ? · Est-ce qu'il vit dans ou au bord des rivières, des lacs ou des mares ? · Est-ce qu'il vit en Afrique ? · Est-ce qu'il est plus grand ou plus long qu'un adulte ? · Est-ce qu'il a quatre pattes ? · Est-ce qu'il mange seulement des plantes ? · Est-ce qu'il peut être dangereux pour l'homme ? · Est-ce qu'il vit en groupe ? · 🆕 Est-ce qu'il a des dents ?
-- **Ça dépend** : Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il sait nager ? · Est-ce qu'il est gris ? · Est-ce qu'il a des défenses ? · 🆕 Est-ce qu'il vit dans la savane ?
+- **Oui** : Est-ce un mammifère ? · Est-ce qu'il vit dans ou au bord des rivières, des lacs ou des mares ? · Est-ce qu'il vit en Afrique ? · Est-ce qu'il est plus grand ou plus long qu'un adulte ? · Est-ce qu'il a quatre pattes ? · Est-ce qu'il mange seulement des plantes ? · Est-ce qu'il vit en groupe ? · 🆕 Est-ce qu'il a des dents ?
+- **Ça dépend** : Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il sait nager ? · Est-ce qu'il est gris ? · Est-ce qu'il peut être dangereux pour l'homme ? · Est-ce qu'il a des défenses ? · 🆕 Est-ce qu'il vit dans la savane ?
 
 ## 🐦 Hirondelle (`swallow`)
 
 - **Oui** : Est-ce un oiseau ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il peut voler ? · Est-ce qu'il a deux pattes ? · Est-ce qu'il est noir et blanc ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il pond des œufs ? · Est-ce qu'il tient dans la main d'un adulte ? · Est-ce qu'il part dans les pays chauds en hiver ?
-- **Ça dépend** : Est-ce qu'il vit en Afrique ? · Est-ce qu'il vit en groupe ? · Est-ce qu'il chante ?
+- **Ça dépend** : Est-ce qu'il vit en Afrique ? · Est-ce qu'il est blanc ? · Est-ce qu'il est noir ? · Est-ce qu'il vit en groupe ? · Est-ce qu'il chante ?
 
 ## 🦞 Homard (`lobster`)
 
 - **Oui** : Est-ce un crustacé ? · Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il vit dans la mer ou au bord de la mer ? · Est-ce qu'il a une carapace ou une coquille ? · Est-ce qu'il a une longue queue ? · Est-ce qu'il pond des œufs ? · 🆕 Est-ce qu'il a des pinces ?
-- **Ça dépend** : Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il a huit pattes ? · Est-ce qu'il est orange ou roux ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce que les gens en mangent souvent ? · 🆕 Est-ce qu'il a plus de huit pattes ?
+- **Ça dépend** : Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il sait nager ? · Est-ce qu'il a huit pattes ? · Est-ce qu'il est orange ou roux ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce que les gens en mangent souvent ? · 🆕 Est-ce qu'il a plus de huit pattes ?
 
 ## 🦪 Huître (`oyster`) 🆕 nouveau
 
@@ -559,7 +559,7 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 ## 🐾 Hyène (`hyena`)
 
 - **Oui** : Est-ce un mammifère ? · Est-ce qu'il vit en Afrique ? · Est-ce qu'il a quatre pattes ? · Est-ce qu'il a des poils ou de la fourrure ? · Est-ce qu'il a des taches ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il vit en groupe ? · 🆕 Est-ce qu'il vit dans la savane ? · 🆕 Est-ce qu'il a des dents ?
-- **Ça dépend** : Est-ce qu'il est gris ? · Est-ce qu'il peut être dangereux pour l'homme ? · Est-ce qu'il vit surtout la nuit ?
+- **Ça dépend** : Est-ce qu'il est gris ? · Est-ce qu'il peut être dangereux pour l'homme ? · Est-ce qu'il vit surtout la nuit ? · Est-ce qu'il est de la famille du chien ?
 
 ## 🦎 Iguane (`iguana`)
 
@@ -569,7 +569,7 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 ## 🐆 Jaguar (`jaguar`)
 
 - **Oui** : Est-ce un mammifère ? · Est-ce qu'il vit en Amérique ? · Est-ce qu'il vit dans la forêt ? · Est-ce qu'il sait nager ? · Est-ce qu'il a quatre pattes ? · Est-ce qu'il a des poils ou de la fourrure ? · Est-ce qu'il a une longue queue ? · Est-ce qu'il a des taches ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il peut être dangereux pour l'homme ? · Est-ce un félin, de la famille du chat ? · Est-ce qu'il a des moustaches ? · 🆕 Est-ce qu'il vit dans la jungle ? · 🆕 Est-ce qu'il a des dents ?
-- **Ça dépend** : Est-ce qu'il grimpe ou vit dans les arbres ? · Est-ce qu'il est plus grand ou plus long qu'un adulte ? · Est-ce qu'il est orange ou roux ? · Est-ce qu'il vit surtout la nuit ? · 🆕 Est-ce qu'il mange des poissons ?
+- **Ça dépend** : Est-ce qu'il grimpe ou vit dans les arbres ? · Est-ce qu'il est plus grand ou plus long qu'un adulte ? · Est-ce qu'il est orange ou roux ? · Est-ce qu'il vit surtout la nuit ? · Est-ce qu'il court très vite ? · Est-ce qu'il est jaune ? · 🆕 Est-ce qu'il mange des poissons ?
 
 ## 🦘 Kangourou (`kangaroo`)
 
@@ -599,7 +599,7 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 ## 🐇 Lapin (`rabbit`)
 
 - **Oui** : Est-ce un mammifère ? · Est-ce qu'on l'élève dans les fermes ? · Est-ce un animal de compagnie ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il creuse un terrier ? · Est-ce qu'il a quatre pattes ? · Est-ce qu'il a des poils ou de la fourrure ? · Est-ce qu'il a de grandes oreilles ? · Est-ce qu'il mange seulement des plantes ? · Est-ce qu'il se déplace en sautant ? · Est-ce que les gens en mangent souvent ? · Est-ce qu'il a des moustaches ? · 🆕 Est-ce qu'il a des dents ?
-- **Ça dépend** : Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il est blanc ? · Est-ce qu'il est noir ? · Est-ce qu'il est gris ? · Est-ce qu'il vit en groupe ? · Est-ce qu'il court très vite ? · Est-ce qu'on le trouve souvent dans les maisons ?
+- **Ça dépend** : Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il a des taches ? · Est-ce qu'il est blanc ? · Est-ce qu'il est noir ? · Est-ce qu'il est gris ? · Est-ce qu'il vit en groupe ? · Est-ce qu'il court très vite ? · Est-ce un rongeur ? · Est-ce qu'on le trouve souvent dans les maisons ?
 
 ## 🐒 Lémurien (`lemur`) 🆕 nouveau
 
@@ -609,7 +609,7 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 ## 🐆 Léopard (`leopard`)
 
 - **Oui** : Est-ce un mammifère ? · Est-ce qu'il vit en Afrique ? · Est-ce qu'il vit en Asie ? · Est-ce qu'il grimpe ou vit dans les arbres ? · Est-ce qu'il a quatre pattes ? · Est-ce qu'il a des poils ou de la fourrure ? · Est-ce qu'il a une longue queue ? · Est-ce qu'il a des taches ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il peut être dangereux pour l'homme ? · Est-ce qu'il vit surtout la nuit ? · Est-ce un félin, de la famille du chat ? · Est-ce qu'il a des moustaches ? · 🆕 Est-ce qu'il vit dans la savane ? · 🆕 Est-ce qu'il a des dents ?
-- **Ça dépend** : Est-ce qu'il est plus grand ou plus long qu'un adulte ? · Est-ce qu'il est orange ou roux ? · Est-ce qu'il est jaune ? · 🆕 Est-ce qu'il vit dans la jungle ?
+- **Ça dépend** : Est-ce qu'il est plus grand ou plus long qu'un adulte ? · Est-ce qu'il est orange ou roux ? · Est-ce qu'il court très vite ? · Est-ce qu'il est jaune ? · 🆕 Est-ce qu'il vit dans la jungle ?
 
 ## 🦎 Lézard (`lizard`)
 
@@ -618,13 +618,13 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 
 ## 🐾 Libellule (`dragonfly`)
 
-- **Oui** : Est-ce un insecte ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il peut voler ? · Est-ce qu'il a six pattes ? · Est-ce qu'il a une longue queue ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il pond des œufs ? · Est-ce qu'il tient dans la main d'un adulte ?
-- **Ça dépend** : Est-ce qu'il vit dans ou au bord des rivières, des lacs ou des mares ? · Est-ce qu'il a des couleurs vives ? · 🆕 Est-ce qu'il est plus petit qu'une souris, sans compter la queue ?
+- **Oui** : Est-ce un insecte ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il peut voler ? · Est-ce qu'il a six pattes ? · Est-ce qu'il a une longue queue ? · Est-ce qu'il pond des œufs ? · Est-ce qu'il tient dans la main d'un adulte ?
+- **Ça dépend** : Est-ce qu'il vit dans ou au bord des rivières, des lacs ou des mares ? · Est-ce qu'il a des couleurs vives ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · 🆕 Est-ce qu'il est plus petit qu'une souris, sans compter la queue ?
 
 ## 🐇 Lièvre (`hare`)
 
 - **Oui** : Est-ce un mammifère ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il a quatre pattes ? · Est-ce qu'il a des poils ou de la fourrure ? · Est-ce qu'il a de grandes oreilles ? · Est-ce qu'il mange seulement des plantes ? · Est-ce qu'il se déplace en sautant ? · Est-ce qu'il court très vite ? · Est-ce qu'il a des moustaches ? · 🆕 Est-ce qu'il a des dents ?
-- **Ça dépend** : Est-ce qu'il est plus petit qu'un chat ? · Est-ce que les gens en mangent souvent ?
+- **Ça dépend** : Est-ce qu'il creuse un terrier ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce que les gens en mangent souvent ? · Est-ce un rongeur ?
 
 ## 🐾 Limace (`slug`)
 
@@ -644,7 +644,7 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 ## 🐺 Loup (`wolf`)
 
 - **Oui** : Est-ce un mammifère ? · Est-ce qu'il vit en Asie ? · Est-ce qu'il vit en Amérique ? · Est-ce qu'il vit dans la forêt ? · Est-ce qu'il a quatre pattes ? · Est-ce qu'il a des poils ou de la fourrure ? · Est-ce qu'il a une longue queue ? · Est-ce qu'il est gris ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il peut être dangereux pour l'homme ? · Est-ce qu'il vit en groupe ? · Est-ce qu'il est de la famille du chien ? · Est-ce qu'il a des moustaches ? · 🆕 Est-ce qu'il a des dents ?
-- **Ça dépend** : Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il vit dans des endroits très froids ? · Est-ce qu'il vit à la montagne ? · Est-ce qu'il vit surtout la nuit ?
+- **Ça dépend** : Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il vit dans des endroits très froids ? · Est-ce qu'il vit à la montagne ? · Est-ce qu'il vit surtout la nuit ? · Est-ce qu'il court très vite ?
 
 ## 🦦 Loutre (`otter`)
 
@@ -669,17 +669,17 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 ## 🐦 Macareux (`puffin`) 🆕 nouveau
 
 - **Oui** : Est-ce un oiseau ? · Est-ce qu'il vit dans la mer ou au bord de la mer ? · Est-ce qu'il vit dans des endroits très froids ? · Est-ce qu'il creuse un terrier ? · Est-ce qu'il peut voler ? · Est-ce qu'il sait nager ? · Est-ce qu'il a deux pattes ? · Est-ce qu'il est noir et blanc ? · Est-ce qu'il a des couleurs vives ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il vit en groupe ? · Est-ce qu'il pond des œufs ? · 🆕 Est-ce qu'il mange des poissons ?
-- **Ça dépend** : Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il vit en Amérique ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il est orange ou roux ? · Est-ce qu'il a un très grand bec ?
+- **Ça dépend** : Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il vit en Amérique ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il est blanc ? · Est-ce qu'il est noir ? · Est-ce qu'il est orange ou roux ? · Est-ce qu'il a un très grand bec ?
 
 ## 🐧 Manchot (pingouin) (`penguin`)
 
 - **Oui** : Est-ce un oiseau ? · Est-ce qu'il vit dans la mer ou au bord de la mer ? · Est-ce qu'il vit dans des endroits très froids ? · Est-ce qu'il sait nager ? · Est-ce qu'il a deux pattes ? · Est-ce qu'il est noir et blanc ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il vit en groupe ? · Est-ce qu'il pond des œufs ? · 🆕 Est-ce qu'il mange des poissons ?
-- **Ça dépend** : Est-ce qu'il passe presque tout son temps dans l'eau ?
+- **Ça dépend** : Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il est blanc ? · Est-ce qu'il est noir ?
 
 ## 🐒 Mandrill (`mandrill`) 🆕 nouveau
 
-- **Oui** : Est-ce un mammifère ? · Est-ce qu'il vit en Afrique ? · Est-ce qu'il vit dans la forêt ? · Est-ce qu'il a quatre pattes ? · Est-ce qu'il a des poils ou de la fourrure ? · Est-ce qu'il a des couleurs vives ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il vit en groupe ? · Est-ce un singe ? · 🆕 Est-ce qu'il vit dans la jungle ? · 🆕 Est-ce qu'il a des dents ?
-- **Ça dépend** : Est-ce qu'il grimpe ou vit dans les arbres ? · Est-ce qu'il peut être dangereux pour l'homme ? · Est-ce qu'il a une barbichette ?
+- **Oui** : Est-ce un mammifère ? · Est-ce qu'il vit en Afrique ? · Est-ce qu'il vit dans la forêt ? · Est-ce qu'il a quatre pattes ? · Est-ce qu'il a des poils ou de la fourrure ? · Est-ce qu'il a des couleurs vives ? · Est-ce qu'il vit en groupe ? · Est-ce un singe ? · 🆕 Est-ce qu'il vit dans la jungle ? · 🆕 Est-ce qu'il a des dents ?
+- **Ça dépend** : Est-ce qu'il grimpe ou vit dans les arbres ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il peut être dangereux pour l'homme ? · Est-ce qu'il a une barbichette ?
 
 ## 🐾 Mante religieuse (`mantis`) 🆕 nouveau
 
@@ -698,8 +698,8 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 
 ## 🪼 Méduse (`jellyfish`)
 
-- **Oui** : Est-ce qu'il a un corps mou, sans os ? · Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il vit dans la mer ou au bord de la mer ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il n'a pas de pattes du tout ? · Est-ce qu'il a des tentacules ? · Est-ce qu'il a du venin ?
-- **Ça dépend** : Est-ce qu'il sait nager ? · Est-ce qu'il est blanc ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il peut être dangereux pour l'homme ? · 🆕 Est-ce qu'il mange des poissons ? · 🆕 Est-ce qu'il brille dans le noir ?
+- **Oui** : Est-ce qu'il a un corps mou, sans os ? · Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il vit dans la mer ou au bord de la mer ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il sait nager ? · Est-ce qu'il n'a pas de pattes du tout ? · Est-ce qu'il a des tentacules ? · Est-ce qu'il a du venin ?
+- **Ça dépend** : Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il est blanc ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il peut être dangereux pour l'homme ? · Est-ce qu'il pond des œufs ? · 🆕 Est-ce qu'il mange des poissons ? · 🆕 Est-ce qu'il brille dans le noir ?
 
 ## 🐦‍⬛ Merle (`blackbird`)
 
@@ -714,7 +714,7 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 ## 🐾 Mille-pattes (`millipede`) 🆕 nouveau
 
 - **Oui** : Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il vit dans la forêt ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il pond des œufs ? · Est-ce qu'il tient dans la main d'un adulte ? · 🆕 Est-ce qu'il a plus de huit pattes ?
-- **Ça dépend** : Est-ce qu'il creuse un terrier ? · Est-ce qu'il est noir ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il mange seulement des plantes ? · Est-ce qu'il a du venin ? · Est-ce qu'il vit surtout la nuit ? · Est-ce qu'on le trouve souvent dans les maisons ? · 🆕 Est-ce qu'il se roule en boule pour se protéger ? · 🆕 Est-ce qu'il est plus petit qu'une souris, sans compter la queue ?
+- **Ça dépend** : Est-ce un insecte ? · Est-ce qu'il creuse un terrier ? · Est-ce qu'il est noir ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il mange seulement des plantes ? · Est-ce qu'il a du venin ? · Est-ce qu'il vit surtout la nuit ? · Est-ce qu'on le trouve souvent dans les maisons ? · 🆕 Est-ce qu'il se roule en boule pour se protéger ? · 🆕 Est-ce qu'il est plus petit qu'une souris, sans compter la queue ?
 
 ## 🐦 Moineau (`sparrow`)
 
@@ -739,7 +739,7 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 ## 🦨 Mouffette (`skunk`)
 
 - **Oui** : Est-ce un mammifère ? · Est-ce qu'il vit en Amérique ? · Est-ce qu'il a quatre pattes ? · Est-ce qu'il a des poils ou de la fourrure ? · Est-ce qu'il a une longue queue ? · Est-ce qu'il a des rayures ? · Est-ce qu'il est noir et blanc ? · Est-ce qu'il vit surtout la nuit ? · 🆕 Est-ce qu'il a des dents ?
-- **Ça dépend** : Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ?
+- **Ça dépend** : Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il est blanc ? · Est-ce qu'il est noir ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ?
 
 ## 🐾 Moule (`mussel`) 🆕 nouveau
 
@@ -749,7 +749,7 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 ## 🦟 Moustique (`mosquito`)
 
 - **Oui** : Est-ce un insecte ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il peut voler ? · Est-ce qu'il a six pattes ? · Est-ce qu'il vit surtout la nuit ? · Est-ce qu'il pond des œufs ? · Est-ce qu'il tient dans la main d'un adulte ? · Est-ce qu'il boit du sang ? · Est-ce qu'on le trouve souvent dans les maisons ? · 🆕 Est-ce qu'il peut marcher sur les murs ? · 🆕 Est-ce qu'il est plus petit qu'une souris, sans compter la queue ?
-- **Ça dépend** : Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il peut être dangereux pour l'homme ? · 🆕 Est-ce qu'il vit sur d'autres animaux ou sur les gens ?
+- **Ça dépend** : Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il peut être dangereux pour l'homme ? · Est-ce qu'il a du venin ? · 🆕 Est-ce qu'il vit sur d'autres animaux ou sur les gens ?
 
 ## 🐑 Mouton (`sheep`)
 
@@ -759,7 +759,7 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 ## 🐟 Murène (`moray`) 🆕 nouveau
 
 - **Oui** : Est-ce un poisson ? · Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il vit dans la mer ou au bord de la mer ? · Est-ce qu'il sait nager ? · Est-ce qu'il n'a pas de pattes du tout ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il peut être dangereux pour l'homme ? · Est-ce qu'il vit surtout la nuit ? · Est-ce qu'il pond des œufs ? · 🆕 Est-ce qu'il a des dents ? · 🆕 Est-ce qu'il mange des poissons ?
-- **Ça dépend** : Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il est plus grand ou plus long qu'un adulte ? · Est-ce qu'il a des taches ? · Est-ce qu'il est vert ? · Est-ce qu'il est jaune ?
+- **Ça dépend** : Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il est plus grand ou plus long qu'un adulte ? · Est-ce qu'il a des écailles ? · Est-ce qu'il a des taches ? · Est-ce qu'il est vert ? · Est-ce qu'il est jaune ?
 
 ## 🕷️ Mygale (`tarantula`) 🆕 nouveau
 
@@ -774,7 +774,7 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 ## 🪿 Oie (`goose`)
 
 - **Oui** : Est-ce un oiseau ? · Est-ce qu'on l'élève dans les fermes ? · Est-ce qu'il sait nager ? · Est-ce qu'il a deux pattes ? · Est-ce qu'il a un long cou ? · Est-ce qu'il pond des œufs ? · Est-ce que les gens en mangent souvent ?
-- **Ça dépend** : Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il vit dans ou au bord des rivières, des lacs ou des mares ? · Est-ce qu'il peut voler ? · Est-ce qu'il est blanc ? · Est-ce qu'il est gris ? · Est-ce qu'il mange seulement des plantes ? · Est-ce qu'il vit en groupe ? · Est-ce qu'on mange ses œufs ?
+- **Ça dépend** : Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il vit dans ou au bord des rivières, des lacs ou des mares ? · Est-ce qu'il peut voler ? · Est-ce qu'il est blanc ? · Est-ce qu'il est gris ? · Est-ce qu'il mange seulement des plantes ? · Est-ce qu'il vit en groupe ? · Est-ce qu'on mange ses œufs ? · Est-ce qu'il part dans les pays chauds en hiver ?
 
 ## 🐾 Okapi (`okapi`) 🆕 nouveau
 
@@ -789,7 +789,7 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 ## 🦧 Orang-outan (`orangutan`)
 
 - **Oui** : Est-ce un mammifère ? · Est-ce qu'il vit en Asie ? · Est-ce qu'il vit dans la forêt ? · Est-ce qu'il grimpe ou vit dans les arbres ? · Est-ce qu'il a des poils ou de la fourrure ? · Est-ce qu'il est orange ou roux ? · Est-ce un singe ? · 🆕 Est-ce qu'il vit dans la jungle ? · 🆕 Est-ce qu'il a des dents ?
-- **Ça dépend** : Est-ce qu'il est plus grand ou plus long qu'un adulte ? · Est-ce qu'il a deux pattes ? · Est-ce qu'il a quatre pattes ? · Est-ce qu'il mange seulement des plantes ?
+- **Ça dépend** : Est-ce qu'il est plus grand ou plus long qu'un adulte ? · Est-ce qu'il a deux pattes ? · Est-ce qu'il a quatre pattes ? · Est-ce qu'il a une longue queue ? · Est-ce qu'il mange seulement des plantes ?
 
 ## 🐾 Ornithorynque (`platypus`)
 
@@ -798,13 +798,13 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 
 ## 🐋 Orque (`orca`)
 
-- **Oui** : Est-ce un mammifère ? · Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il vit dans la mer ou au bord de la mer ? · Est-ce qu'il est plus grand ou plus long qu'un adulte ? · Est-ce qu'il sait nager ? · Est-ce qu'il n'a pas de pattes du tout ? · Est-ce qu'il est noir et blanc ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il vit en groupe ? · 🆕 Est-ce qu'il a des dents ? · 🆕 Est-ce qu'il mange des poissons ?
-- **Ça dépend** : Est-ce qu'il vit dans des endroits très froids ? · Est-ce qu'il peut être dangereux pour l'homme ?
+- **Oui** : Est-ce un mammifère ? · Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il vit dans la mer ou au bord de la mer ? · Est-ce qu'il est plus grand ou plus long qu'un adulte ? · Est-ce qu'il sait nager ? · Est-ce qu'il n'a pas de pattes du tout ? · Est-ce qu'il est noir et blanc ? · Est-ce qu'il est noir ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il vit en groupe ? · 🆕 Est-ce qu'il a des dents ? · 🆕 Est-ce qu'il mange des poissons ?
+- **Ça dépend** : Est-ce qu'il vit dans des endroits très froids ? · Est-ce qu'il est blanc ? · Est-ce qu'il peut être dangereux pour l'homme ?
 
 ## 🐒 Ouistiti (`marmoset`) 🆕 nouveau
 
-- **Oui** : Est-ce un mammifère ? · Est-ce qu'il vit en Amérique ? · Est-ce qu'il vit dans la forêt ? · Est-ce qu'il grimpe ou vit dans les arbres ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il a quatre pattes ? · Est-ce qu'il a des poils ou de la fourrure ? · Est-ce qu'il a une longue queue ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il vit en groupe ? · Est-ce un singe ? · 🆕 Est-ce qu'il vit dans la jungle ? · 🆕 Est-ce qu'il a des dents ?
-- **Ça dépend** : Est-ce qu'il est noir et blanc ? · Est-ce qu'il tient dans la main d'un adulte ?
+- **Oui** : Est-ce un mammifère ? · Est-ce qu'il vit en Amérique ? · Est-ce qu'il vit dans la forêt ? · Est-ce qu'il grimpe ou vit dans les arbres ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il a quatre pattes ? · Est-ce qu'il a des poils ou de la fourrure ? · Est-ce qu'il a une longue queue ? · Est-ce qu'il vit en groupe ? · Est-ce un singe ? · 🆕 Est-ce qu'il vit dans la jungle ? · 🆕 Est-ce qu'il a des dents ?
+- **Ça dépend** : Est-ce qu'il est noir et blanc ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il tient dans la main d'un adulte ?
 
 ## 🐻 Ours brun (`brown_bear`)
 
@@ -814,17 +814,17 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 ## 🐻‍❄️ Ours polaire (`polar_bear`)
 
 - **Oui** : Est-ce un mammifère ? · Est-ce qu'il vit dans la mer ou au bord de la mer ? · Est-ce qu'il vit dans des endroits très froids ? · Est-ce qu'il est plus grand ou plus long qu'un adulte ? · Est-ce qu'il sait nager ? · Est-ce qu'il a quatre pattes ? · Est-ce qu'il a des poils ou de la fourrure ? · Est-ce qu'il est blanc ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il peut être dangereux pour l'homme ? · 🆕 Est-ce qu'il a des dents ?
-- **Ça dépend** : Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il vit en Asie ? · Est-ce qu'il vit en Amérique ? · 🆕 Est-ce qu'il mange des poissons ?
+- **Ça dépend** : Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il vit en Asie ? · Est-ce qu'il vit en Amérique ? · Est-ce qu'il dort tout l'hiver ? · 🆕 Est-ce qu'il mange des poissons ?
 
 ## 🐾 Oursin (`sea_urchin`)
 
 - **Oui** : Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il vit dans la mer ou au bord de la mer ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il a des piquants ? · Est-ce qu'il tient dans la main d'un adulte ?
-- **Ça dépend** : Est-ce qu'il n'a pas de pattes du tout ? · Est-ce qu'il a une carapace ou une coquille ? · Est-ce qu'il est noir ? · Est-ce que les gens en mangent souvent ?
+- **Ça dépend** : Est-ce qu'il n'a pas de pattes du tout ? · Est-ce qu'il a une carapace ou une coquille ? · Est-ce qu'il est noir ? · Est-ce qu'il peut être dangereux pour l'homme ? · Est-ce qu'il pond des œufs ? · Est-ce que les gens en mangent souvent ?
 
 ## 🐼 Panda (`panda`)
 
 - **Oui** : Est-ce un mammifère ? · Est-ce qu'il vit en Asie ? · Est-ce qu'il vit dans la forêt ? · Est-ce qu'il a quatre pattes ? · Est-ce qu'il a des poils ou de la fourrure ? · Est-ce qu'il est noir et blanc ? · Est-ce qu'il mange seulement des plantes ? · Est-ce qu'il a un masque noir autour des yeux ? · 🆕 Est-ce qu'il a des dents ?
-- **Ça dépend** : Est-ce qu'il vit dans des endroits très froids ? · Est-ce qu'il vit à la montagne ? · Est-ce qu'il grimpe ou vit dans les arbres ? · Est-ce qu'il est plus grand ou plus long qu'un adulte ?
+- **Ça dépend** : Est-ce qu'il vit dans des endroits très froids ? · Est-ce qu'il vit à la montagne ? · Est-ce qu'il grimpe ou vit dans les arbres ? · Est-ce qu'il est plus grand ou plus long qu'un adulte ? · Est-ce qu'il est blanc ? · Est-ce qu'il est noir ?
 
 ## 🐾 Panda roux (`red_panda`) 🆕 nouveau
 
@@ -869,7 +869,7 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 ## 🦜 Perruche (`budgie`)
 
 - **Oui** : Est-ce un oiseau ? · Est-ce un animal de compagnie ? · Est-ce qu'il vit en Australie ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il peut voler ? · Est-ce qu'il a deux pattes ? · Est-ce qu'il a des couleurs vives ? · Est-ce qu'il mange seulement des plantes ? · Est-ce qu'il vit en groupe ? · Est-ce qu'il pond des œufs ? · Est-ce qu'il tient dans la main d'un adulte ? · Est-ce qu'il peut répéter des mots ? · Est-ce qu'on le trouve souvent dans les maisons ?
-- **Ça dépend** : Est-ce qu'il est vert ? · Est-ce qu'il est jaune ?
+- **Ça dépend** : Est-ce qu'il est vert ? · Est-ce qu'il chante ? · Est-ce qu'il est jaune ?
 
 ## 🐗 Phacochère (`warthog`)
 
@@ -884,7 +884,7 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 ## 🦭 Phoque (`seal`)
 
 - **Oui** : Est-ce un mammifère ? · Est-ce qu'il vit dans la mer ou au bord de la mer ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il sait nager ? · Est-ce qu'il a des poils ou de la fourrure ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il a des moustaches ? · 🆕 Est-ce qu'il a des dents ? · 🆕 Est-ce qu'il mange des poissons ?
-- **Ça dépend** : Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il vit dans des endroits très froids ? · Est-ce qu'il a quatre pattes ? · Est-ce qu'il n'a pas de pattes du tout ? · Est-ce qu'il est gris ? · Est-ce qu'il vit en groupe ?
+- **Ça dépend** : Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il vit dans des endroits très froids ? · Est-ce qu'il est plus grand ou plus long qu'un adulte ? · Est-ce qu'il a quatre pattes ? · Est-ce qu'il n'a pas de pattes du tout ? · Est-ce qu'il est gris ? · Est-ce qu'il vit en groupe ?
 
 ## 🐦 Pic vert (`woodpecker`)
 
@@ -894,12 +894,12 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 ## 🐦 Pie (`magpie`)
 
 - **Oui** : Est-ce un oiseau ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il peut voler ? · Est-ce qu'il a deux pattes ? · Est-ce qu'il a une longue queue ? · Est-ce qu'il est noir et blanc ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il pond des œufs ?
-- **Ça dépend** : Est-ce qu'il grimpe ou vit dans les arbres ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il peut répéter des mots ?
+- **Ça dépend** : Est-ce qu'il grimpe ou vit dans les arbres ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il est blanc ? · Est-ce qu'il est noir ? · Est-ce qu'il peut répéter des mots ?
 
 ## 🐙 Pieuvre (`octopus`)
 
 - **Oui** : Est-ce qu'il a un corps mou, sans os ? · Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il vit dans la mer ou au bord de la mer ? · Est-ce qu'il sait nager ? · Est-ce qu'il a des tentacules ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il pond des œufs ? · 🆕 Est-ce qu'il peut changer de couleur ? · 🆕 Est-ce qu'il crache de l'encre ?
-- **Ça dépend** : Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il a huit pattes ? · Est-ce qu'il n'a pas de pattes du tout ? · Est-ce qu'il a des couleurs vives ? · Est-ce qu'il est orange ou roux ? · 🆕 Est-ce qu'il mange des poissons ?
+- **Ça dépend** : Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il a huit pattes ? · Est-ce qu'il n'a pas de pattes du tout ? · Est-ce qu'il a des couleurs vives ? · Est-ce qu'il est orange ou roux ? · Est-ce qu'il a du venin ? · 🆕 Est-ce qu'il mange des poissons ?
 
 ## 🐦 Pigeon (`pigeon`)
 
@@ -908,8 +908,8 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 
 ## 🐦 Pintade (`guinea_fowl`) 🆕 nouveau
 
-- **Oui** : Est-ce un oiseau ? · Est-ce qu'on l'élève dans les fermes ? · Est-ce qu'il vit en Afrique ? · Est-ce qu'il a deux pattes ? · Est-ce qu'il a des taches ? · Est-ce qu'il est gris ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il vit en groupe ? · Est-ce qu'il pond des œufs ? · Est-ce que les gens en mangent souvent ?
-- **Ça dépend** : Est-ce qu'il peut voler ? · Est-ce qu'il est noir ? · Est-ce qu'on mange ses œufs ? · 🆕 Est-ce qu'il vit dans la savane ? · 🆕 Est-ce qu'il a une crête ou une huppe sur la tête ?
+- **Oui** : Est-ce un oiseau ? · Est-ce qu'on l'élève dans les fermes ? · Est-ce qu'il vit en Afrique ? · Est-ce qu'il a deux pattes ? · Est-ce qu'il a des taches ? · Est-ce qu'il est gris ? · Est-ce qu'il vit en groupe ? · Est-ce qu'il pond des œufs ? · Est-ce que les gens en mangent souvent ?
+- **Ça dépend** : Est-ce qu'il peut voler ? · Est-ce qu'il est noir ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'on mange ses œufs ? · 🆕 Est-ce qu'il vit dans la savane ? · 🆕 Est-ce qu'il a une crête ou une huppe sur la tête ?
 
 ## 🐟 Piranha (`piranha`) 🆕 nouveau
 
@@ -919,27 +919,27 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 ## 🐟 Poisson rouge (`goldfish`)
 
 - **Oui** : Est-ce un poisson ? · Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il vit dans ou au bord des rivières, des lacs ou des mares ? · Est-ce un animal de compagnie ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il sait nager ? · Est-ce qu'il n'a pas de pattes du tout ? · Est-ce qu'il a des écailles ? · Est-ce qu'il est orange ou roux ? · Est-ce qu'il pond des œufs ? · Est-ce qu'il tient dans la main d'un adulte ? · Est-ce qu'on le trouve souvent dans les maisons ?
-- **Ça dépend** : Est-ce qu'il vit en Asie ? · Est-ce qu'il vit en groupe ? · 🆕 Est-ce qu'il a des dents ? · 🆕 Est-ce qu'il est plus petit qu'une souris, sans compter la queue ?
+- **Ça dépend** : Est-ce qu'il vit en Asie ? · Est-ce qu'il a des couleurs vives ? · Est-ce qu'il vit en groupe ? · 🆕 Est-ce qu'il a des dents ? · 🆕 Est-ce qu'il est plus petit qu'une souris, sans compter la queue ?
 
 ## 🐟 Poisson volant (`flying_fish`) 🆕 nouveau
 
-- **Oui** : Est-ce un poisson ? · Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il vit dans la mer ou au bord de la mer ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il peut voler ? · Est-ce qu'il sait nager ? · Est-ce qu'il n'a pas de pattes du tout ? · Est-ce qu'il a des écailles ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il vit en groupe ? · Est-ce qu'il pond des œufs ?
-- **Ça dépend** : Est-ce qu'il est gris ? · Est-ce qu'il se déplace en sautant ? · Est-ce qu'il tient dans la main d'un adulte ?
+- **Oui** : Est-ce un poisson ? · Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il vit dans la mer ou au bord de la mer ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il peut voler ? · Est-ce qu'il sait nager ? · Est-ce qu'il n'a pas de pattes du tout ? · Est-ce qu'il a des écailles ? · Est-ce qu'il vit en groupe ? · Est-ce qu'il pond des œufs ?
+- **Ça dépend** : Est-ce qu'il est gris ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il se déplace en sautant ? · Est-ce qu'il tient dans la main d'un adulte ?
 
 ## 🐟 Poisson-chat (`catfish`) 🆕 nouveau
 
-- **Oui** : Est-ce un poisson ? · Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il vit dans ou au bord des rivières, des lacs ou des mares ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il vit en Amérique ? · Est-ce qu'il sait nager ? · Est-ce qu'il n'a pas de pattes du tout ? · Est-ce qu'il est noir ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il pond des œufs ? · Est-ce qu'il a des moustaches ?
-- **Ça dépend** : Est-ce qu'il vit en Asie ? · Est-ce qu'il est plus grand ou plus long qu'un adulte ? · Est-ce qu'il est gris ? · Est-ce qu'il vit surtout la nuit ? · 🆕 Est-ce qu'il a des dents ? · 🆕 Est-ce qu'il mange des poissons ?
+- **Oui** : Est-ce un poisson ? · Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il vit dans ou au bord des rivières, des lacs ou des mares ? · Est-ce qu'il vit en Amérique ? · Est-ce qu'il sait nager ? · Est-ce qu'il n'a pas de pattes du tout ? · Est-ce qu'il est noir ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il pond des œufs ? · Est-ce qu'il a des moustaches ?
+- **Ça dépend** : Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il vit en Asie ? · Est-ce qu'il est plus grand ou plus long qu'un adulte ? · Est-ce qu'il a des écailles ? · Est-ce qu'il est gris ? · Est-ce qu'il vit surtout la nuit ? · 🆕 Est-ce qu'il a des dents ? · 🆕 Est-ce qu'il mange des poissons ?
 
 ## 🐠 Poisson-clown (`clownfish`)
 
 - **Oui** : Est-ce un poisson ? · Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il vit dans la mer ou au bord de la mer ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il sait nager ? · Est-ce qu'il n'a pas de pattes du tout ? · Est-ce qu'il a des écailles ? · Est-ce qu'il a des rayures ? · Est-ce qu'il a des couleurs vives ? · Est-ce qu'il est orange ou roux ? · Est-ce qu'il pond des œufs ? · Est-ce qu'il tient dans la main d'un adulte ?
-- **Ça dépend** : Est-ce un animal de compagnie ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · 🆕 Est-ce qu'il a des dents ?
+- **Ça dépend** : Est-ce un animal de compagnie ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · 🆕 Est-ce qu'il a des dents ? · 🆕 Est-ce qu'il est plus petit qu'une souris, sans compter la queue ?
 
 ## 🐡 Poisson-globe (`pufferfish`) 🆕 nouveau
 
-- **Oui** : Est-ce un poisson ? · Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il vit dans la mer ou au bord de la mer ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il sait nager ? · Est-ce qu'il n'a pas de pattes du tout ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il peut être dangereux pour l'homme ? · Est-ce qu'il pond des œufs ? · Est-ce qu'il a des piquants ?
-- **Ça dépend** : Est-ce qu'il vit en Asie ? · Est-ce qu'il a des taches ? · Est-ce qu'il a des couleurs vives ? · Est-ce qu'il a du venin ? · Est-ce qu'il tient dans la main d'un adulte ? · Est-ce qu'il est jaune ? · 🆕 Est-ce qu'il a des dents ? · 🆕 Est-ce qu'il se roule en boule pour se protéger ?
+- **Oui** : Est-ce un poisson ? · Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il vit dans la mer ou au bord de la mer ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il sait nager ? · Est-ce qu'il n'a pas de pattes du tout ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il pond des œufs ? · Est-ce qu'il a des piquants ?
+- **Ça dépend** : Est-ce qu'il vit en Asie ? · Est-ce qu'il a des taches ? · Est-ce qu'il a des couleurs vives ? · Est-ce qu'il peut être dangereux pour l'homme ? · Est-ce qu'il a du venin ? · Est-ce qu'il tient dans la main d'un adulte ? · Est-ce qu'il est jaune ? · 🆕 Est-ce qu'il a des dents ? · 🆕 Est-ce qu'il se roule en boule pour se protéger ?
 
 ## 🐾 Porc-épic (`porcupine`)
 
@@ -953,8 +953,8 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 
 ## 🐔 Poule (`hen`)
 
-- **Oui** : Est-ce un oiseau ? · Est-ce qu'on l'élève dans les fermes ? · Est-ce qu'il a deux pattes ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il vit en groupe ? · Est-ce qu'il pond des œufs ? · Est-ce que les gens en mangent souvent ? · Est-ce qu'on mange ses œufs ? · 🆕 Est-ce qu'il a une crête ou une huppe sur la tête ?
-- **Ça dépend** : Est-ce un animal de compagnie ? · Est-ce qu'il peut voler ? · Est-ce qu'il est blanc ? · Est-ce qu'il est noir ? · Est-ce qu'il est orange ou roux ?
+- **Oui** : Est-ce un oiseau ? · Est-ce qu'on l'élève dans les fermes ? · Est-ce qu'il a deux pattes ? · Est-ce qu'il vit en groupe ? · Est-ce qu'il pond des œufs ? · Est-ce que les gens en mangent souvent ? · Est-ce qu'on mange ses œufs ? · 🆕 Est-ce qu'il a une crête ou une huppe sur la tête ?
+- **Ça dépend** : Est-ce un animal de compagnie ? · Est-ce qu'il peut voler ? · Est-ce qu'il est blanc ? · Est-ce qu'il est noir ? · Est-ce qu'il est orange ou roux ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il mange seulement des plantes ?
 
 ## 🐾 Puce (`flea`) 🆕 nouveau
 
@@ -964,7 +964,7 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 ## 🐆 Puma (`puma`)
 
 - **Oui** : Est-ce un mammifère ? · Est-ce qu'il vit en Amérique ? · Est-ce qu'il vit à la montagne ? · Est-ce qu'il a quatre pattes ? · Est-ce qu'il a des poils ou de la fourrure ? · Est-ce qu'il a une longue queue ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce un félin, de la famille du chat ? · Est-ce qu'il a des moustaches ? · 🆕 Est-ce qu'il a des dents ?
-- **Ça dépend** : Est-ce qu'il vit dans la forêt ? · Est-ce qu'il est plus grand ou plus long qu'un adulte ? · Est-ce qu'il est orange ou roux ? · Est-ce qu'il peut être dangereux pour l'homme ?
+- **Ça dépend** : Est-ce qu'il vit dans la forêt ? · Est-ce qu'il est plus grand ou plus long qu'un adulte ? · Est-ce qu'il est orange ou roux ? · Est-ce qu'il peut être dangereux pour l'homme ? · Est-ce qu'il court très vite ?
 
 ## 🐍 Python (`python`)
 
@@ -979,7 +979,7 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 ## 🐀 Rat (`rat`)
 
 - **Oui** : Est-ce un mammifère ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il a quatre pattes ? · Est-ce qu'il a des poils ou de la fourrure ? · Est-ce qu'il a une longue queue ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il vit en groupe ? · Est-ce un rongeur ? · Est-ce qu'il a des moustaches ? · Est-ce qu'il vit dans les égouts ? · 🆕 Est-ce qu'il a des dents ?
-- **Ça dépend** : Est-ce un animal de compagnie ? · Est-ce qu'il est noir ? · Est-ce qu'il est gris ? · Est-ce qu'il peut être dangereux pour l'homme ? · Est-ce qu'il vit surtout la nuit ? · Est-ce qu'on le trouve souvent dans les maisons ?
+- **Ça dépend** : Est-ce un animal de compagnie ? · Est-ce qu'il sait nager ? · Est-ce qu'il est noir ? · Est-ce qu'il est gris ? · Est-ce qu'il peut être dangereux pour l'homme ? · Est-ce qu'il vit surtout la nuit ? · Est-ce qu'on le trouve souvent dans les maisons ?
 
 ## 🦝 Raton laveur (`raccoon`)
 
@@ -1004,7 +1004,7 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 ## 🦈 Requin (`shark`)
 
 - **Oui** : Est-ce un poisson ? · Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il vit dans la mer ou au bord de la mer ? · Est-ce qu'il sait nager ? · Est-ce qu'il n'a pas de pattes du tout ? · Est-ce qu'il est gris ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il peut être dangereux pour l'homme ? · 🆕 Est-ce qu'il a des dents ? · 🆕 Est-ce qu'il mange des poissons ?
-- **Ça dépend** : Est-ce qu'il est plus grand ou plus long qu'un adulte ? · Est-ce qu'il a des écailles ? · Est-ce qu'il pond des œufs ?
+- **Ça dépend** : Est-ce qu'il est plus grand ou plus long qu'un adulte ? · Est-ce qu'il a des écailles ? · Est-ce qu'il est blanc ? · Est-ce qu'il pond des œufs ?
 
 ## 🦏 Rhinocéros (`rhino`)
 
@@ -1019,12 +1019,12 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 ## 🦎 Salamandre (`salamander`)
 
 - **Oui** : Est-ce un amphibien ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il vit dans la forêt ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il a quatre pattes ? · Est-ce qu'il a une longue queue ? · Est-ce qu'il a des taches ? · Est-ce qu'il est noir ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il vit surtout la nuit ? · Est-ce qu'il tient dans la main d'un adulte ?
-- **Ça dépend** : Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il vit dans ou au bord des rivières, des lacs ou des mares ? · Est-ce qu'il a des couleurs vives ? · Est-ce qu'il a du venin ? · Est-ce qu'il pond des œufs ? · Est-ce qu'il est jaune ? · 🆕 Est-ce qu'il a des dents ?
+- **Ça dépend** : Est-ce un reptile ? · Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il vit dans ou au bord des rivières, des lacs ou des mares ? · Est-ce qu'il a des couleurs vives ? · Est-ce qu'il a du venin ? · Est-ce qu'il pond des œufs ? · Est-ce qu'il est jaune ? · 🆕 Est-ce qu'il a des dents ?
 
 ## 🐗 Sanglier (`boar`)
 
-- **Oui** : Est-ce un mammifère ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il vit dans la forêt ? · Est-ce qu'il a quatre pattes ? · Est-ce qu'il a des poils ou de la fourrure ? · Est-ce qu'il a des sabots ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il a des défenses ? · 🆕 Est-ce qu'il a des dents ?
-- **Ça dépend** : Est-ce qu'il est noir ? · Est-ce qu'il peut être dangereux pour l'homme ? · Est-ce qu'il vit surtout la nuit ? · Est-ce qu'il vit en groupe ? · Est-ce que les gens en mangent souvent ?
+- **Oui** : Est-ce un mammifère ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il vit dans la forêt ? · Est-ce qu'il a quatre pattes ? · Est-ce qu'il a des poils ou de la fourrure ? · Est-ce qu'il a des sabots ? · Est-ce qu'il a des défenses ? · 🆕 Est-ce qu'il a des dents ?
+- **Ça dépend** : Est-ce qu'il est noir ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il mange seulement des plantes ? · Est-ce qu'il peut être dangereux pour l'homme ? · Est-ce qu'il vit surtout la nuit ? · Est-ce qu'il vit en groupe ? · Est-ce que les gens en mangent souvent ?
 
 ## 🐾 Sangsue (`leech`) 🆕 nouveau
 
@@ -1033,13 +1033,13 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 
 ## 🐟 Sardine (`sardine`) 🆕 nouveau
 
-- **Oui** : Est-ce un poisson ? · Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il vit dans la mer ou au bord de la mer ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il sait nager ? · Est-ce qu'il n'a pas de pattes du tout ? · Est-ce qu'il a des écailles ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il vit en groupe ? · Est-ce qu'il pond des œufs ? · Est-ce que les gens en mangent souvent ? · Est-ce qu'il tient dans la main d'un adulte ?
-- **Ça dépend** : Est-ce qu'il est gris ?
+- **Oui** : Est-ce un poisson ? · Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il vit dans la mer ou au bord de la mer ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il sait nager ? · Est-ce qu'il n'a pas de pattes du tout ? · Est-ce qu'il a des écailles ? · Est-ce qu'il vit en groupe ? · Est-ce qu'il pond des œufs ? · Est-ce que les gens en mangent souvent ? · Est-ce qu'il tient dans la main d'un adulte ?
+- **Ça dépend** : Est-ce qu'il est gris ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ?
 
 ## 🐟 Saumon (`salmon`)
 
 - **Oui** : Est-ce un poisson ? · Est-ce qu'il passe presque tout son temps dans l'eau ? · Est-ce qu'il vit dans la mer ou au bord de la mer ? · Est-ce qu'il vit dans ou au bord des rivières, des lacs ou des mares ? · Est-ce qu'il sait nager ? · Est-ce qu'il n'a pas de pattes du tout ? · Est-ce qu'il a des écailles ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il se déplace en sautant ? · Est-ce qu'il pond des œufs ? · Est-ce que les gens en mangent souvent ? · 🆕 Est-ce qu'il a des dents ? · 🆕 Est-ce qu'il mange des poissons ?
-- **Ça dépend** : Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il est gris ? · Est-ce qu'il est orange ou roux ?
+- **Ça dépend** : Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il est gris ? · Est-ce qu'il est orange ou roux ? · Est-ce qu'il est rose ?
 
 ## 🦗 Sauterelle (`grasshopper`)
 
@@ -1048,8 +1048,8 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 
 ## 🪲 Scarabée (`beetle`)
 
-- **Oui** : Est-ce un insecte ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il peut voler ? · Est-ce qu'il a six pattes ? · Est-ce qu'il a une carapace ou une coquille ? · Est-ce qu'il pond des œufs ? · Est-ce qu'il tient dans la main d'un adulte ?
-- **Ça dépend** : Est-ce qu'il a des couleurs vives ? · Est-ce qu'il est noir ? · 🆕 Est-ce qu'il est plus petit qu'une souris, sans compter la queue ?
+- **Oui** : Est-ce un insecte ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il peut voler ? · Est-ce qu'il a six pattes ? · Est-ce qu'il a une carapace ou une coquille ? · Est-ce qu'il est noir ? · Est-ce qu'il pond des œufs ? · Est-ce qu'il tient dans la main d'un adulte ?
+- **Ça dépend** : Est-ce qu'il a des couleurs vives ? · 🆕 Est-ce qu'il est plus petit qu'une souris, sans compter la queue ?
 
 ## 🦂 Scorpion (`scorpion`)
 
@@ -1088,8 +1088,8 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 
 ## 🐾 Taupe (`mole`)
 
-- **Oui** : Est-ce un mammifère ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il creuse un terrier ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il a quatre pattes ? · Est-ce qu'il a des poils ou de la fourrure ? · Est-ce qu'il est noir ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · 🆕 Est-ce qu'il a des dents ?
-- **Ça dépend** : Est-ce qu'il est gris ? · Est-ce qu'il vit surtout la nuit ? · Est-ce qu'il a des moustaches ? · Est-ce qu'il tient dans la main d'un adulte ?
+- **Oui** : Est-ce un mammifère ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il creuse un terrier ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il a quatre pattes ? · Est-ce qu'il a des poils ou de la fourrure ? · Est-ce qu'il est noir ? · 🆕 Est-ce qu'il a des dents ?
+- **Ça dépend** : Est-ce qu'il est gris ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il vit surtout la nuit ? · Est-ce un rongeur ? · Est-ce qu'il a des moustaches ? · Est-ce qu'il tient dans la main d'un adulte ?
 
 ## 🐂 Taureau (`bull`) 🆕 nouveau
 
@@ -1104,17 +1104,17 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 ## 🐅 Tigre (`tiger`)
 
 - **Oui** : Est-ce un mammifère ? · Est-ce qu'il vit en Asie ? · Est-ce qu'il vit dans la forêt ? · Est-ce qu'il est plus grand ou plus long qu'un adulte ? · Est-ce qu'il a quatre pattes ? · Est-ce qu'il a des poils ou de la fourrure ? · Est-ce qu'il a une longue queue ? · Est-ce qu'il a des rayures ? · Est-ce qu'il est orange ou roux ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ? · Est-ce qu'il peut être dangereux pour l'homme ? · Est-ce un félin, de la famille du chat ? · Est-ce qu'il a des moustaches ? · 🆕 Est-ce qu'il vit dans la jungle ? · 🆕 Est-ce qu'il a des dents ?
-- **Ça dépend** : Est-ce qu'il sait nager ? · Est-ce qu'il vit surtout la nuit ?
+- **Ça dépend** : Est-ce qu'il sait nager ? · Est-ce qu'il vit surtout la nuit ? · Est-ce qu'il court très vite ?
 
 ## 🐾 Tique (`tick`) 🆕 nouveau
 
-- **Oui** : Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il vit dans la forêt ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il a huit pattes ? · Est-ce qu'il peut être dangereux pour l'homme ? · Est-ce qu'il pond des œufs ? · Est-ce qu'il tient dans la main d'un adulte ? · Est-ce qu'il boit du sang ? · 🆕 Est-ce qu'il est plus petit qu'une souris, sans compter la queue ? · 🆕 Est-ce qu'il vit sur d'autres animaux ou sur les gens ?
-- **Ça dépend** : Est-ce qu'il vit à la montagne ? · Est-ce qu'il est noir ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ?
+- **Oui** : Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il vit dans la forêt ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il peut être dangereux pour l'homme ? · Est-ce qu'il pond des œufs ? · Est-ce qu'il tient dans la main d'un adulte ? · Est-ce qu'il boit du sang ? · 🆕 Est-ce qu'il est plus petit qu'une souris, sans compter la queue ? · 🆕 Est-ce qu'il vit sur d'autres animaux ou sur les gens ?
+- **Ça dépend** : Est-ce un insecte ? · Est-ce qu'il vit à la montagne ? · Est-ce qu'il a huit pattes ? · Est-ce qu'il est noir ? · Est-ce qu'il mange d'autres animaux, même des insectes ou des vers ?
 
 ## 🐢 Tortue (`tortoise`)
 
 - **Oui** : Est-ce un reptile ? · Est-ce qu'il a quatre pattes ? · Est-ce qu'il a une carapace ou une coquille ? · Est-ce qu'il mange seulement des plantes ? · Est-ce qu'il dort tout l'hiver ? · Est-ce qu'il pond des œufs ?
-- **Ça dépend** : Est-ce un animal de compagnie ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il vit en Afrique ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il a des écailles ?
+- **Ça dépend** : Est-ce un animal de compagnie ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il vit en Afrique ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il sait nager ? · Est-ce qu'il a des écailles ? · Est-ce qu'il est vert ?
 
 ## 🐢 Tortue de mer (`sea_turtle`)
 
@@ -1134,7 +1134,7 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 ## 🐄 Vache (`cow`)
 
 - **Oui** : Est-ce un mammifère ? · Est-ce qu'on l'élève dans les fermes ? · Est-ce qu'il est plus grand ou plus long qu'un adulte ? · Est-ce qu'il a quatre pattes ? · Est-ce qu'il a des poils ou de la fourrure ? · Est-ce qu'il a des cornes ou des bois ? · Est-ce qu'il a des sabots ? · Est-ce qu'il mange seulement des plantes ? · Est-ce qu'il vit en groupe ? · Est-ce que les gens en mangent souvent ? · Est-ce qu'on boit son lait ? · 🆕 Est-ce qu'il a des dents ?
-- **Ça dépend** : Est-ce qu'il a une longue queue ? · Est-ce qu'il a des taches ? · Est-ce qu'il est noir et blanc ? · Est-ce qu'il est blanc ? · Est-ce qu'il est noir ?
+- **Ça dépend** : Est-ce qu'il a une longue queue ? · Est-ce qu'il a des taches ? · Est-ce qu'il est noir et blanc ? · Est-ce qu'il est blanc ? · Est-ce qu'il est noir ? · Est-ce qu'il est orange ou roux ?
 
 ## 🦅 Vautour (`vulture`) 🆕 nouveau
 
@@ -1144,7 +1144,7 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 ## 🪱 Ver de terre (`earthworm`)
 
 - **Oui** : Est-ce qu'il a un corps mou, sans os ? · Est-ce qu'on peut le voir en liberté dans la nature en France ? · Est-ce qu'il creuse un terrier ? · Est-ce qu'il est plus petit qu'un chat ? · Est-ce qu'il n'a pas de pattes du tout ? · Est-ce qu'il tient dans la main d'un adulte ?
-- **Ça dépend** : Est-ce qu'il pond des œufs ? · 🆕 Est-ce qu'il est plus petit qu'une souris, sans compter la queue ?
+- **Ça dépend** : Est-ce qu'il pond des œufs ? · Est-ce qu'il est rose ? · 🆕 Est-ce qu'il est plus petit qu'une souris, sans compter la queue ?
 
 ## 🐍 Vipère (`viper`)
 
@@ -1164,4 +1164,4 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 ## 🦓 Zèbre (`zebra`)
 
 - **Oui** : Est-ce un mammifère ? · Est-ce qu'il vit en Afrique ? · Est-ce qu'il a quatre pattes ? · Est-ce qu'il a des poils ou de la fourrure ? · Est-ce qu'il a une crinière ? · Est-ce qu'il a des sabots ? · Est-ce qu'il a des rayures ? · Est-ce qu'il est noir et blanc ? · Est-ce qu'il mange seulement des plantes ? · Est-ce qu'il vit en groupe ? · 🆕 Est-ce qu'il vit dans la savane ? · 🆕 Est-ce qu'il a des dents ?
-- **Ça dépend** : Est-ce qu'il est plus grand ou plus long qu'un adulte ? · Est-ce qu'il a une longue queue ? · Est-ce qu'il court très vite ?
+- **Ça dépend** : Est-ce qu'il est plus grand ou plus long qu'un adulte ? · Est-ce qu'il a une longue queue ? · Est-ce qu'il est blanc ? · Est-ce qu'il est noir ? · Est-ce qu'il court très vite ?

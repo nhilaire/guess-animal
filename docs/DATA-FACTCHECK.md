@@ -58,3 +58,26 @@ elephant and not seen from French coasts; orca not bigger than an elephant; dolp
 active at night; sea anemone brightly coloured; pike green and spotted; eel nocturnal and not longer than an adult;
 salmon jumps; trout in mountains and farmed; dove not in flocks; quail speckled, its eggs eaten; leopard gecko is a
 pet; poisson-chat black and native to America.
+
+## Trap facts (after the phone test, 2026-10-13)
+
+After the user's phone test (coq → moineau → flamant rose proposed in a row), an agent listed facts that are correct
+but that many children answer the other way. 117 cells were set to « variable » (applied with the engine change:
+answers likelihood 0.90, at least 3 questions after a wrong proposal, question cap +5 per miss). Main groups:
+
+- black-and-white animals (zèbre, panda, manchot, orque, pie, mouffette, hirondelle, macareux): « noir ? » and
+  « blanc ? » → variable;
+- poultry and game birds (poule, coq, dinde, canard, caille, faisan, pintade): « mange d'autres animaux » /
+  « seulement des plantes » → variable; the rooster « pond des œufs » → variable;
+- omnivores pictured as plant eaters (sanglier, hérisson, chimpanzé, mandrill, ouistiti, geai, taupe, chauve-souris);
+- classic confusions: lapin / lièvre / taupe / hérisson « rongeur », hyène « famille du chien », chauve-souris
+  « oiseau », hippocampe / anguille « poisson », tique / cloporte / mille-pattes « insecte », salamandre « reptile »;
+- speed, swimming, danger and venom of well-known animals (fauves « court très vite », tortue / homard / rat « nage »,
+  araignée / oursin « dangereux », fourmi / moustique / pieuvre / anaconda « venin »);
+- colours and sizes children see differently (requin blanc, vache rousse, crevette / saumon roses, poisson rouge
+  coloré…).
+
+Kept as yes/no (visually obvious, and needed so that every pair still differs on 2 questions, AC-04): gorilla and
+chimpanzee without a long tail, gorilla on the ground and bigger than an adult, python without venom, seal with fur,
+crab walking rather than swimming, beaver in France, green woodpecker (pic vert) green, orca black, jellyfish
+swimming, typical scarab black.

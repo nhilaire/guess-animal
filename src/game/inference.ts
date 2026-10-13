@@ -2,11 +2,13 @@
 // seeded generator kept in the game state (variety mode); without a seed the engine is fully deterministic.
 import { Fact, GameData } from './types';
 
-export const P_YES: Record<Fact, number> = { y: 0.95, n: 0.05, v: 0.5 };
+export const P_YES: Record<Fact, number> = { y: 0.9, n: 0.1, v: 0.5 };
 export const PROPOSE_THRESHOLD = 0.85;
 export const MAX_QUESTIONS = 20;
 export const MIN_GAIN_BITS = 0.01;
 export const MAX_WRONG_GUESSES = 3;
+export const MIN_QUESTIONS_AFTER_MISS = 3;
+export const EXTRA_QUESTIONS_PER_MISS = 5;
 export const VARIETY_RATIO = 0.85;
 export const VARIETY_CANDIDATES = 3;
 
@@ -22,6 +24,7 @@ type Core = {
   questionsAnswered: number;
   wrongGuesses: number;
   rng: number | null; // mulberry32 state (variety mode) or null (deterministic mode)
+  lastMissAt: number | null; // questionsAnswered at the last wrong proposal
 };
 
 // `history` holds the states before each answer since the last proposal, for undo.
@@ -122,7 +125,10 @@ function chooseQuestion(data: GameData, c: Core): { q: number; gain: number; rng
 function advance(data: GameData, c: Core): Core {
   const top = topAnimal(c);
   if (top < 0) return { ...c, phase: 'gaveUp', current: -1 };
-  if (c.weights[top] >= PROPOSE_THRESHOLD || c.questionsAnswered >= MAX_QUESTIONS) {
+  // After a wrong proposal: a few more questions before proposing again, and a larger question budget.
+  const cap = MAX_QUESTIONS + EXTRA_QUESTIONS_PER_MISS * c.wrongGuesses;
+  const mayPropose = c.lastMissAt === null || c.questionsAnswered - c.lastMissAt >= MIN_QUESTIONS_AFTER_MISS;
+  if ((c.weights[top] >= PROPOSE_THRESHOLD && mayPropose) || c.questionsAnswered >= cap) {
     return { ...c, phase: 'proposal', current: top };
   }
   const { q, gain, rng } = chooseQuestion(data, c);
@@ -147,6 +153,7 @@ export function newGame(data: GameData, seed?: number): GameState {
     questionsAnswered: 0,
     wrongGuesses: 0,
     rng: seed === undefined ? null : seed >>> 0,
+    lastMissAt: null,
   };
   return { ...advance(data, start), history: [] };
 }
@@ -176,7 +183,7 @@ export function answerProposal(data: GameData, s: GameState, correct: boolean): 
   discarded[s.current] = true;
   const weights = normalise(s.weights.map((w, i) => (discarded[i] ? 0 : w)));
   const wrongGuesses = s.wrongGuesses + 1;
-  const c: Core = { ...core(s), weights, discarded, wrongGuesses };
+  const c: Core = { ...core(s), weights, discarded, wrongGuesses, lastMissAt: s.questionsAnswered };
   if (wrongGuesses >= MAX_WRONG_GUESSES) return { ...c, phase: 'gaveUp', history: [] };
   return { ...advance(data, c), history: [] };
 }

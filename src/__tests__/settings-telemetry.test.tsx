@@ -76,7 +76,7 @@ describe('telemetry calls (AC-20, AC-21)', () => {
     }
     await fireEvent.press(screen.getByTestId('pick-bee'));
     const events = logged();
-    expect(events).toContainEqual(['game_end', { result: 'given_up', questions: 20, wrong_guesses: 3 }]);
+    expect(events).toContainEqual(['game_end', { result: 'given_up', questions: 30, wrong_guesses: 3 }]); // 20 + 5 + 5 (cap grows after each miss)
     expect(events).toContainEqual(['animal_missed', { animal: 'bee' }]);
   });
 
