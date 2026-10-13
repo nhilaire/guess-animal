@@ -271,7 +271,9 @@ Business and technical indicators followed in Firebase (free Spark plan). Detail
 - AC-29 [manual] Given the data review sheet, when the user reviews at least 30 animals across all questions (from
   v0.2.0: at least 30 of the new animals, with all questions including the new ones; new animals and questions are
   marked in docs/DATA-REVIEW.md, and the independent fact-check findings are recorded in docs/DATA-FACTCHECK.md with
-  their corrections applied before the review), then
+  their corrections applied before the review).
+  User decision 2026-10-13 for v0.2.0: the sheet review of the new animals is replaced by the user playing the new
+  animals on the phone during the release test (AC-29 is then proven together with AC-30). Then
   every correction is applied and the user confirms the data are right.
 - AC-30 [manual] Given the release APK on the user's phone, when a game is played with sound on, then the voice is
   natural and intelligible and the game is fun for the family.
