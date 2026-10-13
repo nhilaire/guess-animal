@@ -37,7 +37,7 @@ Result is `PASS`, `FAIL` or `NOT PROVEN`. Evidence must be a concrete pointer (t
 | AC-26 | victory/give-up effects and vibration follow the sound/vibration settings | unit | feedback.test.tsx "victory: win effect, victory line and a vibration when both are on", "give up: lose effect, both lines chained and a vibration", "nothing when sound and vibrations are off"; jest.txt PASS | PASS |
 | AC-27 | no-break spaces before ! ? : ; and inside « » in fr.ts, questions and manifest | unit | typography.test.ts "fr.ts strings use no-break spaces", "question texts and proposal sentences use no-break spaces"; audio-manifest.test.ts "spoken texts follow French typography (AC-27)"; jest.txt PASS | PASS |
 | AC-28 | user confirms the voice from samples before all audio is generated | manual | docs/PLAN.md: user chose fr-FR-DeniseNeural on 2026-10-11 (eacb512); scripts/tts.mjs DEFAULT_VOICE = 'fr-FR-DeniseNeural'; no voice assets changed since | PASS |
-| AC-29 | v0.2.0: user judges the new animals (fact-check applied first) and confirms the data | manual | docs/DATA-FACTCHECK.md: fact-check and "Trap facts" applied. docs/DATA-REVIEW.md "v0.2.0 new animals reviewed: 0"; user decision of 2026-10-13: judged on the phone at release | PENDING RELEASE |
-| AC-30 | on the user's phone the voice is natural and the game is fun | manual | v0.2.0 has not been played on the phone yet | PENDING RELEASE |
+| AC-29 | v0.2.0: user judges the new animals (fact-check applied first) and confirms the data | manual | docs/DATA-FACTCHECK.md: fact-check and "Trap facts" applied. User decision of 2026-10-13: the new animals are judged on the phone; on 2026-10-13 the user played v0.2.0 (arm64 APK sha256 4da51cc3…, commit 3c23197) including new animals and accepted it | PASS (phone test 2026-10-13) |
+| AC-30 | on the user's phone the voice is natural and the game is fun | manual | user played v0.2.0 on the phone on 2026-10-13 (arm64 APK sha256 4da51cc3…, commit 3c23197) and accepted it | PASS (phone test 2026-10-13) |
 
-SUMMARY: 32 PASS, 0 FAIL, 0 NOT PROVEN, 2 PENDING RELEASE
+SUMMARY: 34 PASS, 0 FAIL, 0 NOT PROVEN, 0 PENDING RELEASE

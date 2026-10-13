@@ -11,7 +11,7 @@ answered **Non**. To review: read each block and note any answer a child or a pa
 | v0.1 data (146 animals, 89 questions) reviewed by the user | yes, 2026-10-12: the user confirmed in the session that they reviewed 30 or more animals and found nothing to correct |
 | v0.1 animals reviewed | 30 or more (user statement) |
 | v0.1 corrections applied | 0 |
-| v0.2.0 new animals and questions reviewed by the user | no: on 2026-10-13 the user chose not to review the sheet and to judge the new animals by playing on the phone (release test) instead |
+| v0.2.0 new animals and questions reviewed by the user | not on this sheet: on 2026-10-13 the user chose to judge the new animals by playing on the phone, and accepted v0.2.0 after the phone test the same day |
 | v0.2.0 new animals reviewed | 0 |
 | v0.2.0 corrections applied | 0 |
 
