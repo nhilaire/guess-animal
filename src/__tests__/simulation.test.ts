@@ -43,10 +43,10 @@ describe.each(MODES)('player with one wrong answer, $name (AC-12)', ({ name, see
 });
 
 describe('variety on the real data (AC-31)', () => {
-  it('over 20 seeds the opening question takes at least 2 different values', () => {
+  it('over 20 seeds the opening question takes at least 4 different values', () => {
     const openings = new Set(Array.from({ length: 20 }, (_, k) => newGame(data, 1000 + k).current));
     console.log(`opening questions over 20 seeds: ${[...openings].map((q) => data.questions[q].id).join(', ')}`);
-    expect(openings.size).toBeGreaterThanOrEqual(2);
+    expect(openings.size).toBeGreaterThanOrEqual(4);
   });
 });
 

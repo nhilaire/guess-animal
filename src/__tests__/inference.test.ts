@@ -1,5 +1,7 @@
 import {
   MAX_QUESTIONS,
+  VARIETY_CANDIDATES,
+  VARIETY_RATIO,
   answerProposal,
   answerQuestion,
   entropy,
@@ -283,15 +285,15 @@ describe('variety mode (AC-31, AC-10, v0.2.0)', () => {
     })),
   };
 
-  it('draws among at most 3 questions within 85 % of the best gain', () => {
+  it('draws among at most VARIETY_CANDIDATES questions within VARIETY_RATIO of the best gain', () => {
     const det = newGame(many);
     const gains = many.questions.map((_, q) => expectedGain(many, det.weights, q));
     const best = Math.max(...gains);
     const ranked = gains
       .map((g, q) => ({ g, q }))
-      .filter((x) => x.g >= 0.85 * best)
+      .filter((x) => x.g >= VARIETY_RATIO * best)
       .sort((a, b) => (Math.abs(b.g - a.g) > 1e-12 ? b.g - a.g : a.q - b.q))
-      .slice(0, 3)
+      .slice(0, VARIETY_CANDIDATES)
       .map((x) => x.q);
     const seen = new Set<number>();
     for (let seed = 1; seed <= 40; seed++) {

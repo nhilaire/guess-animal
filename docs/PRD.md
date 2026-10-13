@@ -103,10 +103,10 @@ flowchart LR
   a child gives differently from the data).
 - Next question: among questions not yet asked (a question answered « Je ne sais pas » counts as asked and is never
   asked again), ranked by expected information gain on the current weights (entropy before minus expected entropy
-  after Oui / Non). Variety (v0.2.0): the candidates are the unasked questions whose gain is ≥ 85 % of the best gain,
-  keeping at most the 3 best; the question is drawn uniformly among them with the game's random generator (seeded
+  after Oui / Non). Variety (v0.2.0): the candidates are the unasked questions whose gain is ≥ 50 % of the best gain,
+  keeping at most the 6 best (user choice 2026-10-13, was 85 % / 3: more varied games for about 1 more question); the question is drawn uniformly among them with the game's random generator (seeded
   per game, injected so that tests are reproducible). Candidates are ranked by gain, ties broken by the earlier
-  position in `data/questions.csv`, compared with 0.85 × best gain without rounding. In variety mode a new seed is
+  position in `data/questions.csv`, compared with 0.5 × best gain without rounding. In variety mode a new seed is
   taken from Math.random at each game start (Jouer / Rejouer). The generator state is part of the game state: undo
   restores it and it survives background / resume. In deterministic mode (tests and e2e flows) the best question
   is taken, ties going to the earliest question in the data file. Opening the deep link `guessanimal://deterministic`
@@ -217,9 +217,9 @@ Business and technical indicators followed in Firebase (free Spark plan). Detail
 - AC-07 [unit] Given a state in deterministic mode, when the next question is chosen, then it is the unasked question
   with the highest expected information gain, ties going to the earliest question in the data; a question answered
   « Je ne sais pas » is never chosen again (in any mode).
-- AC-31 [unit] Given a state in variety mode, when the next question is chosen, then it is one of at most 3 unasked
-  questions whose gain is ≥ 85 % of the best; the same seed gives the same game; over 20 seeds the opening question
-  takes at least 2 different values.
+- AC-31 [unit] Given a state in variety mode, when the next question is chosen, then it is one of at most 6 unasked
+  questions whose gain is ≥ 50 % of the best; the same seed gives the same game; over 20 seeds the opening question
+  takes at least 4 different values.
 - AC-08 [unit] Given a state with no wrong proposal yet, when the top weight is ≥ 0.85, or 20 questions are answered,
   or no question gains > 0.01 bit, then the engine proposes the top animal; otherwise it asks a question.
 - AC-09 [unit] Given a wrong proposal, when « Non » is answered, then the animal is discarded and the game continues

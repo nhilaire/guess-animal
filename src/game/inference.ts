@@ -9,8 +9,8 @@ export const MIN_GAIN_BITS = 0.01;
 export const MAX_WRONG_GUESSES = 3;
 export const MIN_QUESTIONS_AFTER_MISS = 3;
 export const EXTRA_QUESTIONS_PER_MISS = 5;
-export const VARIETY_RATIO = 0.85;
-export const VARIETY_CANDIDATES = 3;
+export const VARIETY_RATIO = 0.5;
+export const VARIETY_CANDIDATES = 6;
 
 export type Answer = 'yes' | 'no' | 'dontKnow';
 export type Phase = 'question' | 'proposal' | 'found' | 'gaveUp';
@@ -109,7 +109,7 @@ function rankedQuestions(data: GameData, c: Core): { q: number; gain: number }[]
   return out.sort((a, b) => (Math.abs(b.gain - a.gain) > 1e-12 ? b.gain - a.gain : a.q - b.q));
 }
 
-// Deterministic mode: the best question. Variety mode: drawn among at most 3 questions within 85 % of the best.
+// Deterministic mode: the best question. Variety mode: drawn among at most 6 questions within 50 % of the best.
 function chooseQuestion(data: GameData, c: Core): { q: number; gain: number; rng: number | null } {
   const ranked = rankedQuestions(data, c);
   if (ranked.length === 0) return { q: -1, gain: 0, rng: c.rng };
