@@ -4,7 +4,7 @@ Status: approved
 Project slug: guess-animal
 Final app name: Devine l'Animal
 Android package: io.github.nhilaire.guessanimal
-Version target: 0.2.0
+Version target: 0.2.1
 Last updated: 2026-10-12
 
 > Written in English. Player-facing French copy is quoted in the "French copy" section.
@@ -147,6 +147,9 @@ flowchart LR
 
 - Style: bright, friendly flat colours, large rounded buttons (Oui green with ✓, Non red with ✗, Je ne sais pas grey
   with ?): icon and text together, never colour alone. Large readable font. Portrait only.
+- App icon and splash (v0.2.1, user request 2026-10-13): the cat and magnifier of the earlier prototype's logo
+  (AI-generated for the author), without its « TROUVE ANIMAL » text, on yellow; Android adaptive icon with a
+  monochrome layer; the splash shows the same image on the game background (Android 12+ always shows a splash).
 - Animals: Unicode emoji + French display name; 🐾 when no emoji fits. No copyrighted images.
 - Voice: every question, every proposal sentence (« J'ai trouvé ! C'est la girafe ? ») and the fixed sentences (pitch,
   victory, give up, list prompt, thanks) are pre-recorded audio files with the fr-FR-DeniseNeural voice from Azure Speech

@@ -31,6 +31,7 @@ Format: `- [ ] T-01 Title (AC-01, AC-02) - proof: unit|e2e|device`. Check the bo
 - [x] T-24 Voice clips for new questions and proposals, same voice (AC-13, AC-27, AC-28) - proof: unit
 - [x] T-25 Regenerate e2e flows, APK size < 40 MB check (AC-23, AC-24) - proof: device
 - [x] T-26 After the phone test: no proposals in a row (3 questions after a miss, cap +5 per miss), answers likelihood 0.90, trap facts set to variable, wider variety (6 best within 50 %) (AC-06, AC-08, AC-09, AC-31, AC-34) - proof: unit
+- [x] T-27 v0.2.1 app icon and splash from the earlier prototype logo (cat + magnifier, no text) (AC-30) - proof: device
 
 ## Notes
 
