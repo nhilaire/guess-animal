@@ -118,3 +118,34 @@ describe('game screens', () => {
     expect(screen.getByText('Question 1')).toBeTruthy();
   });
 });
+
+describe('background and resume keep the draws (AC-25, v0.2.0)', () => {
+  it('a paused game shows the same next questions as an uninterrupted one with the same seed', async () => {
+    const random = jest.spyOn(Math, 'random').mockReturnValue(0.4242);
+    const listeners: ((s: AppStateStatus) => void)[] = [];
+    const spy = jest.spyOn(AppState, 'addEventListener').mockImplementation((_type, fn) => {
+      listeners.push(fn as (s: AppStateStatus) => void);
+      return { remove: () => {} } as ReturnType<typeof AppState.addEventListener>;
+    });
+    const sequence = async (pause: boolean) => {
+      await startGame();
+      const ids = [currentQuestionId()];
+      for (let i = 0; i < 3; i++) {
+        if (pause && i === 1) {
+          await act(async () => listeners.forEach((l) => l('background')));
+          await act(async () => listeners.forEach((l) => l('active')));
+        }
+        await fireEvent.press(screen.getByTestId('answer-yes'));
+        ids.push(currentQuestionId());
+      }
+      screen.unmount();
+      await AsyncStorage.clear();
+      return ids;
+    };
+    const plain = await sequence(false);
+    const paused = await sequence(true);
+    expect(paused).toEqual(plain);
+    spy.mockRestore();
+    random.mockRestore();
+  });
+});

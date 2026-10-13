@@ -8,6 +8,7 @@ import {
   normalise,
   undo,
 } from '../game/inference';
+import { GAME_DATA } from '../game/data.generated';
 import { Fact, GameData } from '../game/types';
 
 // Tiny fixture: 4 questions, 5 animals.
@@ -301,5 +302,20 @@ describe('variety mode (AC-31, AC-10, v0.2.0)', () => {
     const back = answerQuestion(many, undo(after), 'no');
     expect(back.current).toBe(after.current);
     expect(back.rng).toBe(after.rng);
+  });
+});
+
+describe('variety mode keeps the rules (AC-07)', () => {
+  it('never asks again a question answered Je ne sais pas, whatever the seed', () => {
+    for (let seed = 1; seed <= 30; seed++) {
+      let s = newGame(GAME_DATA, seed);
+      const dontKnow = new Set<number>();
+      let guard = 0;
+      while (s.phase === 'question' && guard++ < 25) {
+        expect(dontKnow.has(s.current)).toBe(false);
+        dontKnow.add(s.current);
+        s = answerQuestion(GAME_DATA, s, 'dontKnow');
+      }
+    }
   });
 });

@@ -190,7 +190,8 @@ Business and technical indicators followed in Firebase (free Spark plan). Detail
 ## Non-functional requirements
 
 - Performance: smooth on a mid-range Android phone, cold start < 3 s, next question shown < 100 ms after an answer.
-- APK size (arm64): < 40 MB, audio included.
+- APK size (arm64): < 45 MB (decimal: 45 000 000 bytes), audio included. Raised from 40 MB by the user on 2026-10-13
+  (v0.2.0 arm64 APK: 40 426 388 bytes) to keep voice quality and room for more animals.
 - Works fully offline (airplane mode): every screen and every audio file. No account. No ads.
 - Permissions: no microphone (RECORD_AUDIO), no AD_ID; only what the stack and opt-in telemetry need.
 - Android: minSdk from the stack defaults; portrait only.
@@ -252,7 +253,7 @@ Business and technical indicators followed in Firebase (free Spark plan). Detail
 - AC-22 [device] Given consent accepted on the emulator, when a game is played to the end, then `game_start` and
   `game_end` appear in logcat with no identifier.
 - AC-23 [device] Given the release APK, when its manifest is inspected, then it has neither RECORD_AUDIO nor AD_ID
-  permission and the arm64 release APK is < 40 MB; when the app is played in airplane mode, every e2e flow passes.
+  permission and the arm64 release APK is < 45 000 000 bytes; when the app is played in airplane mode, every e2e flow passes.
 - AC-24 [device] Given the release APK on the emulator, when it is cold started, then the first screen is shown in
   < 3 s, and no crash appears in logcat during the e2e flows.
 - AC-25 [unit] Given a game in progress, when the app goes to background and comes back, then the same question and
