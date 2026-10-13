@@ -346,3 +346,25 @@ describe('variety mode keeps the rules (AC-07)', () => {
     }
   });
 });
+
+describe('variety rule on the real data (AC-31, v0.2.0)', () => {
+  it('opening questions are always among the 6 best with gain >= 50 % of the best, and the cap is exercised', () => {
+    const det = newGame(GAME_DATA);
+    const ranked = GAME_DATA.questions
+      .map((_, q) => ({ q, g: expectedGain(GAME_DATA, det.weights, q) }))
+      .sort((a, b) => (Math.abs(b.g - a.g) > 1e-12 ? b.g - a.g : a.q - b.q));
+    const best = ranked[0].g;
+    const aboveRatio = ranked.filter((x) => x.g >= VARIETY_RATIO * best);
+    const eligible = new Set(aboveRatio.slice(0, VARIETY_CANDIDATES).map((x) => x.q));
+    // Both limits are exercised: more questions pass the 50 % threshold than the cap keeps, and some fail it.
+    expect(aboveRatio.length).toBeGreaterThan(VARIETY_CANDIDATES);
+    expect(ranked.length).toBeGreaterThan(aboveRatio.length);
+    const drawn = new Set<number>();
+    for (let seed = 1; seed <= 300; seed++) {
+      const q = newGame(GAME_DATA, seed).current;
+      expect(eligible.has(q)).toBe(true);
+      drawn.add(q);
+    }
+    expect(drawn.size).toBe(VARIETY_CANDIDATES); // every eligible question is drawn at some point
+  });
+});
