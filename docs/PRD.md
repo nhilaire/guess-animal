@@ -4,7 +4,7 @@ Status: approved
 Project slug: guess-animal
 Final app name: Devine l'Animal
 Android package: io.github.nhilaire.guessanimal
-Version target: 0.2.1
+Version target: 0.2.2
 Last updated: 2026-10-12
 
 > Written in English. Player-facing French copy is quoted in the "French copy" section.
