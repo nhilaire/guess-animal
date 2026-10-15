@@ -4,7 +4,7 @@ Status: approved
 Project slug: guess-animal
 Final app name: Devine l'Animal
 Android package: io.github.nhilaire.guessanimal
-Version target: 0.2.2
+Version target: 0.2.3
 Last updated: 2026-10-12
 
 > Written in English. Player-facing French copy is quoted in the "French copy" section.
@@ -49,7 +49,10 @@ still possible, and the game tolerates a wrong answer. Pitch: « Salut ! Je vais
 ## Screens
 
 - **Consent** (first launch only): explains the anonymous statistics; « Accepter » and « Refuser » equally visible.
-- **Home**: title, pitch « Salut ! Je vais lire dans tes pensées. Pense à un animal… », buttons « Jouer » and « Paramètres ».
+- **Home**: title, pitch « Salut ! Je vais lire dans tes pensées. Pense à un animal… », buttons « Jouer », « Paramètres » and
+  « À propos » (v0.2.3).
+- **About** (« À propos », v0.2.3): the story of the game, « Un mot de l'auteur » (made on free time by a passionate
+  developer, bugs possible, thanks for indulgence), « Tes données », version; « Retour » and Android back to Home.
 - **Question** (game): counter « Question 3 », the question text (large), buttons « Oui », « Non »,
   « Je ne sais pas »; secondary buttons « Réécouter » and « Revenir » (« Revenir » disabled before the first answer).
   Android back returns to Home (the game is abandoned).
@@ -284,6 +287,9 @@ Business and technical indicators followed in Firebase (free Spark plan). Detail
   User decision 2026-10-13 for v0.2.0: the sheet review of the new animals is replaced by the user playing the new
   animals on the phone during the release test (AC-29 is then proven together with AC-30). Then
   every correction is applied and the user confirms the data are right.
+- AC-35 [e2e] Given Home, when « À propos » is tapped, then the About screen shows « L'histoire de ce jeu » with the
+  electronic-toy story, « Un mot de l'auteur » (développeur passionné, bugs possible), « Tes données » and the app
+  version; « Retour » goes back to Home.
 - AC-30 [manual] Given the release APK on the user's phone, when a game is played with sound on, then the voice is
   natural and intelligible and the game is fun for the family.
 
@@ -320,6 +326,15 @@ Tone: tu. French typography: no-break space before « : ; ! ? » and inside « �
 | settings.sound | Son |
 | settings.vibrations | Vibrations |
 | settings.stats | Statistiques anonymes |
+| home.about | À propos |
+| about.title | À propos |
+| about.storyTitle | L'histoire de ce jeu |
+| about.story | Enfant, j'avais un petit jeu électronique qui devinait à quel animal on pensait, rien qu'en posant des questions. Ça me paraissait magique. Il a disparu depuis longtemps : j'ai voulu le recréer, en mieux, pour y jouer avec mes enfants. |
+| about.authorTitle | Un mot de l'auteur |
+| about.author | Ce jeu ne sort pas d'un studio : je l'ai imaginé et programmé sur mon temps libre, en développeur passionné, sans prétention. Il est donc perfectible et sans doute pas exempt de bugs. Si je ne trouve pas ton animal ou si une question te paraît bizarre, merci d'avance pour ton indulgence. Et surtout : amuse-toi bien ! |
+| about.dataTitle | Tes données |
+| about.data | Aucun compte, aucune publicité. Des statistiques anonymes (parties jouées, animaux trouvés ou non, plantages) ne sont envoyées que si tu l'as accepté. Tu peux changer d'avis dans les paramètres. |
+| about.version | Version {version} |
 
 `{animal}` is the spoken name with article (« la girafe »); `{n}` is a number.
 
@@ -348,6 +363,9 @@ Amendment 2026-10-12, version 0.2.0 (requested by the user): more variety and mo
 - The new animals and questions get a fact-check by an independent agent, then a review by the user of at least 30 of
   the new animals (AC-29 applies to them); the voice clips of new questions and proposals are generated with the
   same voice (AC-28 unchanged).
+
+Amendment 2026-10-15, version 0.2.3 (requested by the user, texts approved by the user): « À propos » screen from
+Home with the story of the game, a word from the author and the player's data. New AC-35.
 
 ## Out of scope
 

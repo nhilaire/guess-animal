@@ -6,6 +6,7 @@ import { handleLink } from './game/mode';
 import { ConsentScreen } from './screens/ConsentScreen';
 import { GameScreen } from './screens/GameScreen';
 import { HomeScreen } from './screens/HomeScreen';
+import { AboutScreen } from './screens/AboutScreen';
 import { SettingsScreen } from './screens/SettingsScreen';
 import { DEFAULT_SETTINGS, Settings, loadSettings, saveSettings } from './storage/settings';
 import { Consent, loadConsent, saveConsent } from './telemetry/consentStore';
@@ -13,7 +14,7 @@ import { applyConsent } from './telemetry/telemetry';
 import { ErrorBoundary } from './ui/ErrorBoundary';
 import { colors } from './ui/theme';
 
-type Route = 'home' | 'game' | 'settings';
+type Route = 'home' | 'game' | 'settings' | 'about';
 
 export default function App() {
   const [consent, setConsentState] = useState<Consent | 'loading'>('loading');
@@ -65,6 +66,8 @@ export default function App() {
     content = <ConsentScreen onDecision={decide} />;
   } else if (route === 'game') {
     content = <GameScreen settings={settings} onExit={() => setRoute('home')} />;
+  } else if (route === 'about') {
+    content = <AboutScreen onBack={() => setRoute('home')} />;
   } else if (route === 'settings') {
     content = (
       <SettingsScreen
@@ -76,7 +79,7 @@ export default function App() {
       />
     );
   } else {
-    content = <HomeScreen sound={settings.sound} onPlay={() => setRoute('game')} onSettings={() => setRoute('settings')} />;
+    content = <HomeScreen sound={settings.sound} onPlay={() => setRoute('game')} onSettings={() => setRoute('settings')} onAbout={() => setRoute('about')} />;
   }
 
   return (

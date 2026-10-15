@@ -1,0 +1,30 @@
+appId: io.github.nhilaire.guessanimal
+name: About screen tells the story, the word from the author and the version (AC-35)
+tags:
+  - e2e
+---
+- launchApp:
+    clearState: true
+- extendedWaitUntil:
+    visible:
+      id: "consent-screen"
+    timeout: 15000
+- tapOn:
+    id: "consent-refuse"
+- tapOn:
+    id: "home-about"
+- assertVisible:
+    id: "about-screen"
+- assertVisible: "L'histoire de ce jeu"
+- assertVisible: ".*petit jeu électronique.*"
+- assertVisible: "Un mot de l'auteur"
+- takeScreenshot: 50-about
+- scrollUntilVisible:
+    element: "Version 0.2.3"
+    timeout: 20000
+- assertVisible: "Version 0.2.3"
+- takeScreenshot: 51-about-end
+- tapOn:
+    id: "about-back"
+- assertVisible:
+    id: "home-screen"

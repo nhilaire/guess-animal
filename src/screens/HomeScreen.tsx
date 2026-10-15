@@ -8,9 +8,9 @@ import { Button } from '../ui/Button';
 import { Screen } from '../ui/Screen';
 import { colors, font, spacing } from '../ui/theme';
 
-type Props = { sound: boolean; onPlay: () => void; onSettings: () => void };
+type Props = { sound: boolean; onPlay: () => void; onSettings: () => void; onAbout: () => void };
 
-export function HomeScreen({ sound, onPlay, onSettings }: Props) {
+export function HomeScreen({ sound, onPlay, onSettings, onAbout }: Props) {
   // The pitch is spoken for players who cannot read yet.
   useEffect(() => {
     if (!sound) return;
@@ -31,6 +31,7 @@ export function HomeScreen({ sound, onPlay, onSettings }: Props) {
       </View>
       <Button label={fr.home.play} onPress={onPlay} large testID="home-play" />
       <Button label={fr.home.settings} onPress={onSettings} variant="secondary" testID="home-settings" />
+      <Button label={fr.home.about} onPress={onAbout} variant="secondary" testID="home-about" />
     </Screen>
   );
 }

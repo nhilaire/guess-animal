@@ -1,4 +1,4 @@
-# Plan: Devine l'Animal v0.1.0
+# Plan: Devine l'Animal v0.2.3
 
 Each task is small (one commit), references the acceptance criteria it serves, and names its proof.
 Format: `- [ ] T-01 Title (AC-01, AC-02) - proof: unit|e2e|device`. Check the box only when the proof passes.
@@ -33,6 +33,7 @@ Format: `- [ ] T-01 Title (AC-01, AC-02) - proof: unit|e2e|device`. Check the bo
 - [x] T-26 After the phone test: no proposals in a row (3 questions after a miss, cap +5 per miss), answers likelihood 0.90, trap facts set to variable, wider variety (6 best within 50 %) (AC-06, AC-08, AC-09, AC-31, AC-34) - proof: unit
 - [x] T-27 v0.2.1 app icon and splash from the earlier prototype logo (cat + magnifier, no text) (AC-30) - proof: device
 - [x] T-28 v0.2.2 Expo SDK patch update (expo 57.0.28, jest-expo 57.0.6), expo-doctor clean (AC-24, AC-30) - proof: device
+- [ ] T-29 v0.2.3 « À propos » screen: story, word from the author, data, version; Home link; Android back; Maestro flow; Jest timeout 30 s (AC-35) - proof: e2e
 
 ## Notes
 

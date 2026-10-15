@@ -17,6 +17,33 @@ export const fr = {
     pitch: typo('Salut ! Je vais lire dans tes pensées. Pense à un animal…'),
     play: 'Jouer',
     settings: 'Paramètres',
+    about: 'À propos',
+  },
+  // « À propos » (AC-35), texts approved by the user on 2026-10-15.
+  about: {
+    title: 'À propos',
+    storyTitle: "L'histoire de ce jeu",
+    story: [
+      typo(
+        "Enfant, j'avais un petit jeu électronique qui devinait à quel animal on pensait, rien qu'en posant des questions. " +
+          "Ça me paraissait magique. Il a disparu depuis longtemps : j'ai voulu le recréer, en mieux, pour y jouer avec mes enfants.",
+      ),
+    ],
+    authorTitle: "Un mot de l'auteur",
+    author: [
+      typo("Ce jeu ne sort pas d'un studio : je l'ai imaginé et programmé sur mon temps libre, en développeur passionné, sans prétention."),
+      typo(
+        'Il est donc perfectible et sans doute pas exempt de bugs. Si je ne trouve pas ton animal ou si une question te ' +
+          "paraît bizarre, merci d'avance pour ton indulgence. Et surtout : amuse-toi bien !",
+      ),
+    ],
+    dataTitle: 'Tes données',
+    data: [
+      'Aucun compte, aucune publicité. Des statistiques anonymes (parties jouées, animaux trouvés ou non, plantages) ne ' +
+        "sont envoyées que si tu l'as accepté. Tu peux changer d'avis dans les paramètres.",
+    ],
+    version: (version: string) => `Version ${version}`,
+    back: 'Retour',
   },
   game: {
     counter: (n: number) => `Question ${n}`,
