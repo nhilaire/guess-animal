@@ -3,6 +3,16 @@
 A small Android family guessing game made with React Native: think of an animal among about 150, the game asks
 yes/no questions (shown and read aloud) until it finds it. The game is in French and works offline.
 
+## Screenshots
+
+<!-- factory:screenshots:start -->
+<p>
+  <img src="docs/screenshots/readme-1-home.png" width="240" alt="home">
+  <img src="docs/screenshots/readme-2-question.png" width="240" alt="question">
+  <img src="docs/screenshots/readme-3-victory.png" width="240" alt="victory">
+</p>
+<!-- factory:screenshots:end -->
+
 ## Play
 
 Download the APK attached to the latest release (if any) or build it yourself (below), then install it on an
