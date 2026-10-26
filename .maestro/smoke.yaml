@@ -1,5 +1,5 @@
 appId: io.github.nhilaire.guessanimal
-name: Smoke - French consent, refuse, consent not asked again, question 1 (AC-01, AC-02, AC-14)
+name: Smoke - consent in the phone language (French or English), refuse, consent not asked again, question 1 (AC-01, AC-02, AC-14)
 tags:
   - smoke
 ---
@@ -10,15 +10,17 @@ tags:
       id: "consent-screen"
     timeout: 15000
 - openLink: "guessanimal://deterministic"
-- assertVisible: "Statistiques anonymes"
-- assertVisible: "Accepter"
-- assertVisible: "Refuser"
+- assertVisible: "Statistiques anonymes|Anonymous statistics"
+- assertVisible: "Accepter|Accept"
+- assertVisible: "Refuser|Decline"
 - takeScreenshot: 01-consent
 - tapOn:
     id: "consent-refuse"
+- runFlow: helpers/french.yaml
 - assertVisible:
     id: "home-screen"
 - takeScreenshot: 02-home
+- takeScreenshot: readme-1-home
 - stopApp
 - launchApp
 - assertVisible:

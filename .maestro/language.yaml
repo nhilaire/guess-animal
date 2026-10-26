@@ -1,0 +1,62 @@
+appId: io.github.nhilaire.guessanimal
+name: Language - switch from the settings, the whole UI follows at once and the choice survives a restart (AC-37)
+tags:
+  - e2e
+  - language
+---
+- launchApp:
+    clearState: true
+- extendedWaitUntil:
+    visible:
+      id: "consent-screen"
+    timeout: 15000
+- openLink: "guessanimal://deterministic"
+- tapOn:
+    id: "consent-refuse"
+- tapOn:
+    id: "home-settings"
+- scrollUntilVisible:
+    element:
+      id: "settings-language-fr"
+- tapOn:
+    id: "settings-language-fr"
+- assertVisible: "Paramètres"
+- assertVisible: "Son"
+- takeScreenshot: language-fr-settings
+- tapOn:
+    id: "settings-language-en"
+- assertVisible: "Settings"
+- assertVisible: "Sound"
+- takeScreenshot: language-en-settings
+- tapOn:
+    id: "settings-back"
+- assertVisible: "Play"
+- assertVisible: "Guess the Animal"
+- tapOn:
+    id: "home-play"
+- assertVisible:
+    id: "q-mammal"
+- assertVisible: "Is it a mammal?"
+- assertVisible: ".*I don't know.*"
+- takeScreenshot: language-en-game
+- stopApp
+- launchApp:
+    stopApp: false
+- extendedWaitUntil:
+    visible:
+      id: "home-screen"
+    timeout: 15000
+- assertVisible: "Play"
+- tapOn:
+    id: "home-settings"
+- scrollUntilVisible:
+    element:
+      id: "settings-language-auto"
+- tapOn:
+    id: "settings-language-auto"
+- tapOn:
+    id: "settings-language-fr"
+- tapOn:
+    id: "settings-back"
+- assertVisible: "Jouer"
+- assertVisible: "Devine l'Animal"

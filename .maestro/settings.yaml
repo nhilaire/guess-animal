@@ -12,6 +12,7 @@ tags:
 - openLink: "guessanimal://deterministic"
 - tapOn:
     id: "consent-accept"
+- runFlow: helpers/french.yaml
 - tapOn:
     id: "home-settings"
 - assertVisible:

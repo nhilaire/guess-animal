@@ -1,7 +1,7 @@
 # Devine l'Animal
 
 A small Android family guessing game made with React Native: think of an animal among about 150, the game asks
-yes/no questions (shown and read aloud) until it finds it. The game is in French and works offline.
+yes/no questions (shown and read aloud) until it finds it. The game is in French and English (it follows the phone's language, changeable in the settings) and works offline.
 
 ## Screenshots
 

@@ -37,7 +37,7 @@ Format: `- [ ] T-01 Title (AC-01, AC-02) - proof: unit|e2e|device`. Check the bo
 - [x] T-30 Language core: i18n index, Strings type, I18nProvider, expo-localization, language setting store, English UI dictionary, settings language choice, app wiring, launcher name per language (AC-36, AC-37, AC-39) - proof: unit
 - [x] T-31 English data: data/en/*.csv -> per-language generated data, validation (articles, generic names, ids), Give up list sorted per language, language switch keeps the game (AC-05, AC-38) - proof: unit
 - [x] T-32 English voice: en-US-AvaNeural clips with the same generator, per-language manifest, playback in the game language (AC-13, AC-19, AC-38, AC-40) - proof: unit
-- [ ] T-33 Maestro: flows pin French through the settings, language flow with screenshots, readme captures (AC-37) - proof: e2e
+- [x] T-33 Maestro: flows pin French through the settings, language flow with screenshots, readme captures (AC-37) - proof: e2e
 
 ## Notes
 

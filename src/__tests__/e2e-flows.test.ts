@@ -21,7 +21,10 @@ const launch = [
   '    timeout: 15000',
   '- openLink: "guessanimal://deterministic"',
 ];
-const start = [...launch, '- tapOn:', '    id: "consent-refuse"', '- tapOn:', '    id: "home-play"'];
+// The game follows the phone's language: after the consent choice, every flow pins French in the settings so that its
+// French assertions hold whatever the emulator's language (language.yaml covers English).
+const french = '- runFlow: helpers/french.yaml';
+const start = [...launch, '- tapOn:', '    id: "consent-refuse"', french, '- tapOn:', '    id: "home-play"'];
 
 function lionSteps(): string[] {
   const data = GAME_DATA;
@@ -47,6 +50,7 @@ function findLion(tag: string, name: string, consent: 'accept' | 'refuse'): stri
     ...launch,
     '- tapOn:',
     `    id: "consent-${consent}"`,
+    french,
     '- tapOn:',
     '    id: "home-play"',
     ...lionSteps(),
@@ -54,12 +58,14 @@ function findLion(tag: string, name: string, consent: 'accept' | 'refuse'): stri
     '    id: "proposal-screen"',
     `- assertVisible: "${fr.proposal.question(lion.spoken)}"`,
     `- takeScreenshot: ${tag === 'telemetry' ? 'telemetry-' : ''}10-proposal-lion`,
+    ...(tag === 'e2e' ? ['- takeScreenshot: readme-2-proposal'] : []),
     '- tapOn:',
     '    id: "proposal-yes"',
     '- assertVisible:',
     '    id: "victory-screen"',
     `- assertVisible: "${fr.victory.title}"`,
     `- takeScreenshot: ${tag === 'telemetry' ? 'telemetry-' : ''}11-victory`,
+    ...(tag === 'e2e' ? ['- takeScreenshot: readme-3-victory'] : []),
     '',
   ].join('\n');
 }

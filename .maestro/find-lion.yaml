@@ -12,6 +12,7 @@ tags:
 - openLink: "guessanimal://deterministic"
 - tapOn:
     id: "consent-refuse"
+- runFlow: helpers/french.yaml
 - tapOn:
     id: "home-play"
 - assertVisible:
@@ -50,9 +51,11 @@ tags:
     id: "proposal-screen"
 - assertVisible: "J'ai trouvé ! C'est le lion ?"
 - takeScreenshot: 10-proposal-lion
+- takeScreenshot: readme-2-proposal
 - tapOn:
     id: "proposal-yes"
 - assertVisible:
     id: "victory-screen"
 - assertVisible: "Youpi, je suis trop fort !"
 - takeScreenshot: 11-victory
+- takeScreenshot: readme-3-victory
