@@ -22,7 +22,7 @@ Android phone (allow installation from unknown sources).
 
 - No account, no ads, no personal data.
 - Anonymous usage statistics and crash reports (Firebase) are sent **only if you accept** on first launch.
-  You can change your choice at any time in *Paramètres*.
+  You can change your choice at any time in *Settings* (*Paramètres* in French).
 - What is sent (only after consent): games started; game result (found / given up / quit) with the number of
   questions and wrong guesses; the animal picked when the game gives up (a fixed animal id or `not_listed`); app opens
   (Firebase `session_start` / `first_open`); crash reports. No identifier, no advertising ID, no free text.
