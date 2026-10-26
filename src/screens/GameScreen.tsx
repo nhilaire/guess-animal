@@ -2,13 +2,16 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { AppState, BackHandler } from 'react-native';
 
 import { feedback } from '../audio/feedback';
-import { GAME_DATA } from '../game/data.generated';
+import { GAME_DATA, GAME_DATA_BY_LANGUAGE } from '../game/data.generated';
 import { Answer, GameState, answerProposal, answerQuestion, newGame, undo } from '../game/inference';
 import { newSeed } from '../game/mode';
+import { useI18n } from '../i18n/I18nProvider';
 import { Settings } from '../storage/settings';
 import { track } from '../telemetry/telemetry';
 import { GiveUpView, ProposalView, QuestionView, ThanksView, VictoryView } from './GameViews';
 
+// The engine works on ids and facts, shared by every language; the texts shown come from the current language, so
+// switching the language during a game keeps the same question.
 const data = GAME_DATA;
 // A new seed per game (variety mode), or none in deterministic mode (tests, e2e flows).
 const startGame = (): GameState => newGame(data, newSeed());
@@ -16,11 +19,13 @@ const startGame = (): GameState => newGame(data, newSeed());
 type Props = { settings: Settings; onExit: () => void };
 
 export function GameScreen({ settings, onExit }: Props) {
+  const { t, language } = useI18n();
+  const shown = GAME_DATA_BY_LANGUAGE[language];
   const [state, setState] = useState<GameState>(startGame);
   const [thanks, setThanks] = useState(false);
   const [round, setRound] = useState(0);
   const ended = useRef(false);
-  const sortedAnimals = useMemo(() => [...data.animals].sort((a, b) => a.name.localeCompare(b.name, 'fr')), []);
+  const sortedAnimals = useMemo(() => [...shown.animals].sort((a, b) => a.name.localeCompare(b.name, t.locale)), [shown, t.locale]);
 
   // One game_start per round.
   useEffect(() => {
@@ -105,7 +110,7 @@ export function GameScreen({ settings, onExit }: Props) {
     case 'question':
       return (
         <QuestionView
-          question={data.questions[state.current]}
+          question={shown.questions[state.current]}
           number={state.questionsAnswered + 1}
           canUndo={state.history.length > 0}
           onAnswer={onAnswer}
@@ -117,9 +122,9 @@ export function GameScreen({ settings, onExit }: Props) {
         />
       );
     case 'proposal':
-      return <ProposalView animal={data.animals[state.current]} onAnswer={onProposal} />;
+      return <ProposalView animal={shown.animals[state.current]} onAnswer={onProposal} />;
     case 'found':
-      return <VictoryView animal={data.animals[state.current]} questions={state.questionsAnswered} onPlayAgain={playAgain} onHome={quit} />;
+      return <VictoryView animal={shown.animals[state.current]} questions={state.questionsAnswered} onPlayAgain={playAgain} onHome={quit} />;
     case 'gaveUp':
       return <GiveUpView animals={sortedAnimals} onPick={onPick} />;
   }

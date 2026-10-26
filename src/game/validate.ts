@@ -1,7 +1,16 @@
 // Data quality checks (PRD "Rules and scoring > Data"). Pure functions used by the tests.
 import { GameData } from './types';
 
-export const GENERIC_NAMES = ['Poisson', 'Singe', 'Serpent', 'Oiseau', 'Insecte'];
+export const GENERIC_NAMES_BY_LANGUAGE = {
+  fr: ['Poisson', 'Singe', 'Serpent', 'Oiseau', 'Insecte'],
+  en: ['Fish', 'Monkey', 'Snake', 'Bird', 'Insect'],
+};
+export const GENERIC_NAMES = GENERIC_NAMES_BY_LANGUAGE.fr;
+
+// The spoken name carries its article: « la girafe », « a giraffe ».
+const SPOKEN_ARTICLE = { fr: /^(le |la |l'|les )/, en: /^(a |an )/ };
+
+type DataLanguage = keyof typeof GENERIC_NAMES_BY_LANGUAGE;
 export const MIN_ANIMALS = 215;
 export const MAX_ANIMALS = 235;
 export const MIN_STRONG_DIFFERENCES = 2;
@@ -28,7 +37,7 @@ export function closePairs(data: GameData, min = MIN_STRONG_DIFFERENCES): string
   return out;
 }
 
-export function structuralProblems(data: GameData): string[] {
+export function structuralProblems(data: GameData, language: DataLanguage = 'fr'): string[] {
   const p: string[] = [];
   const n = data.animals.length;
   if (n < MIN_ANIMALS || n > MAX_ANIMALS) p.push(`${n} animals, expected ${MIN_ANIMALS}-${MAX_ANIMALS}`);
@@ -55,8 +64,8 @@ export function structuralProblems(data: GameData): string[] {
     if (a.facts.length !== data.questions.length) p.push(`${a.id}: ${a.facts.length} facts for ${data.questions.length} questions`);
     if (a.facts.some((f) => f !== 'y' && f !== 'n' && f !== 'v')) p.push(`${a.id}: invalid fact`);
     if (!a.emoji.trim()) p.push(`${a.id}: no emoji`);
-    if (!/^(le |la |l'|les )/.test(a.spoken)) p.push(`${a.id}: spoken name without article: ${a.spoken}`);
-    if (GENERIC_NAMES.includes(a.name)) p.push(`generic animal: ${a.name}`);
+    if (!SPOKEN_ARTICLE[language].test(a.spoken)) p.push(`${a.id}: spoken name without article: ${a.spoken}`);
+    if (GENERIC_NAMES_BY_LANGUAGE[language].includes(a.name)) p.push(`generic animal: ${a.name}`);
   }
   return p;
 }

@@ -4,7 +4,8 @@ import { AppState, AppStateStatus } from 'react-native';
 
 import App from '../App';
 import { Feedback, setFeedback } from '../audio/feedback';
-import { GAME_DATA } from '../game/data.generated';
+import { GAME_DATA, GAME_DATA_EN } from '../game/data.generated';
+import { deviceLanguageTags } from '../i18n/deviceLocale';
 
 const recorded: string[] = [];
 const fake: Feedback = {
@@ -147,5 +148,60 @@ describe('background and resume keep the draws (AC-25, v0.2.0)', () => {
     expect(paused).toEqual(plain);
     spy.mockRestore();
     random.mockRestore();
+  });
+});
+
+describe('game in English (AC-38)', () => {
+  beforeEach(async () => {
+    jest.mocked(deviceLanguageTags).mockReturnValue(['fr-FR']);
+  });
+
+  async function startEnglishGame() {
+    await AsyncStorage.setItem('settings.language.v1', 'en');
+    await startGame();
+  }
+
+  it('shows the English question, answers and proposal, and finds the lion', async () => {
+    await startEnglishGame();
+    const id = currentQuestionId();
+    expect(screen.getByText(GAME_DATA_EN.questions[questionIndex(id)].text)).toBeTruthy();
+    for (const label of ['Yes', 'No', "I don't know", 'Listen again', 'Go back']) expect(screen.getAllByText(label, { exact: false }).length).toBeGreaterThan(0);
+    await answerFor('lion');
+    expect(screen.getByText("I've got it! Is it a lion?")).toBeTruthy();
+    await fireEvent.press(screen.getByTestId('proposal-yes'));
+    expect(screen.getByText("Yippee, I'm so good!")).toBeTruthy();
+    expect(screen.getByText('It was a lion.')).toBeTruthy();
+  });
+
+  it('sorts the Give up list by English name', async () => {
+    await startEnglishGame();
+    for (let i = 0; i < 3; i++) {
+      await answerDontKnowUntilProposal();
+      await fireEvent.press(screen.getByTestId('proposal-no'));
+    }
+    expect(screen.getByText("Well done, you're really good!")).toBeTruthy();
+    const firstNames = screen.getAllByTestId(/^pick-(?!not-listed)/).slice(0, 3).map((n) => String(n.props.testID));
+    expect(firstNames).toEqual(['pick-anaconda', 'pick-ant', 'pick-anteater']);
+  });
+
+  it('switching the language during a game keeps the same question and counter', async () => {
+    const listeners: ((s: AppStateStatus) => void)[] = [];
+    const spy = jest.spyOn(AppState, 'addEventListener').mockImplementation((_type, fn) => {
+      listeners.push(fn as (s: AppStateStatus) => void);
+      return { remove: () => {} } as ReturnType<typeof AppState.addEventListener>;
+    });
+    await startGame();
+    await fireEvent.press(screen.getByTestId('answer-yes'));
+    const id = currentQuestionId();
+    expect(screen.getByText('Question 2')).toBeTruthy();
+    expect(screen.getByText(GAME_DATA.questions[questionIndex(id)].text)).toBeTruthy();
+    // The player switches the phone to English and comes back to the game.
+    jest.mocked(deviceLanguageTags).mockReturnValue(['en-US']);
+    await act(async () => listeners.forEach((l) => l('active')));
+    expect(currentQuestionId()).toBe(id);
+    expect(screen.getByText('Question 2')).toBeTruthy();
+    expect(screen.getByText(GAME_DATA_EN.questions[questionIndex(id)].text)).toBeTruthy();
+    expect(screen.getByText('Yes', { exact: false })).toBeTruthy();
+    spy.mockRestore();
   });
 });
