@@ -15,9 +15,9 @@ export function HomeScreen({ sound, onPlay, onSettings, onAbout }: Props) {
   // The pitch is spoken for players who cannot read yet.
   useEffect(() => {
     if (!sound) return;
-    feedback().line('pitch');
+    feedback().line('pitch', language);
     return () => feedback().stop();
-  }, [sound]);
+  }, [sound, language]);
 
   return (
     <Screen testID="home-screen">

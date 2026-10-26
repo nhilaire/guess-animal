@@ -1,7 +1,8 @@
 #!/usr/bin/env node
-// Generates the voice files (Azure Speech, fr-FR-DeniseNeural) for every question, every proposal sentence and the
-// fixed sentences, plus src/audio/manifest.generated.ts (static require() map + spoken texts).
-// Files are named by a hash of the text: changing a text regenerates only that file; unused files are deleted.
+// Generates the voice files (Azure Speech) for every question, every proposal sentence and the fixed sentences, in
+// every language of the game (fr: fr-FR-DeniseNeural; en: en-US-AvaNeural, files prefixed "en_"), plus
+// src/audio/manifest.generated.ts (static require() map + spoken texts, per language).
+// Files are named by a hash of the voice and text: changing a text regenerates only that file; unused files are deleted.
 //
 //   node scripts/generate-audio.mjs           # synthesise missing files (needs AZURE_SPEECH_KEY / _REGION)
 //   node scripts/generate-audio.mjs --check   # exit 1 if a file or the manifest is missing / out of date
@@ -17,42 +18,79 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const AUDIO_DIR = path.join(ROOT, 'assets', 'voice');
 const MANIFEST = path.join(ROOT, 'src', 'audio', 'manifest.generated.ts');
 
-// Fixed sentences: must equal the French copy in src/i18n/fr.ts (checked by a test).
-export const LINES = {
-  pitch: 'Salut ! Je vais lire dans tes pensées. Pense à un animal…',
-  victory: 'Youpi, je suis trop fort !',
-  giveUp: 'Bravo, tu es très fort !',
-  giveUpBody: 'À quel animal pensais-tu ?',
-  thanks: 'Merci ! Je ferai mieux la prochaine fois.',
+// Per language: Azure voice, file prefix, fixed sentences (must equal the copy in src/i18n/<lang>.ts, checked by a
+// test) and the proposal sentence. French files keep their v0.2 names (no prefix).
+export const LANGUAGES = {
+  fr: {
+    voice: DEFAULT_VOICE,
+    prefix: '',
+    lines: {
+      pitch: 'Salut ! Je vais lire dans tes pensées. Pense à un animal…',
+      victory: 'Youpi, je suis trop fort !',
+      giveUp: 'Bravo, tu es très fort !',
+      giveUpBody: 'À quel animal pensais-tu ?',
+      thanks: 'Merci ! Je ferai mieux la prochaine fois.',
+    },
+    proposal: (spoken) => `J'ai trouvé ! C'est ${spoken} ?`,
+    typography: frenchTypography,
+  },
+  en: {
+    voice: 'en-US-AvaNeural',
+    prefix: 'en_',
+    lines: {
+      pitch: "Hi! I'm going to read your mind. Think of an animal…",
+      victory: "Yippee, I'm so good!",
+      giveUp: "Well done, you're really good!",
+      giveUpBody: 'Which animal were you thinking of?',
+      thanks: "Thank you! I'll do better next time.",
+    },
+    proposal: (spoken) => `I've got it! Is it ${spoken}?`,
+    typography: (text) => text,
+  },
 };
 
 export function clips() {
-  const { questions, animals } = buildData();
+  const data = buildData();
+  const texts = { fr: data, en: data.en };
   const list = [];
-  for (const q of questions) list.push({ group: 'questions', key: q.id, text: q.text });
-  for (const a of animals) list.push({ group: 'proposals', key: a.id, text: frenchTypography(`J'ai trouvé ! C'est ${a.spoken} ?`) });
-  for (const [key, text] of Object.entries(LINES)) list.push({ group: 'lines', key, text: frenchTypography(text) });
-  return list.map((c) => {
-    const hash = crypto.createHash('sha1').update(`${DEFAULT_VOICE}|${c.text}`).digest('hex').slice(0, 10);
-    return { ...c, file: `${c.group.slice(0, 1)}_${c.key}_${hash}.mp3` };
-  });
+  for (const [language, l] of Object.entries(LANGUAGES)) {
+    const { questions, animals } = texts[language];
+    const add = (group, key, text) => {
+      const hash = crypto.createHash('sha1').update(`${l.voice}|${text}`).digest('hex').slice(0, 10);
+      list.push({ language, voice: l.voice, group, key, text, file: `${l.prefix}${group.slice(0, 1)}_${key}_${hash}.mp3` });
+    };
+    for (const q of questions) add('questions', q.id, q.text);
+    for (const a of animals) add('proposals', a.id, l.typography(l.proposal(a.spoken)));
+    for (const [key, text] of Object.entries(l.lines)) add('lines', key, l.typography(text));
+  }
+  return list;
 }
 
 function renderManifest(list) {
   const groups = ['questions', 'proposals', 'lines'];
-  const body = groups
-    .map((g) => {
-      const entries = list
-        .filter((c) => c.group === g)
-        .map((c) => `    ${JSON.stringify(c.key)}: { text: ${JSON.stringify(c.text)}, source: require('../../assets/voice/${c.file}') },`)
+  const body = Object.keys(LANGUAGES)
+    .map((language) => {
+      const inner = groups
+        .map((g) => {
+          const entries = list
+            .filter((c) => c.language === language && c.group === g)
+            .map((c) => `      ${JSON.stringify(c.key)}: { text: ${JSON.stringify(c.text)}, source: require('../../assets/voice/${c.file}') },`)
+            .join('\n');
+          return `    ${g}: {\n${entries}\n    },`;
+        })
         .join('\n');
-      return `  ${g}: {\n${entries}\n  },`;
+      return `  // ${LANGUAGES[language].voice}\n  ${language}: {\n${inner}\n  },`;
     })
     .join('\n');
-  return `// GENERATED by scripts/generate-audio.mjs. Do not edit. Voice: ${DEFAULT_VOICE} (Azure Speech).
+  return `// GENERATED by scripts/generate-audio.mjs. Do not edit. Voices: ${Object.values(LANGUAGES)
+    .map((l) => l.voice)
+    .join(', ')} (Azure Speech).
 export type Clip = { text: string; source: number };
+export type VoiceSet = { questions: Record<string, Clip>; proposals: Record<string, Clip>; lines: Record<string, Clip> };
 
-export const VOICE: { questions: Record<string, Clip>; proposals: Record<string, Clip>; lines: Record<string, Clip> } = {
+export const VOICE: Record<${Object.keys(LANGUAGES)
+    .map((l) => `'${l}'`)
+    .join(' | ')}, VoiceSet> = {
 ${body}
 };
 `;
@@ -74,7 +112,7 @@ async function main(argv) {
   fs.mkdirSync(AUDIO_DIR, { recursive: true });
   let bytes = 0;
   for (const [i, c] of missing.entries()) {
-    bytes += await synthesize(c.text, path.join(AUDIO_DIR, c.file));
+    bytes += await synthesize(c.text, path.join(AUDIO_DIR, c.file), c.voice);
     process.stdout.write(`\r${i + 1}/${missing.length} ${c.file}                    `);
     await new Promise((r) => setTimeout(r, 150)); // stay well under the F0 rate limit
   }

@@ -8,11 +8,13 @@ import { GAME_DATA, GAME_DATA_EN } from '../game/data.generated';
 import { deviceLanguageTags } from '../i18n/deviceLocale';
 
 const recorded: string[] = [];
+// Language of every voice clip asked for, in order.
+const voiceLanguages: string[] = [];
 const fake: Feedback = {
-  question: (id) => recorded.push(`question:${id}`),
-  proposal: (id) => recorded.push(`proposal:${id}`),
-  line: (l) => recorded.push(`line:${l}`),
-  then: (l) => recorded.push(`then:${l}`),
+  question: (id, language) => voiceLanguages.push(language) && recorded.push(`question:${id}`),
+  proposal: (id, language) => voiceLanguages.push(language) && recorded.push(`proposal:${id}`),
+  line: (l, language) => voiceLanguages.push(language) && recorded.push(`line:${l}`),
+  then: (l, language) => voiceLanguages.push(language) && recorded.push(`then:${l}`),
   effect: (e) => recorded.push(`effect:${e}`),
   vibrate: () => recorded.push('vibrate'),
   stop: () => recorded.push('stop'),
@@ -46,6 +48,7 @@ async function answerDontKnowUntilProposal() {
 beforeEach(async () => {
   await AsyncStorage.clear();
   recorded.length = 0;
+  voiceLanguages.length = 0;
   setFeedback(fake);
 });
 
@@ -171,6 +174,9 @@ describe('game in English (AC-38)', () => {
     await fireEvent.press(screen.getByTestId('proposal-yes'));
     expect(screen.getByText("Yippee, I'm so good!")).toBeTruthy();
     expect(screen.getByText('It was a lion.')).toBeTruthy();
+    // Every clip (pitch, questions, proposal, victory) was asked for in English.
+    expect(recorded).toEqual(expect.arrayContaining(['line:pitch', 'proposal:lion', 'line:victory']));
+    expect(new Set(voiceLanguages)).toEqual(new Set(['en']));
   });
 
   it('sorts the Give up list by English name', async () => {

@@ -42,18 +42,18 @@ export function GameScreen({ settings, onExit }: Props) {
     track('game_end', { result: won ? 'found' : 'given_up', questions: state.questionsAnswered, wrong_guesses: state.wrongGuesses });
     if (settings.sound) {
       feedback().effect(won ? 'win' : 'lose');
-      feedback().line(won ? 'victory' : 'giveUp');
-      if (!won) feedback().then('giveUpBody');
+      feedback().line(won ? 'victory' : 'giveUp', language);
+      if (!won) feedback().then('giveUpBody', language);
     }
     if (settings.vibrations) feedback().vibrate();
-  }, [state, settings]);
+  }, [state, settings, language]);
 
   // Speak the current question or proposal.
   useEffect(() => {
     if (!settings.sound) return;
-    if (state.phase === 'question') feedback().question(data.questions[state.current].id);
-    else if (state.phase === 'proposal') feedback().proposal(data.animals[state.current].id);
-  }, [state.phase, state.current, round, settings.sound]);
+    if (state.phase === 'question') feedback().question(data.questions[state.current].id, language);
+    else if (state.phase === 'proposal') feedback().proposal(data.animals[state.current].id, language);
+  }, [state.phase, state.current, round, settings.sound, language]);
 
   const quit = useCallback(() => {
     feedback().stop();
@@ -100,7 +100,7 @@ export function GameScreen({ settings, onExit }: Props) {
 
   const onPick = (animal: string) => {
     track('animal_missed', { animal });
-    if (settings.sound) feedback().line('thanks');
+    if (settings.sound) feedback().line('thanks', language);
     setThanks(true);
   };
 
@@ -114,7 +114,7 @@ export function GameScreen({ settings, onExit }: Props) {
           number={state.questionsAnswered + 1}
           canUndo={state.history.length > 0}
           onAnswer={onAnswer}
-          onReplay={() => settings.sound && feedback().question(data.questions[state.current].id)}
+          onReplay={() => settings.sound && feedback().question(data.questions[state.current].id, language)}
           onUndo={() => {
             feedback().stop();
             setState(undo);

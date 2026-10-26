@@ -51,11 +51,11 @@ export function createExpoFeedback(): Feedback {
   };
 
   return {
-    question: (id) => speak(VOICE.questions[id]),
-    proposal: (id) => speak(VOICE.proposals[id]),
-    line: (line: Line) => speak(VOICE.lines[line]),
-    then: (line: Line) => {
-      const clip = VOICE.lines[line];
+    question: (id, language) => speak(VOICE[language].questions[id]),
+    proposal: (id, language) => speak(VOICE[language].proposals[id]),
+    line: (line: Line, language) => speak(VOICE[language].lines[line]),
+    then: (line: Line, language) => {
+      const clip = VOICE[language].lines[line];
       if (clip) queue.push(clip.source);
     },
     effect: (effect) => playOn('effects', EFFECTS[effect]),

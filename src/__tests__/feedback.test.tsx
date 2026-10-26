@@ -100,12 +100,12 @@ describe('expo-audio implementation', () => {
 
   it('plays the bundled clip of a question and reuses the voice player', () => {
     const f = createExpoFeedback();
-    f.question('mammal');
-    expect(createAudioPlayer).toHaveBeenCalledWith(VOICE.questions.mammal.source);
+    f.question('mammal', 'fr');
+    expect(createAudioPlayer).toHaveBeenCalledWith(VOICE.fr.questions.mammal.source);
     const player = jest.mocked(createAudioPlayer).mock.results[0].value;
     expect(player.play).toHaveBeenCalled();
-    f.proposal('lion');
-    expect(player.replace).toHaveBeenCalledWith(VOICE.proposals.lion.source);
+    f.proposal('lion', 'en');
+    expect(player.replace).toHaveBeenCalledWith(VOICE.en.proposals.lion.source);
     f.stop();
     expect(player.pause).toHaveBeenCalled();
   });
@@ -122,6 +122,6 @@ describe('expo-audio implementation', () => {
     jest.mocked(createAudioPlayer).mockImplementationOnce(() => {
       throw new Error('no audio');
     });
-    expect(() => createExpoFeedback().question('mammal')).not.toThrow();
+    expect(() => createExpoFeedback().question('mammal', 'fr')).not.toThrow();
   });
 });

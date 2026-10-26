@@ -30,8 +30,9 @@ Android phone (allow installation from unknown sources).
 
 ## Voice
 
-The voice is synthetic: the French sentences were generated once with Azure AI Speech (neural voice
-fr-FR-DeniseNeural, `scripts/generate-audio.mjs`) and are bundled in the app; the game never calls a speech service.
+The voice is synthetic: the French and English sentences were generated once with Azure AI Speech (neural voices
+fr-FR-DeniseNeural and en-US-AvaNeural, `scripts/generate-audio.mjs`) and are bundled in the app; the game never calls a
+speech service.
 
 ## Build from source
 

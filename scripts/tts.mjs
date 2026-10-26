@@ -23,7 +23,9 @@ const escapeXml = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(
 
 export async function synthesize(text, outFile, voice = DEFAULT_VOICE) {
   const { key, region } = credentials();
-  const ssml = `<speak version="1.0" xml:lang="fr-FR"><voice name="${voice}">${escapeXml(text)}</voice></speak>`;
+  // The SSML language is the voice locale (fr-FR-DeniseNeural -> fr-FR).
+  const lang = voice.split('-').slice(0, 2).join('-');
+  const ssml = `<speak version="1.0" xml:lang="${lang}"><voice name="${voice}">${escapeXml(text)}</voice></speak>`;
   for (let attempt = 1; attempt <= 4; attempt++) {
     const res = await fetch(`https://${region}.tts.speech.microsoft.com/cognitiveservices/v1`, {
       method: 'POST',
