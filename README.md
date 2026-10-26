@@ -8,7 +8,7 @@ yes/no questions (shown and read aloud) until it finds it. The game is in French
 <!-- factory:screenshots:start -->
 <p>
   <img src="docs/screenshots/readme-1-home.png" width="240" alt="home">
-  <img src="docs/screenshots/readme-2-question.png" width="240" alt="question">
+  <img src="docs/screenshots/readme-2-proposal.png" width="240" alt="proposal">
   <img src="docs/screenshots/readme-3-victory.png" width="240" alt="victory">
 </p>
 <!-- factory:screenshots:end -->
