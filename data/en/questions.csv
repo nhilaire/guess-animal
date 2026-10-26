@@ -1,0 +1,114 @@
+id;text
+mammal;Is it a mammal?
+bird;Is it a bird?
+fish;Is it a fish?
+reptile;Is it a reptile?
+amphibian;Is it an amphibian?
+insect;Is it an insect?
+crustacean;Is it a crustacean?
+soft_body;Does it have a soft body with no bones?
+water;Does it spend almost all its time in water?
+sea;Does it live in the sea or by the sea?
+freshwater;Does it live in or near rivers, lakes or ponds?
+farm;Is it raised on farms?
+pet;Is it a pet?
+wild_france;Can you see it living free in the wild in France?
+africa;Does it live in Africa?
+asia;Does it live in Asia?
+america;Does it live in America?
+australia;Does it live in Australia?
+cold;Does it live in very cold places?
+forest;Does it live in the forest?
+desert;Does it live in the desert?
+mountain;Does it live in the mountains?
+trees;Does it climb or live in trees?
+burrow;Does it dig a burrow?
+big;Is it taller or longer than a grown-up?
+small;Is it smaller than a cat?
+flies;Can it fly?
+swims;Can it swim?
+legs2;Does it have two legs?
+legs4;Does it have four legs?
+legs6;Does it have six legs?
+legs8;Does it have eight legs?
+no_legs;Does it have no legs at all?
+fur;Does it have hair or fur?
+scales;Does it have scales?
+shell;Does it have a shell?
+horns;Does it have horns or antlers?
+long_neck;Does it have a long neck?
+long_tail;Does it have a long tail?
+big_ears;Does it have big ears?
+mane;Does it have a mane?
+hooves;Does it have hooves?
+pouch;Does it have a pouch on its belly?
+tentacles;Does it have tentacles?
+stripes;Does it have stripes?
+spots;Does it have spots?
+black_white;Is it black and white?
+colorful;Does it have bright colors?
+white;Is it white?
+black;Is it black?
+grey;Is it gray?
+orange;Is it orange or reddish-brown?
+green;Is it green?
+carnivore;Does it eat other animals, even insects or worms?
+herbivore;Does it eat only plants?
+dangerous;Can it be dangerous to people?
+venom;Is it venomous?
+night;Is it mostly active at night?
+hibernates;Does it sleep all winter?
+group;Does it live in a group?
+jumps;Does it get around by jumping?
+fast;Can it run very fast?
+eggs;Does it lay eggs?
+eaten;Do people often eat it?
+ridden;Can you ride on its back?
+feline;Is it a feline, from the cat family?
+canine;Is it from the dog family?
+monkey;Is it a monkey or an ape?
+rodent;Is it a rodent?
+raptor;Is it a bird of prey?
+milk;Do we drink its milk?
+wool;Does it give us wool?
+eggs_eaten;Do we eat its eggs?
+beard;Does it have a little beard?
+whiskers;Does it have whiskers?
+tusks;Does it have tusks?
+mask;Does it have a black mask around its eyes?
+big_beak;Does it have a very big beak?
+spikes;Does it have spines or quills?
+huge;Is it bigger than an elephant?
+fits_hand;Can it fit in a grown-up's hand?
+talks;Can it repeat words?
+sings;Does it sing?
+migrates;Does it fly to warm countries for the winter?
+drinks_blood;Does it drink blood?
+sewers;Does it live in sewers?
+in_house;Is it often found inside houses?
+yellow;Is it yellow?
+pink;Is it pink?
+savanna;Does it live in the savanna?
+jungle;Does it live in the jungle?
+hump;Does it have a hump on its back?
+two_humps;Does it have two humps?
+long_nose;Does it have a trunk like an elephant, or a very long nose?
+spits;Does it spit, like a llama?
+teeth;Does it have teeth?
+fish_eater;Does it eat fish?
+pincers;Does it have pincers?
+web;Does it spin webs?
+honey;Does it make honey?
+glows;Does it glow in the dark?
+rolls_ball;Does it roll up into a ball to protect itself?
+wall_climb;Can it walk on walls?
+long_tongue;Does it have a very long tongue?
+many_legs;Does it have more than eight legs?
+tiny;Is it smaller than a mouse, not counting the tail?
+parasite;Does it live on other animals or on people?
+changes_color;Can it change color?
+ink;Does it squirt ink?
+crest;Does it have a crest or a tuft on its head?
+upside_down;Does it sleep upside down?
+borrowed_shell;Does it live in another animal's shell?
+hair;Does it live in people's hair?

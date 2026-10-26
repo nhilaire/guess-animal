@@ -4,16 +4,16 @@ Status: approved
 Project slug: guess-animal
 Final app name: Devine l'Animal
 Android package: io.github.nhilaire.guessanimal
-Version target: 0.2.3
-Last updated: 2026-10-12
+Version target: 0.3.0
+Last updated: 2026-10-26
 
-> Written in English. Player-facing French copy is quoted in the "French copy" section.
+> Written in English. Player-facing copy (French reference, English) is quoted in the "Player copy" section.
 > Status becomes `approved` only after the user explicitly approves this document.
 
 ## Summary
 
 A family guessing game: the player thinks of an animal among about 225 well-known ones, and the app finds it by
-asking yes/no questions, shown on screen and read aloud by a natural French voice. The fun is the "how did it
+asking yes/no questions, shown on screen and read aloud by a natural voice in the game's language (French or English). The fun is the "how did it
 know?" moment, and trying to trip it up with another animal. Each question is the one that best splits the animals
 still possible, and the game tolerates a wrong answer. Pitch: « Salut ! Je vais lire dans tes pensées. Pense à un animal… »
 
@@ -45,6 +45,7 @@ still possible, and the game tolerates a wrong answer. Pitch: « Salut ! Je vais
 | UC-06 | tell the game which animal I had in mind when it gives up | the game's gaps are known |
 | UC-07 | play again right away | I can try to trip it up |
 | UC-08 | turn sound, vibrations and statistics on or off | the game fits the moment and my choices |
+| UC-09 | play in my own language (French or English), following my phone or chosen in the settings | English-speaking family and friends can play too |
 
 ## Screens
 
@@ -62,7 +63,8 @@ still possible, and the game tolerates a wrong answer. Pitch: « Salut ! Je vais
 - **Give up**: « Bravo, tu es très fort ! », « À quel animal pensais-tu ? », alphabetical scrollable list of all
   animals (emoji + display name) and a last entry « Il n'est pas dans la liste ».
 - **Thanks** (after Give up): « Merci ! Je ferai mieux la prochaine fois. », buttons « Rejouer » and « Accueil ».
-- **Settings**: toggles « Son » (voice and effects), « Vibrations », « Statistiques anonymes »; back to Home.
+- **Settings**: toggles « Son » (voice and effects), « Vibrations », « Statistiques anonymes », and « Langue »:
+  « Automatique (langue du téléphone) », « Français », « English » (v0.3.0); back to Home.
 
 ```mermaid
 flowchart LR
@@ -95,6 +97,12 @@ flowchart LR
 - Each fact (animal × question) is `yes`, `no` or `variable` (true only for some individuals or contexts, or
   debatable for a child).
 - A review sheet (`docs/DATA-REVIEW.md`, generated from the CSV) lets the user check animals one by one.
+- English (v0.3.0): `data/en/questions.csv` (id;text) and `data/en/animals.csv` (id;name;spoken) give the English
+  question texts, display names and spoken names with article (« a giraffe », « an elephant »), with exactly the same
+  ids in the same order as the French files (the facts stay in `data/animals.csv`, shared by both languages). The
+  build script checks the ids. No generic English name (« Fish », « Monkey », « Snake », « Bird », « Insect »).
+  Facts are those of the French base (decided by the user: « Can you see it living free in the wild in France? » is
+  kept as is in English).
 
 ### Inference
 
@@ -142,6 +150,18 @@ flowchart LR
 - Data distinguishability: every pair of animals differs on at least 2 questions where one is `yes` and the other
   `no`.
 
+### Languages (v0.3.0)
+
+- Languages: French (reference) and English; fallback English. Resolution: explicit choice in the settings, else the
+  first supported language of the phone's language list, else English. The phone's language is read again when the
+  app comes back to the foreground.
+- The language switch is immediate (no restart) and saved locally; « Automatique » goes back to following the phone.
+- Every player-facing text, question, animal name and voice clip follows the game's language. The Give up list is
+  sorted alphabetically in the game's language.
+- Launcher name: « Devine l'Animal » in French, « Guess the Animal » in English and in any other language (decided by
+  the user).
+- English plural: « In 1 question. », « In {n} questions. ». English typography: no space before « : ! ? ».
+
 ### Persistence
 
 - Saved locally: consent choice and settings (sound, vibrations, statistics). No score, no history, no account.
@@ -154,6 +174,8 @@ flowchart LR
   (AI-generated for the author), without its « TROUVE ANIMAL » text, on yellow; Android adaptive icon with a
   monochrome layer; the splash shows the same image on the game background (Android 12+ always shows a splash).
 - Animals: Unicode emoji + French display name; 🐾 when no emoji fits. No copyrighted images.
+- English voice (v0.3.0, decided by the user): the same pre-recorded clips in English with the en-US-AvaNeural voice
+  (Azure Speech, same script and format, about 345 more clips, ≈ 6.6 MB). The spoken text equals the English copy.
 - Voice: every question, every proposal sentence (« J'ai trouvé ! C'est la girafe ? ») and the fixed sentences (pitch,
   victory, give up, list prompt, thanks) are pre-recorded audio files with the fr-FR-DeniseNeural voice from Azure Speech
   (free tier F0, REST API). They are generated once by a local script, committed in the
@@ -264,7 +286,7 @@ Business and technical indicators followed in Firebase (free Spark plan). Detail
 - AC-22 [device] Given consent accepted on the emulator, when a game is played to the end, then `game_start` and
   `game_end` appear in logcat with no identifier.
 - AC-23 [device] Given the release APK, when its manifest is inspected, then it has neither RECORD_AUDIO nor AD_ID
-  permission and the arm64 release APK is < 45 000 000 bytes; when the app is played in airplane mode, every e2e flow passes.
+  permission and the arm64 release APK is < 50 000 000 bytes (v0.3.0, decided by the user: was 45 000 000 before the English voice); when the app is played in airplane mode, every e2e flow passes.
 - AC-24 [device] Given the release APK on the emulator, when it is cold started, then the first screen is shown in
   < 3 s, and no crash appears in logcat during the e2e flows.
 - AC-25 [unit] Given a game in progress, when the app goes to background and comes back, then the same question and
@@ -290,53 +312,84 @@ Business and technical indicators followed in Firebase (free Spark plan). Detail
 - AC-35 [e2e] Given Home, when « À propos » is tapped, then the About screen shows « L'histoire de ce jeu » with the
   electronic-toy story, « Un mot de l'auteur » (développeur passionné, bugs possible), « Tes données » and the app
   version; « Retour » goes back to Home.
+- AC-36 [unit] Given the dictionaries, then French and English have exactly the same keys and shapes, English is
+  really translated, no text is empty, the languages match `factory-app.json`; given the setting « auto » and phone
+  languages [fr-FR] / [en-US] / [it-IT, fr-FR] / [it-IT], then the game is in French / English / French / English; an
+  explicit choice wins over the phone.
+- AC-37 [e2e] Given Settings, when « English » is tapped, then the whole UI switches at once (« Settings », « Sound »),
+  Home shows « Play », a game shows an English question with « Yes », « No », « I don't know »; after a restart it is
+  still English; when « Automatique » then « Français » are tapped, then Home shows « Jouer ». Screenshots
+  `language-fr-settings`, `language-en-settings`, `language-en-game`.
+- AC-38 [unit] Given the English data and the audio manifest, then every question and animal has a non-empty English
+  text, every English spoken name starts with « a » or « an », no English name is generic, every English question,
+  proposal sentence (« I've got it! Is it {animal}? ») and fixed sentence has a bundled en-US clip whose text equals
+  the English copy; given sound on and the game in English, the English clip of the question is played; the Give up
+  list is sorted by English name; switching the language during a game keeps the same question and counter.
+- AC-39 [device] Given the release APK, when `aapt dump badging` is read, then the application label is « Guess the
+  Animal » by default and for en, and « Devine l'Animal » for fr.
+- AC-40 [manual] Given the English names and questions (`data/en/*.csv`) and the English voice on the phone, when the
+  user plays in English during the release test, then the user confirms the English names, questions and voice.
 - AC-30 [manual] Given the release APK on the user's phone, when a game is played with sound on, then the voice is
   natural and intelligible and the game is fun for the family.
 
-## French copy
+## Player copy
 
-Tone: tu. French typography: no-break space before « : ; ! ? » and inside « ».
+French tone: tu; English tone: neutral « you » (US English, like the en-US voice). French typography: no-break space
+before « : ; ! ? » and inside « »; English: none. Language names in the settings are written in their own language
+(« Français », « English »). Final app name (launcher): « Devine l'Animal » (fr), « Guess the Animal » (en). Question
+texts and animal names: `data/questions.csv` / `data/animals.csv` (fr) and `data/en/*.csv` (en). Spoken audio: one
+clip per text and language (`assets/voice/`, English files prefixed `en_`).
 
-| Key | French text |
-|---|---|
-| consent.title | Statistiques anonymes |
-| consent.body | Pour améliorer le jeu, Devine l'Animal peut envoyer des statistiques anonymes (parties jouées, animaux trouvés ou non, plantages). Aucune donnée personnelle. Tu peux changer d'avis dans les paramètres. |
-| consent.accept | Accepter |
-| consent.refuse | Refuser |
-| home.pitch | Salut ! Je vais lire dans tes pensées. Pense à un animal… |
-| home.play | Jouer |
-| home.settings | Paramètres |
-| game.counter | Question {n} |
-| game.yes | Oui |
-| game.no | Non |
-| game.dontKnow | Je ne sais pas |
-| game.replay | Réécouter |
-| game.undo | Revenir |
-| proposal.question | J'ai trouvé ! C'est {animal} ? |
-| victory.title | Youpi, je suis trop fort ! |
-| victory.body | C'était {animal}. |
-| victory.questions | En {n} questions. |
-| giveup.title | Bravo, tu es très fort ! |
-| giveup.body | À quel animal pensais-tu ? |
-| giveup.notListed | Il n'est pas dans la liste |
-| thanks.body | Merci ! Je ferai mieux la prochaine fois. |
-| common.playAgain | Rejouer |
-| common.home | Accueil |
-| settings.title | Paramètres |
-| settings.sound | Son |
-| settings.vibrations | Vibrations |
-| settings.stats | Statistiques anonymes |
-| home.about | À propos |
-| about.title | À propos |
-| about.storyTitle | L'histoire de ce jeu |
-| about.story | Enfant, j'avais un petit jeu électronique qui devinait à quel animal on pensait, rien qu'en posant des questions. Ça me paraissait magique. Il a disparu depuis longtemps : j'ai voulu le recréer, en mieux, pour y jouer avec mes enfants. |
-| about.authorTitle | Un mot de l'auteur |
-| about.author | Ce jeu ne sort pas d'un studio : je l'ai imaginé et programmé sur mon temps libre, en développeur passionné, sans prétention. Il est donc perfectible et sans doute pas exempt de bugs. Si je ne trouve pas ton animal ou si une question te paraît bizarre, merci d'avance pour ton indulgence. Et surtout : amuse-toi bien ! |
-| about.dataTitle | Tes données |
-| about.data | Aucun compte, aucune publicité. Des statistiques anonymes (parties jouées, animaux trouvés ou non, plantages) ne sont envoyées que si tu l'as accepté. Tu peux changer d'avis dans les paramètres. |
-| about.version | Version {version} |
+| Key | fr | en |
+|---|---|---|
+| consent.title | Statistiques anonymes | Anonymous statistics |
+| consent.body | Pour améliorer le jeu, Devine l'Animal peut envoyer des statistiques anonymes (parties jouées, animaux trouvés ou non, plantages). Aucune donnée personnelle. Tu peux changer d'avis dans les paramètres. | To improve the game, Guess the Animal can send anonymous statistics (games played, animals found or not, crashes). No personal data. You can change your mind in the settings. |
+| consent.accept | Accepter | Accept |
+| consent.refuse | Refuser | Decline |
+| home.pitch | Salut ! Je vais lire dans tes pensées. Pense à un animal… | Hi! I'm going to read your mind. Think of an animal… |
+| home.play | Jouer | Play |
+| home.settings | Paramètres | Settings |
+| home.about | À propos | About |
+| game.counter | Question {n} | Question {n} |
+| game.yes | Oui | Yes |
+| game.no | Non | No |
+| game.dontKnow | Je ne sais pas | I don't know |
+| game.replay | Réécouter | Listen again |
+| game.undo | Revenir | Go back |
+| proposal.question | J'ai trouvé ! C'est {animal} ? | I've got it! Is it {animal}? |
+| victory.title | Youpi, je suis trop fort ! | Yippee, I'm so good! |
+| victory.body | C'était {animal}. | It was {animal}. |
+| victory.questions.one | En {n} question. | In 1 question. |
+| victory.questions.other | En {n} questions. | In {n} questions. |
+| giveup.title | Bravo, tu es très fort ! | Well done, you're really good! |
+| giveup.body | À quel animal pensais-tu ? | Which animal were you thinking of? |
+| giveup.notListed | Il n'est pas dans la liste | It's not in the list |
+| thanks.body | Merci ! Je ferai mieux la prochaine fois. | Thank you! I'll do better next time. |
+| common.playAgain | Rejouer | Play again |
+| common.home | Accueil | Home |
+| settings.title | Paramètres | Settings |
+| settings.sound | Son | Sound |
+| settings.vibrations | Vibrations | Vibrations |
+| settings.stats | Statistiques anonymes | Anonymous statistics |
+| settings.statsHelp | Aide à corriger les erreurs et à améliorer le jeu. Aucune donnée personnelle n'est envoyée. | Helps fix errors and improve the game. No personal data is sent. |
+| settings.language | Langue | Language |
+| settings.languageAuto | Automatique (langue du téléphone) | Automatic (phone language) |
+| settings.back | Retour | Back |
+| about.title | À propos | About |
+| about.storyTitle | L'histoire de ce jeu | The story of this game |
+| about.story | Enfant, j'avais un petit jeu électronique qui devinait à quel animal on pensait, rien qu'en posant des questions. Ça me paraissait magique. Il a disparu depuis longtemps : j'ai voulu le recréer, en mieux, pour y jouer avec mes enfants. | As a child, I had a little electronic game that could guess which animal you were thinking of, just by asking questions. It seemed like magic to me. It disappeared long ago: I wanted to recreate it, even better, to play it with my children. |
+| about.authorTitle | Un mot de l'auteur | A word from the author |
+| about.author | Ce jeu ne sort pas d'un studio : je l'ai imaginé et programmé sur mon temps libre, en développeur passionné, sans prétention. Il est donc perfectible et sans doute pas exempt de bugs. Si je ne trouve pas ton animal ou si une question te paraît bizarre, merci d'avance pour ton indulgence. Et surtout : amuse-toi bien ! | This game does not come from a studio: I imagined and programmed it in my free time, as a passionate developer, without pretension. So it is far from perfect and probably not free of bugs. If I can't find your animal or a question seems odd, thank you in advance for your patience. Above all: have fun! |
+| about.dataTitle | Tes données | Your data |
+| about.data | Aucun compte, aucune publicité. Des statistiques anonymes (parties jouées, animaux trouvés ou non, plantages) ne sont envoyées que si tu l'as accepté. Tu peux changer d'avis dans les paramètres. | No account, no ads. Anonymous statistics (games played, animals found or not, crashes) are only sent if you agreed. You can change your mind in the settings. |
+| about.version | Version {version} | Version {version} |
+| about.back | Retour | Back |
+| errors.title | Oups | Oops |
+| errors.body | Un problème est survenu. Relance le jeu. | Something went wrong. Restart the game. |
+| errors.retry | Réessayer | Try again |
 
-`{animal}` is the spoken name with article (« la girafe »); `{n}` is a number.
+`{animal}` is the spoken name with article (« la girafe », « a giraffe »); `{n}` is a number. French: `.one` for n ≤ 1;
+English: `.one` for n = 1 only.
 
 Amendment 2026-10-12 (user phone test, decided by the user): more playful copy. Pitch « Salut ! Je vais lire dans tes pensées. Pense à un animal… »,
 proposal « J'ai trouvé ! C'est {animal} ? », victory title « Je le savais ! ». Proposal threshold kept at 0.85
@@ -367,10 +420,15 @@ Amendment 2026-10-12, version 0.2.0 (requested by the user): more variety and mo
 Amendment 2026-10-15, version 0.2.3 (requested by the user, texts approved by the user): « À propos » screen from
 Home with the story of the game, a word from the author and the player's data. New AC-35.
 
+Amendment 2026-10-26, version 0.3.0 (requested by the user): the game becomes multilingual, French and English
+(fallback English), following the factory's localisation standard. Decided by the user: English voice pre-recorded
+with Azure en-US-AvaNeural, launcher name « Guess the Animal » in English, the « in France » question kept, APK size
+limit raised to 50 000 000 bytes. New AC-36 to AC-40; AC-23 amended.
+
 ## Out of scope
 
 - Learning new animals or questions from players.
-- Languages other than French.
+- Languages other than French and English (v0.3.0).
 - Speech recognition / microphone.
 - Multiplayer, leaderboards, scores, accounts, ads, in-app purchases.
 - Animal illustrations or photos (emoji only).

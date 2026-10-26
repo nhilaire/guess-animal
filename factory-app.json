@@ -5,5 +5,13 @@
   "stack": "expo",
   "description": "Family guessing game: think of an animal, the app asks yes/no questions aloud until it finds it",
   "language": "fr-FR",
-  "factoryVersion": "1.0.0"
+  "factoryVersion": "1.0.0",
+  "languages": [
+    "fr",
+    "en"
+  ],
+  "fallbackLanguage": "en",
+  "displayNames": {
+    "en": "Guess the Animal"
+  }
 }

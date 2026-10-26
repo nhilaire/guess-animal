@@ -1,0 +1,225 @@
+id;name;spoken
+dog;Dog;a dog
+cat;Cat;a cat
+cow;Cow;a cow
+horse;Horse;a horse
+donkey;Donkey;a donkey
+sheep;Sheep;a sheep
+goat;Goat;a goat
+pig;Pig;a pig
+hen;Hen;a hen
+duck;Duck;a duck
+goose;Goose;a goose
+turkey;Turkey;a turkey
+rabbit;Rabbit;a rabbit
+hamster;Hamster;a hamster
+guinea_pig;Guinea pig;a guinea pig
+goldfish;Goldfish;a goldfish
+budgie;Budgie;a budgie
+llama;Llama;a llama
+fox;Fox;a fox
+wolf;Wolf;a wolf
+boar;Wild boar;a wild boar
+deer;Deer;a deer
+squirrel;Squirrel;a squirrel
+hedgehog;Hedgehog;a hedgehog
+badger;Badger;a badger
+beaver;Beaver;a beaver
+otter;Otter;an otter
+hare;Hare;a hare
+mole;Mole;a mole
+mouse;Mouse;a mouse
+rat;Rat;a rat
+bat;Bat;a bat
+brown_bear;Brown bear;a brown bear
+lynx;Lynx;a lynx
+marmot;Marmot;a marmot
+ibex;Ibex;an ibex
+lion;Lion;a lion
+elephant;Elephant;an elephant
+giraffe;Giraffe;a giraffe
+zebra;Zebra;a zebra
+hippo;Hippo;a hippo
+rhino;Rhino;a rhino
+cheetah;Cheetah;a cheetah
+leopard;Leopard;a leopard
+hyena;Hyena;a hyena
+gorilla;Gorilla;a gorilla
+chimpanzee;Chimpanzee;a chimpanzee
+baboon;Baboon;a baboon
+gazelle;Gazelle;a gazelle
+warthog;Warthog;a warthog
+meerkat;Meerkat;a meerkat
+crocodile;Crocodile;a crocodile
+ostrich;Ostrich;an ostrich
+flamingo;Flamingo;a flamingo
+buffalo;Buffalo;a buffalo
+tiger;Tiger;a tiger
+panda;Panda;a panda
+orangutan;Orangutan;an orangutan
+peacock;Peacock;a peacock
+cobra;Cobra;a cobra
+komodo;Komodo dragon;a Komodo dragon
+camel;Camel;a camel
+kangaroo;Kangaroo;a kangaroo
+koala;Koala;a koala
+platypus;Platypus;a platypus
+jaguar;Jaguar;a jaguar
+puma;Puma;a puma
+raccoon;Raccoon;a raccoon
+bison;Bison;a bison
+sloth;Sloth;a sloth
+armadillo;Armadillo;an armadillo
+toucan;Toucan;a toucan
+parrot;Parrot;a parrot
+anteater;Anteater;an anteater
+skunk;Skunk;a skunk
+hummingbird;Hummingbird;a hummingbird
+rattlesnake;Rattlesnake;a rattlesnake
+polar_bear;Polar bear;a polar bear
+penguin;Penguin;a penguin
+seal;Seal;a seal
+walrus;Walrus;a walrus
+reindeer;Reindeer;a reindeer
+orca;Orca;an orca
+dolphin;Dolphin;a dolphin
+whale;Whale;a whale
+shark;Shark;a shark
+ray;Ray;a ray
+octopus;Octopus;an octopus
+jellyfish;Jellyfish;a jellyfish
+starfish;Starfish;a starfish
+crab;Crab;a crab
+lobster;Lobster;a lobster
+shrimp;Shrimp;a shrimp
+seahorse;Seahorse;a seahorse
+sea_turtle;Sea turtle;a sea turtle
+clownfish;Clownfish;a clownfish
+tuna;Tuna;a tuna
+salmon;Salmon;a salmon
+squid;Squid;a squid
+sea_urchin;Sea urchin;a sea urchin
+frog;Frog;a frog
+toad;Toad;a toad
+salamander;Salamander;a salamander
+carp;Carp;a carp
+grass_snake;Grass snake;a grass snake
+viper;Viper;a viper
+python;Python;a python
+lizard;Lizard;a lizard
+chameleon;Chameleon;a chameleon
+iguana;Iguana;an iguana
+tortoise;Tortoise;a tortoise
+pigeon;Pigeon;a pigeon
+sparrow;Sparrow;a sparrow
+blackbird;Blackbird;a blackbird
+robin;Robin;a robin
+crow;Crow;a crow
+magpie;Magpie;a magpie
+seagull;Seagull;a seagull
+swan;Swan;a swan
+stork;Stork;a stork
+owl;Owl;an owl
+eagle;Eagle;an eagle
+woodpecker;Green woodpecker;a green woodpecker
+heron;Heron;a heron
+pelican;Pelican;a pelican
+canary;Canary;a canary
+swallow;Swallow;a swallow
+bee;Bee;a bee
+ant;Ant;an ant
+butterfly;Butterfly;a butterfly
+ladybug;Ladybug;a ladybug
+fly;Fly;a fly
+mosquito;Mosquito;a mosquito
+dragonfly;Dragonfly;a dragonfly
+grasshopper;Grasshopper;a grasshopper
+beetle;Beetle;a beetle
+spider;Spider;a spider
+scorpion;Scorpion;a scorpion
+snail;Snail;a snail
+slug;Slug;a slug
+earthworm;Earthworm;an earthworm
+moose;Moose;a moose
+porcupine;Porcupine;a porcupine
+fennec;Fennec fox;a fennec fox
+narwhal;Narwhal;a narwhal
+ferret;Ferret;a ferret
+polar_fox;Arctic fox;an arctic fox
+red_panda;Red panda;a red panda
+lemur;Lemur;a lemur
+mandrill;Mandrill;a mandrill
+tapir;Tapir;a tapir
+okapi;Okapi;an okapi
+gnu;Wildebeest;a wildebeest
+weasel;Weasel;a weasel
+jackal;Jackal;a jackal
+coyote;Coyote;a coyote
+snow_leopard;Snow leopard;a snow leopard
+wombat;Wombat;a wombat
+tasmanian_devil;Tasmanian devil;a Tasmanian devil
+opossum;Opossum;an opossum
+yak;Yak;a yak
+capybara;Capybara;a capybara
+chipmunk;Chipmunk;a chipmunk
+sea_otter;Sea otter;a sea otter
+manatee;Manatee;a manatee
+beluga;Beluga;a beluga
+sperm_whale;Sperm whale;a sperm whale
+chinchilla;Chinchilla;a chinchilla
+gerbil;Gerbil;a gerbil
+marmoset;Marmoset;a marmoset
+gibbon;Gibbon;a gibbon
+pangolin;Pangolin;a pangolin
+echidna;Echidna;an echidna
+dormouse;Dormouse;a dormouse
+bull;Bull;a bull
+dromedary;Dromedary;a dromedary
+quail;Quail;a quail
+guinea_fowl;Guinea fowl;a guinea fowl
+pheasant;Pheasant;a pheasant
+dove;Dove;a dove
+tit;Blue tit;a blue tit
+cuckoo;Cuckoo;a cuckoo
+kingfisher;Kingfisher;a kingfisher
+puffin;Puffin;a puffin
+kiwi;Kiwi;a kiwi
+emu;Emu;an emu
+cockatoo;Cockatoo;a cockatoo
+vulture;Vulture;a vulture
+jay;Jay;a jay
+snowy_owl;Snowy owl;a snowy owl
+crane;Crane;a crane
+rooster;Rooster;a rooster
+anaconda;Anaconda;an anaconda
+gecko;Gecko;a gecko
+axolotl;Axolotl;an axolotl
+piranha;Piranha;a piranha
+catfish;Catfish;a catfish
+pike;Pike;a pike
+eel;Eel;an eel
+sardine;Sardine;a sardine
+swordfish;Swordfish;a swordfish
+pufferfish;Pufferfish;a pufferfish
+flying_fish;Flying fish;a flying fish
+trout;Trout;a trout
+moray;Moray eel;a moray eel
+tarantula;Tarantula;a tarantula
+wasp;Wasp;a wasp
+cricket;Cricket;a cricket
+cockroach;Cockroach;a cockroach
+flea;Flea;a flea
+tick;Tick;a tick
+louse;Louse;a louse
+millipede;Millipede;a millipede
+caterpillar;Caterpillar;a caterpillar
+firefly;Firefly;a firefly
+mantis;Praying mantis;a praying mantis
+stick_insect;Stick insect;a stick insect
+mussel;Mussel;a mussel
+oyster;Oyster;an oyster
+leech;Leech;a leech
+hermit_crab;Hermit crab;a hermit crab
+crayfish;Crayfish;a crayfish
+sea_anemone;Sea anemone;a sea anemone
+woodlouse;Woodlouse;a woodlouse
