@@ -3,11 +3,14 @@ import { ActivityIndicator, Linking, StyleSheet, View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { handleLink } from './game/mode';
+import { LanguageSetting } from './i18n';
+import { I18nProvider } from './i18n/I18nProvider';
 import { ConsentScreen } from './screens/ConsentScreen';
 import { GameScreen } from './screens/GameScreen';
 import { HomeScreen } from './screens/HomeScreen';
 import { AboutScreen } from './screens/AboutScreen';
 import { SettingsScreen } from './screens/SettingsScreen';
+import { loadLanguageSetting, saveLanguageSetting } from './storage/languageSetting';
 import { DEFAULT_SETTINGS, Settings, loadSettings, saveSettings } from './storage/settings';
 import { Consent, loadConsent, saveConsent } from './telemetry/consentStore';
 import { applyConsent } from './telemetry/telemetry';
@@ -20,15 +23,17 @@ export default function App() {
   const [consent, setConsentState] = useState<Consent | 'loading'>('loading');
   const [route, setRoute] = useState<Route>('home');
   const [settings, setSettings] = useState<Settings>(DEFAULT_SETTINGS);
+  const [languageSetting, setLanguageSetting] = useState<LanguageSetting>('auto');
 
   useEffect(() => {
     let alive = true;
     (async () => {
-      const [storedConsent, storedSettings] = await Promise.all([loadConsent(), loadSettings()]);
+      const [storedConsent, storedSettings, storedLanguage] = await Promise.all([loadConsent(), loadSettings(), loadLanguageSetting()]);
       if (storedConsent !== 'unknown') await applyConsent(storedConsent === 'granted');
       if (alive) {
         setConsentState(storedConsent);
         setSettings(storedSettings);
+        setLanguageSetting(storedLanguage);
       }
     })();
     return () => {
@@ -48,6 +53,12 @@ export default function App() {
     await saveConsent(value);
     await applyConsent(granted);
     setConsentState(value);
+  }, []);
+
+  // The switch is immediate (context), then saved; a game in progress is not touched.
+  const changeLanguage = useCallback((value: LanguageSetting) => {
+    setLanguageSetting(value);
+    void saveLanguageSetting(value);
   }, []);
 
   const changeSettings = useCallback((next: Settings) => {
@@ -84,7 +95,9 @@ export default function App() {
 
   return (
     <SafeAreaProvider>
-      <ErrorBoundary>{content}</ErrorBoundary>
+      <I18nProvider setting={languageSetting} onChange={changeLanguage}>
+        <ErrorBoundary>{content}</ErrorBoundary>
+      </I18nProvider>
     </SafeAreaProvider>
   );
 }

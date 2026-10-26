@@ -2,8 +2,8 @@ import { useEffect } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 import { feedback } from '../audio/feedback';
-import { APP_NAME } from '../config/app';
-import { fr } from '../i18n/fr';
+import { appName } from '../config/app';
+import { useI18n } from '../i18n/I18nProvider';
 import { Button } from '../ui/Button';
 import { Screen } from '../ui/Screen';
 import { colors, font, spacing } from '../ui/theme';
@@ -11,6 +11,7 @@ import { colors, font, spacing } from '../ui/theme';
 type Props = { sound: boolean; onPlay: () => void; onSettings: () => void; onAbout: () => void };
 
 export function HomeScreen({ sound, onPlay, onSettings, onAbout }: Props) {
+  const { t, language } = useI18n();
   // The pitch is spoken for players who cannot read yet.
   useEffect(() => {
     if (!sound) return;
@@ -25,13 +26,13 @@ export function HomeScreen({ sound, onPlay, onSettings, onAbout }: Props) {
           🦁 🐘 🦒
         </Text>
         <Text style={styles.title} accessibilityRole="header">
-          {APP_NAME}
+          {appName(language)}
         </Text>
-        <Text style={styles.pitch}>{fr.home.pitch}</Text>
+        <Text style={styles.pitch}>{t.home.pitch}</Text>
       </View>
-      <Button label={fr.home.play} onPress={onPlay} large testID="home-play" />
-      <Button label={fr.home.settings} onPress={onSettings} variant="secondary" testID="home-settings" />
-      <Button label={fr.home.about} onPress={onAbout} variant="secondary" testID="home-about" />
+      <Button label={t.home.play} onPress={onPlay} large testID="home-play" />
+      <Button label={t.home.settings} onPress={onSettings} variant="secondary" testID="home-settings" />
+      <Button label={t.home.about} onPress={onAbout} variant="secondary" testID="home-about" />
     </Screen>
   );
 }

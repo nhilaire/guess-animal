@@ -30,3 +30,7 @@ jest.mock('expo-haptics', () => ({
 
 // Safe-area insets: the library's own mock (zero insets, provider renders its children).
 jest.mock('react-native-safe-area-context', () => require('react-native-safe-area-context/jest/mock').default);
+
+// The phone's languages: French by default; a test can switch with
+// jest.mocked(deviceLanguageTags).mockReturnValue(['en-US']).
+jest.mock('./src/i18n/deviceLocale', () => ({ deviceLanguageTags: jest.fn(() => ['fr-FR']) }));

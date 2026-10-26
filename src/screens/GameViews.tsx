@@ -1,7 +1,7 @@
 // Presentational views of a game. No rule here: GameScreen owns the state and the callbacks.
 import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native';
 
-import { fr } from '../i18n/fr';
+import { useI18n } from '../i18n/I18nProvider';
 import { Animal, Question } from '../game/types';
 import { Button } from '../ui/Button';
 import { Screen } from '../ui/Screen';
@@ -17,25 +17,26 @@ type QuestionProps = {
 };
 
 export function QuestionView({ question, number, canUndo, onAnswer, onReplay, onUndo }: QuestionProps) {
+  const { t } = useI18n();
   return (
     <Screen testID="question-screen">
       <Text style={styles.counter} testID="game-counter">
-        {fr.game.counter(number)}
+        {t.game.counter(number)}
       </Text>
       <View style={styles.center}>
         <Text style={styles.question} testID={`q-${question.id}`} accessibilityRole="header">
           {question.text}
         </Text>
       </View>
-      <Button label={fr.game.yes} icon="✓" variant="yes" large onPress={() => onAnswer('yes')} testID="answer-yes" />
-      <Button label={fr.game.no} icon="✗" variant="no" large onPress={() => onAnswer('no')} testID="answer-no" />
-      <Button label={fr.game.dontKnow} icon="?" variant="neutral" large onPress={() => onAnswer('dontKnow')} testID="answer-dontknow" />
+      <Button label={t.game.yes} icon="✓" variant="yes" large onPress={() => onAnswer('yes')} testID="answer-yes" />
+      <Button label={t.game.no} icon="✗" variant="no" large onPress={() => onAnswer('no')} testID="answer-no" />
+      <Button label={t.game.dontKnow} icon="?" variant="neutral" large onPress={() => onAnswer('dontKnow')} testID="answer-dontknow" />
       <View style={styles.row}>
         <View style={styles.half}>
-          <Button label={fr.game.replay} icon="🔊" variant="secondary" onPress={onReplay} testID="game-replay" />
+          <Button label={t.game.replay} icon="🔊" variant="secondary" onPress={onReplay} testID="game-replay" />
         </View>
         <View style={styles.half}>
-          <Button label={fr.game.undo} icon="↩" variant="secondary" onPress={onUndo} disabled={!canUndo} testID="game-undo" />
+          <Button label={t.game.undo} icon="↩" variant="secondary" onPress={onUndo} disabled={!canUndo} testID="game-undo" />
         </View>
       </View>
     </Screen>
@@ -43,6 +44,7 @@ export function QuestionView({ question, number, canUndo, onAnswer, onReplay, on
 }
 
 export function ProposalView({ animal, onAnswer }: { animal: Animal; onAnswer: (correct: boolean) => void }) {
+  const { t } = useI18n();
   return (
     <Screen testID="proposal-screen">
       <View style={styles.center}>
@@ -50,11 +52,11 @@ export function ProposalView({ animal, onAnswer }: { animal: Animal; onAnswer: (
           {animal.emoji}
         </Text>
         <Text style={styles.question} testID="proposal-text" accessibilityRole="header">
-          {fr.proposal.question(animal.spoken)}
+          {t.proposal.question(animal.spoken)}
         </Text>
       </View>
-      <Button label={fr.game.yes} icon="✓" variant="yes" large onPress={() => onAnswer(true)} testID="proposal-yes" />
-      <Button label={fr.game.no} icon="✗" variant="no" large onPress={() => onAnswer(false)} testID="proposal-no" />
+      <Button label={t.game.yes} icon="✓" variant="yes" large onPress={() => onAnswer(true)} testID="proposal-yes" />
+      <Button label={t.game.no} icon="✗" variant="no" large onPress={() => onAnswer(false)} testID="proposal-no" />
     </Screen>
   );
 }
@@ -62,6 +64,7 @@ export function ProposalView({ animal, onAnswer }: { animal: Animal; onAnswer: (
 type EndProps = { onPlayAgain: () => void; onHome: () => void };
 
 export function VictoryView({ animal, questions, onPlayAgain, onHome }: EndProps & { animal: Animal; questions: number }) {
+  const { t } = useI18n();
   return (
     <Screen testID="victory-screen">
       <View style={styles.center}>
@@ -69,13 +72,13 @@ export function VictoryView({ animal, questions, onPlayAgain, onHome }: EndProps
           {animal.emoji}
         </Text>
         <Text style={styles.title} accessibilityRole="header">
-          {fr.victory.title}
+          {t.victory.title}
         </Text>
-        <Text style={styles.body}>{fr.victory.body(animal.spoken)}</Text>
-        <Text style={styles.body}>{fr.victory.questions(questions)}</Text>
+        <Text style={styles.body}>{t.victory.body(animal.spoken)}</Text>
+        <Text style={styles.body}>{t.victory.questions(questions)}</Text>
       </View>
-      <Button label={fr.common.playAgain} large onPress={onPlayAgain} testID="end-play-again" />
-      <Button label={fr.common.home} variant="secondary" onPress={onHome} testID="end-home" />
+      <Button label={t.common.playAgain} large onPress={onPlayAgain} testID="end-play-again" />
+      <Button label={t.common.home} variant="secondary" onPress={onHome} testID="end-home" />
     </Screen>
   );
 }
@@ -83,12 +86,13 @@ export function VictoryView({ animal, questions, onPlayAgain, onHome }: EndProps
 export const NOT_LISTED = 'not_listed';
 
 export function GiveUpView({ animals, onPick }: { animals: Animal[]; onPick: (id: string) => void }) {
+  const { t } = useI18n();
   return (
     <Screen testID="giveup-screen">
       <Text style={styles.title} accessibilityRole="header">
-        {fr.giveUp.title}
+        {t.giveUp.title}
       </Text>
-      <Text style={styles.body}>{fr.giveUp.body}</Text>
+      <Text style={styles.body}>{t.giveUp.body}</Text>
       <FlatList
         style={styles.list}
         data={animals}
@@ -101,7 +105,7 @@ export function GiveUpView({ animals, onPick }: { animals: Animal[]; onPick: (id
         )}
         ListFooterComponent={
           <Pressable accessibilityRole="button" style={[styles.item, styles.notListed]} onPress={() => onPick(NOT_LISTED)} testID="pick-not-listed">
-            <Text style={styles.itemText}>{fr.giveUp.notListed}</Text>
+            <Text style={styles.itemText}>{t.giveUp.notListed}</Text>
           </Pressable>
         }
       />
@@ -110,6 +114,7 @@ export function GiveUpView({ animals, onPick }: { animals: Animal[]; onPick: (id
 }
 
 export function ThanksView({ onPlayAgain, onHome }: EndProps) {
+  const { t } = useI18n();
   return (
     <Screen testID="thanks-screen">
       <View style={styles.center}>
@@ -117,11 +122,11 @@ export function ThanksView({ onPlayAgain, onHome }: EndProps) {
           🐱
         </Text>
         <Text style={styles.title} accessibilityRole="header">
-          {fr.thanks.body}
+          {t.thanks.body}
         </Text>
       </View>
-      <Button label={fr.common.playAgain} large onPress={onPlayAgain} testID="end-play-again" />
-      <Button label={fr.common.home} variant="secondary" onPress={onHome} testID="end-home" />
+      <Button label={t.common.playAgain} large onPress={onPlayAgain} testID="end-play-again" />
+      <Button label={t.common.home} variant="secondary" onPress={onHome} testID="end-home" />
     </Screen>
   );
 }

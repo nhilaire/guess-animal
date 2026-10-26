@@ -1,10 +1,13 @@
-// Every player-facing string lives here, in French (tone: tu). Components never inline text.
+// Every player-facing string lives in a dictionary, French first (the reference, tone: tu). Components never inline
+// text: they read `t` from useI18n(). Other languages (en.ts) must have the same keys (src/i18n/types.ts).
 // `typo` applies French typography: no-break space before ? ! : ; (source text stays readable).
 import { NBSP } from './format';
 
 export const typo = (s: string): string => s.replace(/[   ]*([?!:;])/g, `${NBSP}$1`);
 
 export const fr = {
+  // BCP 47 locale of this language (sorting, formatting).
+  locale: 'fr-FR',
   consent: {
     title: 'Statistiques anonymes',
     body: typo(
@@ -79,6 +82,8 @@ export const fr = {
     vibrations: 'Vibrations',
     stats: 'Statistiques anonymes',
     statsHelp: "Aide à corriger les erreurs et à améliorer le jeu. Aucune donnée personnelle n'est envoyée.",
+    language: 'Langue',
+    languageAuto: 'Automatique (langue du téléphone)',
     back: 'Retour',
   },
   errors: {
