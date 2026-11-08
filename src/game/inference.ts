@@ -110,15 +110,17 @@ function rankedQuestions(data: GameData, c: Core): { q: number; gain: number }[]
 }
 
 // Deterministic mode: the best question. Variety mode: drawn among at most 6 questions within 50 % of the best.
-function chooseQuestion(data: GameData, c: Core): { q: number; gain: number; rng: number | null } {
+// `bestGain` is the gain of the best question (not of the drawn one): it alone decides whether an informative
+// question remains.
+function chooseQuestion(data: GameData, c: Core): { q: number; bestGain: number; rng: number | null } {
   const ranked = rankedQuestions(data, c);
-  if (ranked.length === 0) return { q: -1, gain: 0, rng: c.rng };
+  if (ranked.length === 0) return { q: -1, bestGain: 0, rng: c.rng };
   const best = ranked[0];
-  if (c.rng === null) return { ...best, rng: null };
+  if (c.rng === null) return { q: best.q, bestGain: best.gain, rng: null };
   const candidates = ranked.filter((x) => x.gain >= VARIETY_RATIO * best.gain).slice(0, VARIETY_CANDIDATES);
-  if (candidates.length < 2) return { ...best, rng: c.rng };
+  if (candidates.length < 2) return { q: best.q, bestGain: best.gain, rng: c.rng };
   const [r, rng] = nextRandom(c.rng);
-  return { ...candidates[Math.floor(r * candidates.length)], rng };
+  return { q: candidates[Math.floor(r * candidates.length)].q, bestGain: best.gain, rng };
 }
 
 // Decides the next step: a proposal or the next question (or giving up).
@@ -131,8 +133,8 @@ function advance(data: GameData, c: Core): Core {
   if ((c.weights[top] >= PROPOSE_THRESHOLD && mayPropose) || c.questionsAnswered >= cap) {
     return { ...c, phase: 'proposal', current: top };
   }
-  const { q, gain, rng } = chooseQuestion(data, c);
-  if (q < 0 || gain <= MIN_GAIN_BITS) return { ...c, phase: 'proposal', current: top };
+  const { q, bestGain, rng } = chooseQuestion(data, c);
+  if (q < 0 || bestGain <= MIN_GAIN_BITS) return { ...c, phase: 'proposal', current: top };
   return { ...c, phase: 'question', current: q, rng };
 }
 

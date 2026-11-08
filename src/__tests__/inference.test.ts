@@ -1,5 +1,6 @@
 import {
   MAX_QUESTIONS,
+  MIN_GAIN_BITS,
   VARIETY_CANDIDATES,
   VARIETY_RATIO,
   answerProposal,
@@ -366,5 +367,38 @@ describe('variety rule on the real data (AC-31, v0.2.0)', () => {
       drawn.add(q);
     }
     expect(drawn.size).toBe(VARIETY_CANDIDATES); // every eligible question is drawn at some point
+  });
+});
+
+describe('variety mode stop rule (AC-08, AC-31, T-36)', () => {
+  // 60 animals alike except on 2 questions: q0 sets 2 animals apart (best gain ≈ 0.017 bit > 0.01), q1 a single one
+  // (≈ 0.0087 bit: ≤ 0.01 but ≥ 50 % of the best, so it is a variety candidate).
+  const lowGain: GameData = {
+    questions: [
+      { id: 'q0', text: 'Q0 ?' },
+      { id: 'q1', text: 'Q1 ?' },
+    ],
+    animals: Array.from({ length: 60 }, (_, k) => ({
+      id: `a${k}`,
+      name: `A${k}`,
+      spoken: `le a${k}`,
+      emoji: '🐾',
+      facts: [k < 2 ? 'y' : 'v', k === 2 ? 'y' : 'v'] as Fact[],
+    })),
+  };
+
+  it('keeps asking while the best question is informative, whatever question the seed draws', () => {
+    const start = newGame(lowGain);
+    const [best, other] = [0, 1].map((q) => expectedGain(lowGain, start.weights, q));
+    expect(best).toBeGreaterThan(MIN_GAIN_BITS);
+    expect(other).toBeLessThanOrEqual(MIN_GAIN_BITS);
+    expect(other).toBeGreaterThanOrEqual(VARIETY_RATIO * best);
+    const drawn = new Set<number>();
+    for (let seed = 1; seed <= 20; seed++) {
+      const s = newGame(lowGain, seed);
+      expect(s.phase).toBe('question');
+      drawn.add(s.current);
+    }
+    expect(drawn).toEqual(new Set([0, 1]));
   });
 });
