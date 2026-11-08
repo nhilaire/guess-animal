@@ -35,6 +35,26 @@ beforeEach(async () => {
 });
 
 describe('settings (AC-18)', () => {
+  it('Android back on Settings returns to Home instead of leaving the app', async () => {
+    const handlers: (() => boolean | null | undefined)[] = [];
+    const spy = jest.spyOn(BackHandler, 'addEventListener').mockImplementation((_e, fn) => {
+      const handler = fn as () => boolean | null | undefined;
+      handlers.push(handler);
+      return { remove: () => handlers.splice(handlers.indexOf(handler), 1) && undefined };
+    });
+    await launch('denied');
+    await fireEvent.press(screen.getByTestId('home-settings'));
+    expect(screen.getByTestId('settings-screen')).toBeTruthy();
+    let handled: boolean | null | undefined = false;
+    // Like Android: the last registered handler runs first.
+    await act(async () => {
+      handled = handlers.length > 0 ? handlers[handlers.length - 1]() : false;
+    });
+    expect(handled).toBe(true);
+    expect(screen.getByTestId('home-screen')).toBeTruthy();
+    spy.mockRestore();
+  });
+
   it('saves sound, vibrations and statistics when toggled', async () => {
     await launch('granted');
     await fireEvent.press(screen.getByTestId('home-settings'));

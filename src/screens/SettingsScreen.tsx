@@ -1,4 +1,5 @@
-import { Pressable, ScrollView, StyleSheet, Switch, Text, View } from 'react-native';
+import { useEffect } from 'react';
+import { BackHandler, Pressable, ScrollView, StyleSheet, Switch, Text, View } from 'react-native';
 
 import { LANGUAGE_NAMES, LANGUAGES, LanguageSetting } from '../i18n';
 import { useI18n } from '../i18n/I18nProvider';
@@ -35,6 +36,14 @@ function Row({ label, help, value, onValueChange, testID }: { label: string; hel
 
 export function SettingsScreen({ settings, telemetryEnabled, onChange, onToggleTelemetry, onBack }: Props) {
   const { t, setting, setSetting } = useI18n();
+  // Android back returns to Home (registered last, so it runs before any app-level handler).
+  useEffect(() => {
+    const sub = BackHandler.addEventListener('hardwareBackPress', () => {
+      onBack();
+      return true;
+    });
+    return () => sub.remove();
+  }, [onBack]);
   // Each language is named in itself; « Automatique » follows the phone.
   const choices: { value: LanguageSetting; label: string }[] = [
     { value: 'auto', label: t.settings.languageAuto },
