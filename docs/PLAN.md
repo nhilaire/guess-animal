@@ -1,4 +1,4 @@
-# Plan: Devine l'Animal v0.3.0
+# Plan: Devine l'Animal v0.3.1
 
 Each task is small (one commit), references the acceptance criteria it serves, and names its proof.
 Format: `- [ ] T-01 Title (AC-01, AC-02) - proof: unit|e2e|device`. Check the box only when the proof passes.
@@ -38,6 +38,10 @@ Format: `- [ ] T-01 Title (AC-01, AC-02) - proof: unit|e2e|device`. Check the bo
 - [x] T-31 English data: data/en/*.csv -> per-language generated data, validation (articles, generic names, ids), Give up list sorted per language, language switch keeps the game (AC-05, AC-38) - proof: unit
 - [x] T-32 English voice: en-US-AvaNeural clips with the same generator, per-language manifest, playback in the game language (AC-13, AC-19, AC-38, AC-40) - proof: unit
 - [x] T-33 Maestro: flows pin French through the settings, language flow with screenshots, readme captures (AC-37) - proof: e2e
+- [ ] T-34 Ignore presses for 350 ms after each game view change, so a double tap never lands on the next screen (AC-15, AC-16) - proof: unit
+- [ ] T-35 Android back on Settings returns to Home (AC-18, AC-37) - proof: unit
+- [ ] T-36 Variety mode decides "no informative question left" on the best gain, not the drawn one (AC-08, AC-31) - proof: unit
+- [ ] T-37 Consent write failure is caught and reported, the consent choice always completes (AC-02, AC-21) - proof: unit
 
 ## Notes
 
