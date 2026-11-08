@@ -13,7 +13,7 @@ import { SettingsScreen } from './screens/SettingsScreen';
 import { loadLanguageSetting, saveLanguageSetting } from './storage/languageSetting';
 import { DEFAULT_SETTINGS, Settings, loadSettings, saveSettings } from './storage/settings';
 import { Consent, loadConsent, saveConsent } from './telemetry/consentStore';
-import { applyConsent } from './telemetry/telemetry';
+import { applyConsent, reportError } from './telemetry/telemetry';
 import { ErrorBoundary } from './ui/ErrorBoundary';
 import { colors } from './ui/theme';
 
@@ -50,9 +50,16 @@ export default function App() {
 
   const decide = useCallback(async (granted: boolean) => {
     const value = granted ? 'granted' : 'denied';
-    await saveConsent(value);
-    await applyConsent(granted);
-    setConsentState(value);
+    // The choice always takes effect on screen, even if saving or applying it fails (the consent screen would
+    // otherwise stay stuck).
+    try {
+      await saveConsent(value);
+      await applyConsent(granted);
+    } catch (error) {
+      reportError(error, 'apply_consent');
+    } finally {
+      setConsentState(value);
+    }
   }, []);
 
   // The switch is immediate (context), then saved; a game in progress is not touched.
