@@ -8,6 +8,7 @@ import { newSeed } from '../game/mode';
 import { useI18n } from '../i18n/I18nProvider';
 import { Settings } from '../storage/settings';
 import { track } from '../telemetry/telemetry';
+import { INPUT_LOCK_MS, lockClock } from '../ui/inputLock';
 import { GiveUpView, ProposalView, QuestionView, ThanksView, VictoryView } from './GameViews';
 
 // The engine works on ids and facts, shared by every language; the texts shown come from the current language, so
@@ -25,6 +26,8 @@ export function GameScreen({ settings, onExit }: Props) {
   const [thanks, setThanks] = useState(false);
   const [round, setRound] = useState(0);
   const ended = useRef(false);
+  // Presses are ignored until this time: set at mount (the tap on « Jouer ») and at each view change.
+  const inputLockedUntil = useRef(lockClock.now() + INPUT_LOCK_MS);
   const sortedAnimals = useMemo(() => [...shown.animals].sort((a, b) => a.name.localeCompare(b.name, t.locale)), [shown, t.locale]);
 
   // One game_start per round.
@@ -81,30 +84,48 @@ export function GameScreen({ settings, onExit }: Props) {
     return () => sub?.remove();
   }, []);
 
-  const playAgain = () => {
+  // Runs `action` (which changes the view) unless the previous view change is too recent, then locks the input.
+  const guarded =
+    <A extends unknown[]>(action: (...args: A) => void) =>
+    (...args: A) => {
+      const now = lockClock.now();
+      if (now < inputLockedUntil.current) return;
+      inputLockedUntil.current = now + INPUT_LOCK_MS;
+      action(...args);
+    };
+
+  const playAgain = guarded(() => {
     feedback().stop();
     setState(startGame());
     setThanks(false);
     setRound((r) => r + 1);
-  };
+  });
 
-  const onAnswer = (a: Answer) => {
+  const onAnswer = guarded((a: Answer) => {
     feedback().stop();
     setState((s) => answerQuestion(data, s, a));
-  };
+  });
 
-  const onProposal = (correct: boolean) => {
+  const onProposal = guarded((correct: boolean) => {
     feedback().stop();
     setState((s) => answerProposal(data, s, correct));
-  };
+  });
 
-  const onPick = (animal: string) => {
+  const onPick = guarded((animal: string) => {
     track('animal_missed', { animal });
     if (settings.sound) feedback().line('thanks', language);
     setThanks(true);
-  };
+  });
 
-  if (thanks) return <ThanksView onPlayAgain={playAgain} onHome={quit} />;
+  const onUndo = guarded(() => {
+    feedback().stop();
+    setState(undo);
+  });
+
+  // « Accueil » on Victory / Thanks (Android back stays immediate).
+  const onHome = guarded(quit);
+
+  if (thanks) return <ThanksView onPlayAgain={playAgain} onHome={onHome} />;
 
   switch (state.phase) {
     case 'question':
@@ -115,16 +136,13 @@ export function GameScreen({ settings, onExit }: Props) {
           canUndo={state.history.length > 0}
           onAnswer={onAnswer}
           onReplay={() => settings.sound && feedback().question(data.questions[state.current].id, language)}
-          onUndo={() => {
-            feedback().stop();
-            setState(undo);
-          }}
+          onUndo={onUndo}
         />
       );
     case 'proposal':
       return <ProposalView animal={shown.animals[state.current]} onAnswer={onProposal} />;
     case 'found':
-      return <VictoryView animal={shown.animals[state.current]} questions={state.questionsAnswered} onPlayAgain={playAgain} onHome={quit} />;
+      return <VictoryView animal={shown.animals[state.current]} questions={state.questionsAnswered} onPlayAgain={playAgain} onHome={onHome} />;
     case 'gaveUp':
       return <GiveUpView animals={sortedAnimals} onPick={onPick} />;
   }

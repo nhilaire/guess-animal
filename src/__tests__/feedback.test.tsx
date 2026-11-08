@@ -8,6 +8,7 @@ import { createExpoFeedback } from '../audio/expoFeedback';
 import { Feedback, setFeedback } from '../audio/feedback';
 import { VOICE } from '../audio/manifest.generated';
 import { GAME_DATA } from '../game/data.generated';
+import { INPUT_LOCK_MS, lockClock } from '../ui/inputLock';
 
 const calls: string[] = [];
 const fake: Feedback = {
@@ -43,6 +44,9 @@ async function playToEnd(animalId: string) {
 beforeEach(async () => {
   await AsyncStorage.clear();
   calls.length = 0;
+  // These taps come at machine speed: each read of the lock clock jumps past the input lock (T-34, input-lock.test).
+  let lockTime = 0;
+  jest.spyOn(lockClock, 'now').mockImplementation(() => (lockTime += INPUT_LOCK_MS));
   setFeedback(fake);
 });
 

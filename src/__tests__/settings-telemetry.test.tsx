@@ -5,6 +5,7 @@ import { BackHandler } from 'react-native';
 
 import App from '../App';
 import { GAME_DATA } from '../game/data.generated';
+import { INPUT_LOCK_MS, lockClock } from '../ui/inputLock';
 
 const questionIndex = (id: string) => GAME_DATA.questions.findIndex((q) => q.id === id);
 const currentQuestionId = () => String(screen.getByTestId(/^q-/).props.testID).replace(/^q-/, '');
@@ -28,6 +29,9 @@ async function play(animalId: string) {
 beforeEach(async () => {
   await AsyncStorage.clear();
   (logEvent as jest.Mock).mockClear();
+  // These taps come at machine speed: each read of the lock clock jumps past the input lock (T-34, input-lock.test).
+  let lockTime = 0;
+  jest.spyOn(lockClock, 'now').mockImplementation(() => (lockTime += INPUT_LOCK_MS));
 });
 
 describe('settings (AC-18)', () => {

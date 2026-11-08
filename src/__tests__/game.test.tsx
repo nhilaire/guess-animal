@@ -6,6 +6,7 @@ import App from '../App';
 import { Feedback, setFeedback } from '../audio/feedback';
 import { GAME_DATA, GAME_DATA_EN } from '../game/data.generated';
 import { deviceLanguageTags } from '../i18n/deviceLocale';
+import { INPUT_LOCK_MS, lockClock } from '../ui/inputLock';
 
 const recorded: string[] = [];
 // Language of every voice clip asked for, in order.
@@ -48,6 +49,9 @@ async function answerDontKnowUntilProposal() {
 beforeEach(async () => {
   await AsyncStorage.clear();
   recorded.length = 0;
+  // These taps come at machine speed: each read of the lock clock jumps past the input lock (T-34, input-lock.test).
+  let lockTime = 0;
+  jest.spyOn(lockClock, 'now').mockImplementation(() => (lockTime += INPUT_LOCK_MS));
   voiceLanguages.length = 0;
   setFeedback(fake);
 });
