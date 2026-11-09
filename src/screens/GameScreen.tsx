@@ -51,12 +51,14 @@ export function GameScreen({ settings, onExit }: Props) {
     if (settings.vibrations) feedback().vibrate();
   }, [state, settings, language]);
 
-  // Speak the current question or proposal.
+  // Speak the current question or proposal. (`state.current` is an index, not a ref: it is read into a local
+  // so the dependency list can name it.)
+  const { phase, current: currentIndex } = state;
   useEffect(() => {
     if (!settings.sound) return;
-    if (state.phase === 'question') feedback().question(data.questions[state.current].id, language);
-    else if (state.phase === 'proposal') feedback().proposal(data.animals[state.current].id, language);
-  }, [state.phase, state.current, round, settings.sound, language]);
+    if (phase === 'question') feedback().question(data.questions[currentIndex].id, language);
+    else if (phase === 'proposal') feedback().proposal(data.animals[currentIndex].id, language);
+  }, [phase, currentIndex, round, settings.sound, language]);
 
   const quit = useCallback(() => {
     feedback().stop();
@@ -122,8 +124,9 @@ export function GameScreen({ settings, onExit }: Props) {
     setState(undo);
   });
 
-  // « Accueil » on Victory / Thanks (Android back stays immediate).
-  const onHome = guarded(quit);
+  // « Accueil » on Victory / Thanks (Android back stays immediate). `quit` reads a ref, so it is wrapped at press
+  // time rather than during render.
+  const onHome = () => guarded(quit)();
 
   if (thanks) return <ThanksView onPlayAgain={playAgain} onHome={onHome} />;
 
